@@ -3,7 +3,7 @@ import React from "react";
 const Home: React.FC = () => {
     return (
         <main className="flex flex-col items-center justify-center min-h-screen px-4
-            py-8 bg-gradient-to-br from-red-100 to-white">
+            py-8 bg-gradient-to-br from-black-100 to-gray">
             {/*Header*/}
             <h1 className="text-4xl font-bold mb-4 text-center text-blue-800">
                 Challenge me
