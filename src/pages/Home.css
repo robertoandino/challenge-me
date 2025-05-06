@@ -1,0 +1,92 @@
+.main-container {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #111827, #1F2937, #374151);
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.header:hover {
+    transform: scale(1.05);
+}
+
+.title {
+    font-size: 3.75rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #e11d48, #7e22ce);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: #d1d5db;
+    max-width: 36rem;
+    margin: 0 auto;
+    line-height: 1.75;
+}
+
+.challenge-box {
+    width: 100%;
+    max-width: 32rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.challenge-box:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border-color: rgba(225, 29, 72, 0.3);
+}
+
+.challenge-text {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.75;
+}
+
+.generate-button {
+    background: linear-gradient(to right, #e11d48, #be123c);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: none;
+    font-size: 1.125rem;
+    cursor: pointer;
+}
+
+.generate-button:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.generate-button:active {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(225, 29, 79, 0.5);
+}
