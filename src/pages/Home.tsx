@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import { challenges } from "../data/challenges";
 
 const Home: React.FC = () => {
+    const [currentChallenge, setCurrentChallenge] = useState<string>("Click the button to receieve a challenge!");
+
+    const generateChallenge = () => {
+        const randomIndex = Math.floor(Math.random() *  challenges.length);
+        setCurrentChallenge(challenges[randomIndex]);
+    };
+
     return (
         <main className="flex flex-col items-center justify-center min-h-screen px-4
             py-8 bg-gradient-to-br from-gray-900 to-gray-700">
