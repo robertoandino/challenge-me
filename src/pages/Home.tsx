@@ -9,6 +9,7 @@ const Home: React.FC = () => {
         setCurrentChallenge(challenges[randomIndex]);
     };
 
+    
     return (
         <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700">
             <div className="container mx-auto px-4 py-12 flex flex-col items-center justify-center min-h-screen">
