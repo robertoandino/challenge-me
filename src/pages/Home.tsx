@@ -4,41 +4,55 @@ import "./Home.css";
 
 const Home: React.FC = () => {
     const [currentChallenge, setCurrentChallenge] = useState<string>("Click the button to receieve a challenge!");
+    const [isGenerating, setIsGenerating] = useState(false);
+    const [hasGenerated, setHasGenerated] = useState(false);
 
     const generateChallenge = () => {
-        const randomIndex = Math.floor(Math.random() *  challenges.length);
-        setCurrentChallenge(challenges[randomIndex]);
-    };
+        setIsGenerating(true);
 
+        setTimeout(() => {
+            const randomIndex = Math.floor(Math.random() * challenges.length);
+            setCurrentChallenge(challenges[randomIndex]);
+            setIsGenerating(false);
+            setHasGenerated(true);
+        }, 500);
+    };
 
     return (
         <main className="main-container">
             <div className="content-wrapper">
                 {/*Header*/}
                 <div className="header">
-                    <h1 className="title">
-                        Challenge me
-                    </h1>
-                    <p className="subtitle">
-                        Get a random mental or physical challenge to energize your day.
-                    </p>
+                    <h1 className="title">Challenge me</h1>
+                    <p className="subtitle">Get a random mental or physical challenge to energize your day.</p>
                 </div>
 
-                {/*Challenge Box (placeholder)*/}
-                <div className="challenge-box">
-                    <p className="challenge-text">
-                        {currentChallenge}
+                {/*Challenge Box*/}
+                <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
+                    <p className={`challenge-text ${isGenerating ? 'loading' : ''}`}>
+                        {isGenerating ? 'Generating challenge...' : currentChallenge}
                     </p>
                 </div>
 
                 {/*Button*/}
                 <button 
                     onClick={generateChallenge}
-                    className="generate-button"
+                    className={`generate-button ${isGenerating ? 'generating' : ''}`}
+                    disabled={isGenerating}
                     aria-label="Generate a new random challenge"    
                 >
-                    Generate Challenge
+                    {isGenerating ? 'Generating...' : 'Generate Challenge'}
                 </button>
+
+                {hasGenerated && (
+                    <button
+                        onClick={() => navigator.clipboard.writeText(currentChallenge)}
+                        className="share-button"
+                        aria-label="Share this challenge"
+                    >
+                        Share Challenge
+                    </button>
+                )}
             </div>
         </main>
     );
