@@ -53,12 +53,11 @@
     margin-bottom: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
-.challenge-box:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    border-color: rgba(225, 29, 72, 0.3);
+.challenge-box-generated {
+    animation: popIn 0.5s ease;
 }
 
 .challenge-text {
@@ -66,6 +65,11 @@
     font-size: 1.5rem;
     font-weight: 500;
     line-height: 1.75;
+    transition: opacity 0.3s ease;
+}
+
+.challenge-text.loading {
+    opacity: 0.7;
 }
 
 .generate-button {
@@ -81,12 +85,38 @@
     cursor: pointer;
 }
 
-.generate-button:hover {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transform: translateY(-2px);
+.generate-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
-.generate-button:active {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(225, 29, 79, 0.5);
+.generate-button.generating {
+    animation: pulse 2s infinite;
+}
+
+.share-button {
+    margin-top: 1rem;
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.75rem 2rem;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.share-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.98); }
+    100% { transform: scale(1); }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
 }
