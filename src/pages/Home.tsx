@@ -50,7 +50,7 @@ const Home: React.FC = () => {
                         className="share-button"
                         aria-label="Share this challenge"
                     >
-                        Share Challenge
+                        Copy Challenge
                     </button>
                 )}
             </div>
