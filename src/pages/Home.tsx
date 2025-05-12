@@ -6,13 +6,17 @@ const Home: React.FC = () => {
     const [currentChallenge, setCurrentChallenge] = useState<string>("Click the button to receieve a challenge!");
     const [isGenerating, setIsGenerating] = useState(false);
     const [hasGenerated, setHasGenerated] = useState(false);
+    const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
+    const [showHistory, setShowHistory] = useState(false);
 
     const generateChallenge = () => {
         setIsGenerating(true);
 
         setTimeout(() => {
             const randomIndex = Math.floor(Math.random() * challenges.length);
-            setCurrentChallenge(challenges[randomIndex]);
+            const newChallenge = challenges[randomIndex];
+            setCurrentChallenge(newChallenge);
+            setChallengeHistory(prev => [newChallenge, ...prev].slice(0, 5));
             setIsGenerating(false);
             setHasGenerated(true);
         }, 500);
