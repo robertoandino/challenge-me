@@ -24,6 +24,18 @@ const Home: React.FC = () => {
 
     return (
         <main className="main-container">
+            <nav className="nav-bar">
+                <div className="nav-content">
+                    <h2 className="nav-title">Challenge me</h2>
+                    <button
+                        className="history-button"
+                        onClick={() => setShowHistory(!showHistory)}
+                    >
+                        {showHistory ? 'Hide History' : 'Show History'}
+                    </button>
+                </div>
+            </nav>
+
             <div className="content-wrapper">
                 {/*Header*/}
                 <div className="header">
