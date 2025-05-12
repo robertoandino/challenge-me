@@ -1,3 +1,42 @@
+.nav-bar {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-title {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.history-button {
+    background: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.history-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 .main-container {
     min-height: 100vh;
     background: linear-gradient(to bottom right, #111827, #1F2937, #374151);
