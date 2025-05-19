@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { challenges } from "../data/challenges";
-import { ChallengeCategory } from "../data/ChallengeCategory";
 import "./Home.css";
 
 const Home: React.FC = () => {
@@ -17,14 +16,21 @@ const Home: React.FC = () => {
     const [difficulty, setDifficulty] = useState<string>('easy');
     const [streakCount, setStreakCount] = useState<number>(0);
 
+    console.log(challenges);
+
     const generateChallenge = () => {
         setIsGenerating(true);
 
         setTimeout(() => {
+            const filteredChallenges = challenges.filter(challenge => 
+                (selectedCategory === 'all' || challenge.category === selectedCategory) &&
+                challenge.difficulty === difficulty
+            );
+
             const randomIndex = Math.floor(Math.random() * challenges.length);
             const newChallenge = challenges[randomIndex];
-            setCurrentChallenge(newChallenge);
-            setChallengeHistory(prev => [newChallenge, ...prev].slice(0, 5));
+            setCurrentChallenge(newChallenge.text);
+            setChallengeHistory(prev => [newChallenge.text, ...prev].slice(0, 5));
             setIsGenerating(false);
             setHasGenerated(true);
         }, 500);
