@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import { challenges } from "../data/challenges";
+import { ChallengeCategory } from "../data/ChallengeCategory";
 import "./Home.css";
 
 const Home: React.FC = () => {
+    // State to manage the current challenge
     const [currentChallenge, setCurrentChallenge] = useState<string>("Click the button to receieve a challenge!");
+    // State to manage the loading state
     const [isGenerating, setIsGenerating] = useState(false);
     const [hasGenerated, setHasGenerated] = useState(false);
+    // Challenge history state
     const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
     const [showHistory, setShowHistory] = useState(false);
+    // State to manage Category and difficulty
+    const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
+    const [difficulty, setDifficulty] = useState<string>('easy');
+    const [streakCount, setStreakCount] = useState<number>(0);
 
     const generateChallenge = () => {
         setIsGenerating(true);
