@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { challenges } from "../data/challenges";
+import { ChallengeCategory } from "../data/Challenge";
 import "./Home.css";
 
 const Home: React.FC = () => {
@@ -66,7 +67,25 @@ const Home: React.FC = () => {
                         ))}
                     </div>
                 </div>
+                
+                <div className="difficulty-selector">
+                    <h3>Difficulty:</h3>
+                    <select
+                        value={difficulty}
+                        onChange={(e) => setDifficulty(e.target.value)}
+                        className="difficulty-select"
+                    >
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
 
+                {streakCount > 0 && (
+                    <div className="streak-counter">
+                        🔥 Streak: {streakCount} challenges
+                    </div>
+                )}
             </div>
 
             <div className="content-wrapper">
