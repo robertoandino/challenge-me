@@ -27,16 +27,15 @@ const Home: React.FC = () => {
                 challenge.difficulty === difficulty
             );
 
-            const randomIndex = Math.floor(Math.random() * challenges.length);
-            const newChallenge = challenges[randomIndex];
+            const randomIndex = Math.floor(Math.random() * filteredChallenges.length);
+            const newChallenge = filteredChallenges[randomIndex];
             setCurrentChallenge(newChallenge.text);
             setChallengeHistory(prev => [newChallenge.text, ...prev].slice(0, 5));
+            setStreakCount(prev => prev + 1);
             setIsGenerating(false);
             setHasGenerated(true);
         }, 500);
     };
-
-    console.log("Challenge History:", challengeHistory);
 
     return (
         <main className="main-container">
@@ -51,6 +50,24 @@ const Home: React.FC = () => {
                     </button>
                 </div>
             </nav>
+
+            <div className="controls-section">
+                <div className="category-controls">
+                    <h3>Choose Category:</h3>
+                    <div className="category-buttons">
+                        {['all', 'physical', 'mental', 'creative', 'social'].map(category => (
+                            <button
+                                key={category}
+                                className={`category-button ${selectedCategory === category ? 'active' : ''}`}
+                                onClick={() => setSelectedCategory(category as ChallengeCategory | 'all')}
+                            >
+                                {category.charAt(0).toUpperCase() + category.slice(1)}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
+            </div>
 
             <div className="content-wrapper">
                 {/*Header*/}
