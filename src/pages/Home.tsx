@@ -38,6 +38,8 @@ const Home: React.FC = () => {
         }, 500);
     };
 
+    console.log(challengeHistory);
+    
     return (
         <main className="main-container">
             <nav className="nav-bar">
