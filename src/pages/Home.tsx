@@ -55,7 +55,7 @@ const Home: React.FC = () => {
             </nav>
 
             {/*Main Header*/}
-            <header className="main-header">
+            <header className="site-header">
                 <h1 className="main-title">Challenge me</h1>
             </header>
 

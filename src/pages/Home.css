@@ -37,7 +37,20 @@
     background: rgba(255, 255, 255, 0.1);
 }
 
+.site-header {
+    text-align: center;
+    padding: 1rem 1rem;
+}
 
+.main-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    background: linear-gradient(to right, #311d48, #be123c);
+    background-clip: text;
+    color: transparent;
+}
 
 .controls-section {
     width: 100%;
