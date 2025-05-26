@@ -54,6 +54,11 @@ const Home: React.FC = () => {
                 </div>
             </nav>
 
+            {/*Main Header*/}
+            <header className="main-header">
+                <h1 className="main-title">Challenge me</h1>
+            </header>
+
             <div className="controls-section">
                 <div className="category-controls">
                     <h3>Choose Category:</h3>
@@ -93,7 +98,6 @@ const Home: React.FC = () => {
             <div className="content-wrapper">
                 {/*Header*/}
                 <div className="header">
-                    <h1 className="title">Challenge me</h1>
                     <p className="subtitle">Get a random mental or physical challenge to energize your day.</p>
                 </div>
 
