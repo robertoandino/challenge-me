@@ -59,22 +59,31 @@ const Home: React.FC = () => {
                 <h1 className="main-title">Challenge me</h1>
             </header>
 
-            <div className="controls-section">
-                <div className="category-controls">
-                    <h3>Choose Category:</h3>
-                    <div className="category-buttons">
-                        {['all', 'physical', 'mental', 'creative', 'social'].map(category => (
-                            <button
-                                key={category}
-                                className={`category-button ${selectedCategory === category ? 'active' : ''}`}
-                                onClick={() => setSelectedCategory(category as ChallengeCategory | 'all')}
-                            >
-                                {category.charAt(0).toUpperCase() + category.slice(1)}
-                            </button>
-                        ))}
-                    </div>
-                </div>
+            {/* Main Content Area */}
+            <div className="page-content">
                 
+                {/* Controls Section */}
+                <section className="controls-section">
+                    <div className="category-controls">
+                        <h3>Choose Category</h3>
+                        <div className="category-buttons">
+                            {['all', 'physical', 'mental', 'creative', 'social'].map(category => (
+                                <button
+                                    key={category}
+                                    className={`category-button ${selectedCategory === category ? 'active' : ''}`}
+                                    onClick={() => setSelectedCategory(category as ChallengeCategory | 'all')}
+                                >
+                                    {category.charAt(0).toUpperCase() + category.slice(1)}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        
+            <div className="controls-section">
+
                 <div className="difficulty-selector">
                     <h3>Difficulty:</h3>
                     <select
