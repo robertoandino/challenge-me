@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     const [hasGenerated, setHasGenerated] = useState(false);
     // Challenge history state
     const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
-    const [showHistory, setShowHistory] = useState(false);
+    //const [showHistory, setShowHistory] = useState(false);
     // State to manage Category and difficulty
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
     const [difficulty, setDifficulty] = useState<string>('easy');
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
     
     return (
         <main className="main-container">
-            <nav className="nav-bar">
+            {/*<nav className="nav-bar">
                 <div className="nav-content">
                     <h2 className="nav-title">Challenge me</h2>
                     <button
@@ -52,7 +52,7 @@ const Home: React.FC = () => {
                         {showHistory ? 'Hide History' : 'Show History'}
                     </button>
                 </div>
-            </nav>
+            </nav>*/}
 
             {/*Main Header*/}
             <header className="site-header">
