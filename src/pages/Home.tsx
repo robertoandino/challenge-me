@@ -102,8 +102,33 @@ const Home: React.FC = () => {
             </div>
     
             {/* Challenge Display Section */}
-            <section className="challenge-display">
+            <section className="challenge-section">
+                <p className="subtitle">Get a random mental or physical challenge to energize your day.</p> 
+            
+                <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
+                    <p className={`challenge-text ${isGenerating ? 'loading' : ''}`}>
+                        {isGenerating ? 'Generating challenge...' : currentChallenge}
+                    </p>
+                </div>
 
+                <div className="button-group">
+                    <button
+                        onClick={generateChallenge}
+                        className={`generate-button ${isGenerating ? 'generating' : ''}`}
+                        disabled={isGenerating}
+                    >
+                        {isGenerating ? 'Generating...' : 'Generate Challenge'}
+                    </button>
+
+                    {hasGenerated && (
+                        <button
+                            onClick={() => navigator.clipboard.writeText(currentChallenge)}
+                            className="share-button"
+                        >
+                            Copy Challenge
+                        </button>
+                    )}
+                </div>
             </section>
         </main>
     );
