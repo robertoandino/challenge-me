@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     const [hasGenerated, setHasGenerated] = useState(false);
     // Challenge history state
     const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
-    //const [showHistory, setShowHistory] = useState(false);
+    const [showHistory, setShowHistory] = useState(false);
     // State to manage Category and difficulty
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
     const [difficulty, setDifficulty] = useState<string>('easy');
@@ -129,6 +129,28 @@ const Home: React.FC = () => {
                         </button>
                     )}
                 </div>
+            </section>
+
+            {/* History Section */}
+            <section className={`history-section ${showHistory ? 'visible' : ''}`}>
+                <div className="history-reader">
+                    <h3>Previous Challenges</h3>
+                    <button
+                        className="history-toggle"
+                        onClick={() => setShowHistory(!showHistory)}
+                    >
+                        {showHistory ? 'Hide' : 'Show'} History
+                    </button>
+                </div>
+                {showHistory && challengeHistory.length > 0 && (
+                    <ul className="history-list">
+                        {challengeHistory.map((challenge, index) => (
+                            <li key={index} className="history-item">
+                                {challenge}
+                            </li>
+                        ))}
+                    </ul>
+                )}
             </section>
         </main>
     );
