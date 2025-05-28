@@ -55,13 +55,30 @@
 .controls-section {
     width: 100%;
     max-width: 32rem;
-    margin: 2rem auto;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    position: relative;
-    z-index: 1;
-    margin-top: 0 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+}
+
+.challenge-section {
+    width: 100%;
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.history-section {
+    width: 100%;
+    max-width: 32rem;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
 }
 
 .category-selector, .difficulty-selector {
