@@ -25,7 +25,8 @@
     font-weight: bold;
     color: white;
     margin: 0;
-    background: linear-gradient(to right, #311d48, #be123c);
+    background: linear-gradient(to right, #e11d48, #be123c);
+    -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
