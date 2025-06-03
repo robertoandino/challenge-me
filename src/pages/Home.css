@@ -32,19 +32,21 @@
 }
 
 .page-content {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .controls-section {
     width: 100%;
     max-width: 32rem;
     margin: 0 auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;    
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
     border-radius: 1rem;
