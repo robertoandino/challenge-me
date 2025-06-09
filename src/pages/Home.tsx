@@ -51,40 +51,45 @@ const Home: React.FC = () => {
             {/* Main Content Area */}
             <div className="page-content">  
                 {/* Controls Section */}
-                <section className="controls-section">
-                    <div className="category-controls">
-                        <h3>Choose Category</h3>
-                        <div className="category-buttons">
-                            {['all', 'physical', 'mental', 'creative', 'social'].map(category => (
-                                <button
-                                    key={category}
-                                    className={`category-button ${selectedCategory === category ? 'active' : ''}`}
-                                    onClick={() => setSelectedCategory(category as ChallengeCategory | 'all')}
-                                >
-                                    {category.charAt(0).toUpperCase() + category.slice(1)}
-                                </button>
-                            ))}
+                <section className="controls-wrapper">
+                    <div className="controls-section">
+                        <div className="controls-header">
+                            <h2>Customize Your Challenge</h2>
+                            {streakCount > 0 && (
+                                <div className="streak-count">
+                                    🔥 Streak: {streakCount}
+                                </div>
+                            )}
                         </div>
-                    </div>
-                    
-                    <div className="difficulty-selector">
-                        <h3>Difficulty:</h3>
-                        <select
-                            value={difficulty}
-                            onChange={(e) => setDifficulty(e.target.value)}
-                            className="difficulty-select"
-                        >
-                            <option value="easy">Easy</option>
-                            <option value="medium">Medium</option>
-                            <option value="hard">Hard</option>
-                        </select>
-                    </div>       
 
-                    {streakCount > 0 && (
-                        <div className="streak-counter">
-                            🔥 Streak: {streakCount} challenges
+                        <div className="category-controls">
+                            <h3>Choose Category</h3>
+                            <div className="category-buttons">
+                                {['all', 'physical', 'mental', 'creative', 'social'].map(category => (
+                                    <button
+                                        key={category}
+                                        className={`category-button ${selectedCategory === category ? 'active' : ''}`}
+                                        onClick={() => setSelectedCategory(category as ChallengeCategory | 'all')}
+                                    >
+                                        {category.charAt(0).toUpperCase() + category.slice(1)}
+                                    </button>
+                                ))}
+                            </div>
                         </div>
-                    )} 
+                    
+                        <div className="difficulty-selector">
+                            <h3>Difficulty:</h3>
+                            <select
+                                value={difficulty}
+                                onChange={(e) => setDifficulty(e.target.value)}
+                                className="difficulty-select"
+                            >
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                        </div> 
+                    </div>                    
                 </section>
             </div>
     
