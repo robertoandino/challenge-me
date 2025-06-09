@@ -62,86 +62,88 @@ const Home: React.FC = () => {
                             )}
                         </div>
 
-                        <div className="category-controls">
-                            <h3>Choose Category</h3>
-                            <div className="category-buttons">
-                                {['all', 'physical', 'mental', 'creative', 'social'].map(category => (
-                                    <button
-                                        key={category}
-                                        className={`category-button ${selectedCategory === category ? 'active' : ''}`}
-                                        onClick={() => setSelectedCategory(category as ChallengeCategory | 'all')}
-                                    >
-                                        {category.charAt(0).toUpperCase() + category.slice(1)}
-                                    </button>
-                                ))}
+                        <div className="controls-grid">  
+                            <div className="category-controls">
+                                <h3>Choose Category</h3>
+                                <div className="category-buttons">
+                                    {['all', 'physical', 'mental', 'creative', 'social'].map(category => (
+                                        <button
+                                            key={category}
+                                            className={`category-button ${selectedCategory === category ? 'active' : ''}`}
+                                            onClick={() => setSelectedCategory(category as ChallengeCategory | 'all')}
+                                        >
+                                            {category.charAt(0).toUpperCase() + category.slice(1)}
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
                     
-                        <div className="difficulty-selector">
-                            <h3>Difficulty:</h3>
-                            <select
-                                value={difficulty}
-                                onChange={(e) => setDifficulty(e.target.value)}
-                                className="difficulty-select"
-                            >
-                                <option value="easy">Easy</option>
-                                <option value="medium">Medium</option>
-                                <option value="hard">Hard</option>
-                            </select>
-                        </div> 
+                            <div className="difficulty-selector">
+                                <h3>Difficulty:</h3>
+                                <select
+                                    value={difficulty}
+                                    onChange={(e) => setDifficulty(e.target.value)}
+                                    className="difficulty-select"
+                                >
+                                    <option value="easy">Easy</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="hard">Hard</option>
+                                </select>
+                            </div>
+                        </div>   
                     </div>                    
                 </section>
-            </div>
     
-            {/* Challenge Display Section */}
-            <section className="challenge-section">
-                <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
-                    <p className={`challenge-text ${isGenerating ? 'loading' : ''}`}>
-                        {isGenerating ? 'Generating challenge...' : currentChallenge}
-                    </p>
-                </div>
+                {/* Challenge Display Section */}
+                <section className="challenge-section">
+                    <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
+                        <p className={`challenge-text ${isGenerating ? 'loading' : ''}`}>
+                            {isGenerating ? 'Generating challenge...' : currentChallenge}
+                        </p>
+                    </div>
 
-                <div className="button-group">
-                    <button
-                        onClick={generateChallenge}
-                        className={`generate-button ${isGenerating ? 'generating' : ''}`}
-                        disabled={isGenerating}
-                    >
-                        {isGenerating ? 'Generating...' : 'Generate Challenge'}
-                    </button>
-
-                    {hasGenerated && (
+                    <div className="button-group">
                         <button
-                            onClick={() => navigator.clipboard.writeText(currentChallenge)}
-                            className="share-button"
+                            onClick={generateChallenge}
+                            className={`generate-button ${isGenerating ? 'generating' : ''}`}
+                            disabled={isGenerating}
                         >
-                            Copy Challenge
+                            {isGenerating ? 'Generating...' : 'Generate Challenge'}
                         </button>
-                    )}
-                </div>
-            </section>
 
-            {/* History Section */}
-            <section className={`history-section ${showHistory ? 'visible' : ''}`}>
-                <div className="history-reader">
-                    <h3>Previous Challenges</h3>
-                    <button
-                        className="history-toggle"
-                        onClick={() => setShowHistory(!showHistory)}
-                    >
-                        {showHistory ? 'Hide' : 'Show'} History
-                    </button>
-                </div>
-                {showHistory && challengeHistory.length > 0 && (
-                    <ul className="history-list">
-                        {challengeHistory.map((challenge, index) => (
-                            <li key={index} className="history-item">
-                                {challenge}
-                            </li>
-                        ))}
-                    </ul>
-                )}
-            </section>
+                        {hasGenerated && (
+                            <button
+                                onClick={() => navigator.clipboard.writeText(currentChallenge)}
+                                className="share-button"
+                            >
+                                Copy Challenge
+                            </button>
+                        )}
+                    </div>
+                </section>
+
+                {/* History Section */}
+                <section className={`history-section ${showHistory ? 'visible' : ''}`}>
+                    <div className="history-reader">
+                        <h3>Previous Challenges</h3>
+                        <button
+                            className="history-toggle"
+                            onClick={() => setShowHistory(!showHistory)}
+                        >
+                            {showHistory ? 'Hide' : 'Show'} History
+                        </button>
+                    </div>
+                    {showHistory && challengeHistory.length > 0 && (
+                        <ul className="history-list">
+                            {challengeHistory.map((challenge, index) => (
+                                <li key={index} className="history-item">
+                                    {challenge}
+                                </li>
+                            ))}
+                        </ul>
+                    )}
+                </section>
+            </div>
         </main>
     );
 };
