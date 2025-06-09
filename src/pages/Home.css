@@ -40,17 +40,18 @@
     gap: 3rem;
 }
 
-.controls-section {
+.controls-wrapper {
     width: 100%;
-    max-width: 32rem;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1.5rem;    
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 0 1rem;
+}
+
+.controls-section {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
-    border-radius: 1rem;
-    padding: 1.5rem;
+    border-radius: 1.5rem;
+    padding: 2rem;
 }
 
 .category-section {
