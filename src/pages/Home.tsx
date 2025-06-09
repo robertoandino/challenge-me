@@ -42,26 +42,13 @@ const Home: React.FC = () => {
     
     return (
         <main className="main-container">
-            {/*<nav className="nav-bar">
-                <div className="nav-content">
-                    <h2 className="nav-title">Challenge me</h2>
-                    <button
-                        className="history-button"
-                        onClick={() => setShowHistory(!showHistory)}
-                    >
-                        {showHistory ? 'Hide History' : 'Show History'}
-                    </button>
-                </div>
-            </nav>*/}
-
             {/*Main Header*/}
             <header className="site-header">
                 <h1 className="main-title">Challenge me</h1>
             </header>
 
             {/* Main Content Area */}
-            <div className="page-content">
-                
+            <div className="page-content">  
                 {/* Controls Section */}
                 <section className="controls-section">
                     <div className="category-controls">
@@ -98,7 +85,6 @@ const Home: React.FC = () => {
                         </div>
                     )} 
                 </section>
-
             </div>
     
             {/* Challenge Display Section */}
