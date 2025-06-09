@@ -54,6 +54,14 @@
     padding: 2rem;
 }
 
+.controls-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
 .category-section {
     display: flex;
     flex-direction: column;
