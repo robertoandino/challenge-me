@@ -45,6 +45,7 @@ const Home: React.FC = () => {
             {/*Main Header*/}
             <header className="site-header">
                 <h1 className="main-title">Challenge me</h1>
+                <p className="subtitle">Get a random mental or physical challenge to energize your day.</p>
             </header>
 
             {/* Main Content Area */}
@@ -89,8 +90,6 @@ const Home: React.FC = () => {
     
             {/* Challenge Display Section */}
             <section className="challenge-section">
-                <p className="subtitle">Get a random mental or physical challenge to energize your day.</p> 
-            
                 <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
                     <p className={`challenge-text ${isGenerating ? 'loading' : ''}`}>
                         {isGenerating ? 'Generating challenge...' : currentChallenge}
