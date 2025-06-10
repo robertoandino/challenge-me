@@ -14,10 +14,10 @@
 
 .site-header {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .main-title {
