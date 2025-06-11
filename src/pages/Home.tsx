@@ -96,10 +96,17 @@ const Home: React.FC = () => {
     
                 {/* Challenge Display Section */}
                 <section className="challenge-section">
-                    <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
-                        <p className={`challenge-text ${isGenerating ? 'loading' : ''}`}>
-                            {isGenerating ? 'Generating challenge...' : currentChallenge}
-                        </p>
+                    <div className={`challenge-containr ${hasGenerated ? 'has-generated' : ''}`}>
+                        <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
+                            {isGenerating ? (
+                                <div className="loadin-state">
+                                    <div className="loading-spinner"></div>
+                                    <p>Generating your challenge...</p>
+                                </div>
+                            ) : (
+                                <p className="challenge-text">{currentChallenge}</p>
+                            )}
+                        </div>
                     </div>
 
                     <div className="button-group">
