@@ -83,9 +83,59 @@
 
 .challenge-section {
     width: 100%;
-    max-width: 32rem;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.challenge-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    /*animation: slideUp 0.5s ease forwards;*/
+}
+
+.challenge-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.challenge-text {
+    color: white;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin: 0;
     text-align: center;
+    opacity: 0;
+    transform: scale(0.95);
+    /*animation: fadeIn 0.5s ease forwards*/
+}
+
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    border-top-color: #e11d48;
+    /*animation: spin 1s linear infinite;*/
 }
 
 .history-section {
