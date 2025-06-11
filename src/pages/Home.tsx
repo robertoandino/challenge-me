@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     const [hasGenerated, setHasGenerated] = useState(false);
     // Challenge history state
     const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
-    const [showHistory, setShowHistory] = useState(false);
+    //const [showHistory, setShowHistory] = useState(false);
     // State to manage Category and difficulty
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
     const [difficulty, setDifficulty] = useState<string>('easy');
