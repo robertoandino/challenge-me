@@ -121,28 +121,6 @@ const Home: React.FC = () => {
                         )}
                     </div>
                 </section>
-
-                {/* History Section */}
-                <section className={`history-section ${showHistory ? 'visible' : ''}`}>
-                    <div className="history-reader">
-                        <h3>Previous Challenges</h3>
-                        <button
-                            className="history-toggle"
-                            onClick={() => setShowHistory(!showHistory)}
-                        >
-                            {showHistory ? 'Hide' : 'Show'} History
-                        </button>
-                    </div>
-                    {showHistory && challengeHistory.length > 0 && (
-                        <ul className="history-list">
-                            {challengeHistory.map((challenge, index) => (
-                                <li key={index} className="history-item">
-                                    {challenge}
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </section>
             </div>
         </main>
     );
