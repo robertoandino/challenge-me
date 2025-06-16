@@ -97,6 +97,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 32rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .challenge-box:hover {
@@ -112,12 +116,14 @@
 .challenge-text {
     color: white;
     font-size: 1.5rem;
-    line-height: 1.6;
+    font-weight: 500;
+    line-height: 1.75;
     margin: 0;
     text-align: center;
     opacity: 0;
     transform: scale(0.95);
-    animation: fadeIn 0.5s ease forwards
+    animation: fadeIn 0.5s ease forwards;
+    transition: opacity 0.3s ease;
 }
 
 .error-text {
@@ -278,58 +284,8 @@
     z-index: 1;
 }
 
-.header {
-    text-align: center;
-    margin-bottom: 3rem;
-    transform: scale(1);
-    transition: transform 0.3s ease;
-}
-
-.header:hover {
-    transform: scale(1.05);
-}
-
-.title {
-    font-size: 3.75rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    background: linear-gradient(to right, #e11d48, #7e22ce);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.subtitle {
-    font-size: 1.125rem;
-    color: #d1d5db;
-    max-width: 36rem;
-    margin: 0 auto;
-    line-height: 1.75;
-}
-
-.challenge-box {
-    width: 100%;
-    max-width: 32rem;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    border-radius: 1.5rem;
-    padding: 1.5rem;
-    margin-bottom: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
-}
-
 .challenge-box-generated {
     animation: popIn 0.5s ease;
-}
-
-.challenge-text {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.75;
-    transition: opacity 0.3s ease;
 }
 
 .challenge-text.loading {
