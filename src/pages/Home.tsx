@@ -37,7 +37,7 @@ const Home: React.FC = () => {
 
             const randomIndex = Math.floor(Math.random() * filteredChallenges.length);
             const newChallenge = filteredChallenges[randomIndex];
-            
+
             setCurrentChallenge(newChallenge.text);
             setChallengeHistory(prev => [newChallenge.text, ...prev].slice(0, 5));
             setStreakCount(prev => prev + 1);
@@ -107,7 +107,7 @@ const Home: React.FC = () => {
                     <div className={`challenge-container ${hasGenerated ? 'has-generated' : ''}`}>
                         <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
                             {isGenerating ? (
-                                <div className="loadin-state">
+                                <div className="loading-state">
                                     <div className="loading-spinner"></div>
                                     <p>Generating your challenge...</p>
                                 </div>
