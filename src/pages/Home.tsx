@@ -112,7 +112,7 @@ const Home: React.FC = () => {
                     <div className="button-group">
                         <button
                             onClick={generateChallenge}
-                            className={`generate-button ${isGenerating ? 'generating' : ''}`}
+                            className={`primary-button ${isGenerating ? 'generating' : ''}`}
                             disabled={isGenerating}
                         >
                             {isGenerating ? 'Generating...' : 'Generate Challenge'}
@@ -121,9 +121,10 @@ const Home: React.FC = () => {
                         {hasGenerated && (
                             <button
                                 onClick={() => navigator.clipboard.writeText(currentChallenge)}
-                                className="share-button"
+                                className="secondary-button"
+                                title="Copy to clipboard"
                             >
-                                Copy Challenge
+                                <span>Copy Challenge</span>
                             </button>
                         )}
                     </div>
