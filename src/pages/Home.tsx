@@ -28,8 +28,16 @@ const Home: React.FC = () => {
                 challenge.difficulty === difficulty
             );
 
+            //Check if there are any challenges available
+            if (filteredChallenges.length === 0) {
+                setCurrentChallenge("No challenges found for selected category and difficulty!");
+                setIsGenerating(false);
+                return;
+            }
+
             const randomIndex = Math.floor(Math.random() * filteredChallenges.length);
             const newChallenge = filteredChallenges[randomIndex];
+            
             setCurrentChallenge(newChallenge.text);
             setChallengeHistory(prev => [newChallenge.text, ...prev].slice(0, 5));
             setStreakCount(prev => prev + 1);
@@ -96,7 +104,7 @@ const Home: React.FC = () => {
     
                 {/* Challenge Display Section */}
                 <section className="challenge-section">
-                    <div className={`challenge-containr ${hasGenerated ? 'has-generated' : ''}`}>
+                    <div className={`challenge-container ${hasGenerated ? 'has-generated' : ''}`}>
                         <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
                             {isGenerating ? (
                                 <div className="loadin-state">
