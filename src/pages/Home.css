@@ -26,6 +26,7 @@
     line-height: 1.75;
 }
 
+/* Base Layout */
 .page-content {
     max-width: 800px;
     margin: 0 auto;
@@ -35,13 +36,16 @@
     gap: 3rem;
 }
 
-.controls-wrapper {
-    width: 100%;
+.page-content {
     max-width: 800px;
-    margin: 0 auto 2rem;
-    padding: 0 1rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
+/* Controls Section */
 .controls-section {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
@@ -74,6 +78,36 @@
     flex-wrap: wrap;
     gap: 0.75rem;
     margin-bottom: 1rem;
+}
+
+.category-button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-button.active {
+    background: rgba(225, 29, 72, 0.5);
+    border-color: rgba(225, 29, 72, 0.8);
+}
+
+.difficulty-select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 0.1rem;
+    color: white;
+}
+
+.difficulty-select option {
+    background-color: #1F2937;
+    color: white;
 }
 
 /* Challenge Section */
@@ -132,6 +166,7 @@
     margin-top: 0.5rem;
 }
 
+/* Loading States */
 .loading-state {
     display: flex;
     flex-direction: column;
@@ -149,6 +184,7 @@
     animation: spin 1s linear infinite;
 }
 
+/* Button Styles */
 .button-group {
     display: flex;
     gap: 1rem;
@@ -190,6 +226,7 @@
     cursor: not-allowed;
 }
 
+/* Animation Keyframes */
 @keyframes slideUp {
     to {
         opacity: 1;
@@ -208,97 +245,4 @@
     to {
         transform: rotate(360deg);
     }
-}
-
-.history-section {
-    width: 100%;
-    max-width: 32rem;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(8px);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-}
-
-.category-selector, .difficulty-selector {
-   background: rgba(255, 255, 255, 0.1);
-   padding: 1rem;
-   border-radius: 1rem;
-   backdrop-filter: blue(8px);
-}
-
-.category-button {
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background: transparent;
-    color: white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.category-button.active {
-    background: rgba(225, 29, 72, 0.5);
-    border-color: rgba(225, 29, 72, 0.8);
-}
-
-.difficulty-select {
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    background: rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    margin-top: 0.1rem;
-}
-
-.difficulty-select option {
-    background-color: #1F2937;
-    color: white;
-}
-
-.streak-counter {
-    text-align: center;
-    font-size: 1.25rem;
-    color: white;
-    padding: 1rem;
-    background: linear-gradient(to right, #e11d48, #be123c);
-    border-radius: 0.75rem;
-    animation: pulse 2s infinite;
-}
-
-.main-container {
-    min-height: 100vh;
-    background: linear-gradient(to bottom right, #111827, #1F2937, #374151);
-}
-
-.content-wrapper {
-    width: 100%;
-    max-width: 32rem;
-    margin: 2rem auto;
-    padding: 0 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    position: relative;
-    z-index: 1;
-}
-
-.challenge-box-generated {
-    animation: popIn 0.5s ease;
-}
-
-.challenge-text.loading {
-    opacity: 0.7;
-}
-
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(0.98); }
-    100% { transform: scale(1); }
-}
-
-@keyframes popIn {
-    0% { transform: scale(0.95); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
 }
