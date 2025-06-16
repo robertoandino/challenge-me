@@ -76,13 +76,7 @@
     margin-bottom: 1rem;
 }
 
-.challenge-section {
-    width: 100%;
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-}
-
+/* Challenge Section */
 .challenge-container {
     display: flex;
     flex-direction: column;
@@ -90,10 +84,6 @@
     opacity: 0;
     transform: translateY(20px);
     animation: slideUp 0.5s ease forwards;
-}
-
-.has-generated {
-
 }
 
 .challenge-box {
@@ -109,8 +99,14 @@
     justify-content: center;
 }
 
-.challenge-box-generated {
+.challenge-box:hover {
+    transform: translateY(-2px);
+    border-color: rgba(225, 29, 72, 0.3);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
 
+.challenge-box-generated {
+    animation: popIn 0.5s ease;
 }
 
 .challenge-text {
