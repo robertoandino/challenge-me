@@ -169,6 +169,36 @@
     font-size: 1rem;
 }
 
+.primary-button:hover:not(:disabled),
+.secondary-button:hover {
+    transform: translateY(-2px);
+}
+
+.primary-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 .history-section {
     width: 100%;
     max-width: 32rem;
