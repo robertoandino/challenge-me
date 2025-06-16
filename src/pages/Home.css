@@ -1,17 +1,4 @@
-.history-button {
-    background: transparent;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.history-button:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
+/* Header Styles */
 .site-header {
     text-align: center;
     padding: 1rem 1rem;
@@ -29,6 +16,14 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    color: #d1d5db;
+    max-width: 36rem;
+    margin: 0 auto;
+    line-height: 1.75;
 }
 
 .page-content {
