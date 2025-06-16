@@ -157,6 +157,18 @@
     font-size: 1rem;
 }
 
+.secondary-button {
+    background: transparent;
+    color: white;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
 .history-section {
     width: 100%;
     max-width: 32rem;
