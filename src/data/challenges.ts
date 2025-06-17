@@ -7,6 +7,12 @@ export const challenges: Challenge[] = [
         category: "physical",
         difficulty: "easy"
     },
+    {
+        id: 2,
+        text: "Meditate for 5 minutes",
+        category: "mental",
+        difficulty: "easy"
+    },
 ]
     /*"Take a 10-minute walk.",
     "Write down three things you're grateful for.",

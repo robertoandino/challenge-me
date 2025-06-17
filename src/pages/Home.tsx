@@ -34,7 +34,7 @@ const Home: React.FC = () => {
                 setIsGenerating(false);
                 return;
             }
-
+            
             const randomIndex = Math.floor(Math.random() * filteredChallenges.length);
             const newChallenge = filteredChallenges[randomIndex];
 
