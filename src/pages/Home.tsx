@@ -128,7 +128,18 @@ const Home: React.FC = () => {
                             />
                         </div>
                     </div>
+                    
+                    {/* Mark as Completed Button */}
+                    {hasGenerated && (
+                        <button
+                            className="complete-button"
+                            onClick={() => setCompletedCount(prev => prev + 1)}
+                        >
+                            Mark as Completed
+                        </button>
+                    )}
 
+                    {/* Generate/Copy Buttons */}        
                     <div className="button-group">
                         <button
                             onClick={generateChallenge}
