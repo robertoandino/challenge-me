@@ -142,6 +142,18 @@ const Home: React.FC = () => {
                         </button>
                     )}
 
+                    {/* Challenges list */}
+                    {completedChallenges.length > 0 && (
+                        <div className="completed-list">
+                            <h4>Completed Challenges</h4>
+                            <ul>
+                                {completedChallenges.map((challenge, idx) => (
+                                    <li key={idx}>{challenge}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    )}
+
                     {/* Generate/Copy Buttons */}        
                     <div className="button-group">
                         <button
