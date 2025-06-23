@@ -164,6 +164,30 @@
     margin-top: 0.5rem;
 }
 
+/* Progress Bar */
+.progress-info {
+    margin: 1.5rem 0 1rem 0;
+    text-align: center;
+    color: #fff;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    max-width: 300px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    margin: 0.5rem auto;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(to right, #e11d48, #be123c);
+    border-radius: 6px;
+    transition: width 0.4s cubic-bezier(.4,0,.2,1)
+}
+
 /* Loading States */
 .loading-state {
     display: flex;
