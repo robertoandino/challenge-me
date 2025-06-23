@@ -228,6 +228,12 @@
     padding: 0;
 }
 
+.completed-list li {
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    color: #fff;
+}
+
 /* Loading States */
 .loading-state {
     display: flex;
