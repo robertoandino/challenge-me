@@ -12,6 +12,7 @@ const Home: React.FC = () => {
     // Challenge history state
     //const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
     const [completedCount, setCompletedCount] = useState<number>(0);
+    const [completedChallenges, setCompletedChallenges] = useState<string[]>([]);
     //const [showHistory, setShowHistory] = useState(false);
     // State to manage Category and difficulty
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
@@ -45,8 +46,6 @@ const Home: React.FC = () => {
             setHasGenerated(true);
         }, 500);
     };
-
-    //console.log(challengeHistory);
     
     return (
         <main className="main-container">
@@ -132,7 +131,12 @@ const Home: React.FC = () => {
                     {hasGenerated && (
                         <button
                             className="complete-button"
-                            onClick={() => setCompletedCount(prev => prev + 1)}
+                            onClick={() => {
+                                setCompletedCount(prev => prev + 1);
+                                setCompletedChallenges(prev => 
+                                    prev.includes(currentChallenge) ? prev : [currentChallenge, ...prev]
+                                );
+                            }}
                         >
                             Mark as Completed
                         </button>
