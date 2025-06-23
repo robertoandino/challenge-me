@@ -188,6 +188,23 @@
     transition: width 0.4s cubic-bezier(.4,0,.2,1)
 }
 
+.complete-button {
+    background: linear-gradient(to right, #22c55e, #16a34a);
+    color: white;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 1rem;
+    border: none;
+    cursor: pointer;
+    margin: 1rem auto 1rem auto;
+    display: block;
+    transition: background 0.2s;
+}
+
+.completed-button:hover {
+    background: linear-gradient(to right, #16a34a, #22c55e);
+}
+
 /* Loading States */
 .loading-state {
     display: flex;
