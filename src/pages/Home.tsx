@@ -10,7 +10,7 @@ const Home: React.FC = () => {
     const [isGenerating, setIsGenerating] = useState(false);
     const [hasGenerated, setHasGenerated] = useState(false);
     // Challenge history state
-    const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
+    //const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
     const [completedCount, setCompletedCount] = useState<number>(0);
     //const [showHistory, setShowHistory] = useState(false);
     // State to manage Category and difficulty
@@ -18,7 +18,6 @@ const Home: React.FC = () => {
     const [difficulty, setDifficulty] = useState<string>('easy');
     const [streakCount, setStreakCount] = useState<number>(0);
 
-    console.log(challenges);
 
     const generateChallenge = () => {
         setIsGenerating(true);
@@ -40,14 +39,14 @@ const Home: React.FC = () => {
             const newChallenge = filteredChallenges[randomIndex];
 
             setCurrentChallenge(newChallenge.text);
-            setChallengeHistory(prev => [newChallenge.text, ...prev].slice(0, 5));
+            //setChallengeHistory(prev => [newChallenge.text, ...prev].slice(0, 5));
             setStreakCount(prev => prev + 1);
             setIsGenerating(false);
             setHasGenerated(true);
         }, 500);
     };
 
-    console.log(challengeHistory);
+    //console.log(challengeHistory);
     
     return (
         <main className="main-container">
