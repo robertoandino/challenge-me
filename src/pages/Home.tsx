@@ -118,6 +118,17 @@ const Home: React.FC = () => {
                         </div>
                     </div>
 
+                    {/* Progress tracker */}
+                    <div className="progress-info">
+                        <span>Challenges completed: {completedCount}</span>
+                        <div className="progress-bar-bg">
+                            <div
+                                className="progress-bar-fill"
+                                style={{ width: `${Math.min((completedCount / 20) * 100, 100)}%` }}
+                            />
+                        </div>
+                    </div>
+
                     <div className="button-group">
                         <button
                             onClick={generateChallenge}
