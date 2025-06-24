@@ -148,7 +148,10 @@ const Home: React.FC = () => {
                             <h4>Completed Challenges</h4>
                             <ul>
                                 {completedChallenges.map((challenge, idx) => (
-                                    <li key={idx}>{challenge}</li>
+                                    <li key={idx}>
+                                        <span role="img" aria-label="completed" style={{marginRight: '0.5rem'}}>✅</span>
+                                        {challenge}
+                                    </li>
                                 ))}
                             </ul>
                         </div>
