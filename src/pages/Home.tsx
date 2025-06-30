@@ -114,7 +114,15 @@ const Home: React.FC = () => {
                         </div>   
                     </div>                    
                 </section>
-    
+
+                {/* Daily Challenge Section */}
+                <section className="daily-challenge-section">
+                    <h2>🌞 Daily Challenge</h2>
+                    <div className="daily-challenge-box">
+                        <p>{dailyChallenge}</p>
+                    </div>
+                </section>
+
                 {/* Challenge Display Section */}
                 <section className="challenge-section">
                     <div className={`challenge-container ${hasGenerated ? 'has-generated' : ''}`}>
