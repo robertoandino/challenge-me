@@ -49,7 +49,7 @@ const Home: React.FC = () => {
         }, 500);
     };
 
-    function getDailyChallenge(challenges: typeof challenges) {
+    function getDailyChallenge() {
         const today = new Date();
         //date as a string in YYYY-MM-DD format
         const daySeed = today.getFullYear() * 10000 + (today.getMonth() + 1)
@@ -58,8 +58,8 @@ const Home: React.FC = () => {
     }
 
     useEffect(() => {
-        setDailyChallenge(getDailyChallenge(challenges).text);
-    })
+        setDailyChallenge(getDailyChallenge().text);
+    }, [])
 
     return (
         <main className="main-container">
