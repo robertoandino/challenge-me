@@ -205,6 +205,24 @@
     background: linear-gradient(to right, #16a34a, #22c55e);
 }
 
+/* Daily Challenges Section */
+.daily-challenge-section {
+    margin: 2rem auto 1.5rem auto;
+    max-width: 32rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: #fff;
+}
+
+.daily-challenge-box {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+    color: #bef264;
+    font-weight: 500;
+}
+
 /* Challenges list */
 .completed-list {
     margin: 1.5rem auto 0 auto;
