@@ -18,6 +18,8 @@ const Home: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
     const [difficulty, setDifficulty] = useState<string>('easy');
     const [streakCount, setStreakCount] = useState<number>(0);
+    // State to manage daily challenge
+    const [dailyChallenge, setDailyChallenge] = useState<string>("");
 
 
     const generateChallenge = () => {
@@ -46,7 +48,15 @@ const Home: React.FC = () => {
             setHasGenerated(true);
         }, 500);
     };
-    
+
+    function getDailyChallenge(challenges: typeof challenges) {
+        const today = new Date();
+        //date as a string in YYYY-MM-DD format
+        const daySeed = today.getFullYear() * 10000 + (today.getMonth() + 1)
+        const index = daySeed % challenges.length;
+        return challenges[index];
+    }
+
     return (
         <main className="main-container">
             {/*Main Header*/}
