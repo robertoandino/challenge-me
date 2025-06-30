@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { challenges } from "../data/challenges";
 import { ChallengeCategory } from "../data/Challenge";
 import "./Home.css";
@@ -56,6 +56,10 @@ const Home: React.FC = () => {
         const index = daySeed % challenges.length;
         return challenges[index];
     }
+
+    useEffect(() => {
+        setDailyChallenge(getDailyChallenge(challenges).text);
+    })
 
     return (
         <main className="main-container">
