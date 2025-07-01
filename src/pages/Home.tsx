@@ -20,6 +20,8 @@ const Home: React.FC = () => {
     const [streakCount, setStreakCount] = useState<number>(0);
     // State to manage daily challenge
     const [dailyChallenge, setDailyChallenge] = useState<string>("");
+    // State to manage profile menu visibility
+    const [profileOpen, setProfileOpen] = useState(false);
 
 
     const generateChallenge = () => {
@@ -57,6 +59,7 @@ const Home: React.FC = () => {
         return challenges[index];
     }
 
+    //Daily challenge effect
     useEffect(() => {
         setDailyChallenge(getDailyChallenge().text);
     }, [])
