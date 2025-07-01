@@ -72,7 +72,7 @@ const Home: React.FC = () => {
                     <button
                         className="profile-button"
                     >
-
+                        <span role="img" aria-label="profile">👤</span>
                     </button>
                 </div>
             </header>
