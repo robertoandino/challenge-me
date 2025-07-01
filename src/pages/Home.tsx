@@ -64,6 +64,8 @@ const Home: React.FC = () => {
         setDailyChallenge(getDailyChallenge().text);
     }, [])
 
+    console.log(setProfileOpen);
+    
     return (
         <main className="main-container">
             {/*Main Header*/}
@@ -77,6 +79,11 @@ const Home: React.FC = () => {
                     >
                         <span role="img" aria-label="profile">👤</span>
                     </button>
+                    {profileOpen && (
+                        <div className="profile-dropdown">
+                            <h4>User Info</h4>
+                        </div>
+                    )}
                 </div>
             </header>
 
