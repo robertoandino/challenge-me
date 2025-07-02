@@ -66,10 +66,9 @@
     color: #fff;
     border-radius: 1rem;
     box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-    padding: 1.25rem 1.5rem;
+    padding: 0.2rem;
     min-width: 220px;
-    margin-top: 0.5rem;
-    animation: fadeIn 0.2s;   
+    margin-top: 0.5rem;  
 }
 
 .profile-dropdown h4 {
