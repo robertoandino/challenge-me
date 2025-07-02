@@ -53,6 +53,22 @@
     z-index: 100;
 }
 
+.profile-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+
+.profile-dropdown {
+    background: rgba(30, 41, 59, 0.97);
+    color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    padding: 1.25rem 1.5rem;   
+}
+
 /* Controls Section */
 .controls-section {
     background: rgba(255, 255, 255, 0.1);
