@@ -45,6 +45,14 @@
     gap: 3rem;
 }
 
+/* Dropdown Menu */
+.profile-menu-container {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 100;
+}
+
 /* Controls Section */
 .controls-section {
     background: rgba(255, 255, 255, 0.1);
