@@ -78,9 +78,11 @@
 
 .profile-dropdown h4 {
     margin-top: 0;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     color: #bef264;
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    font-weight: 600;
 }
 
 /* Controls Section */
