@@ -85,6 +85,18 @@
     font-weight: 600;
 }
 
+.profile-dropdown div {
+    margin-bottom: 0.75rem;
+    padding: 0.05rem 0.25rem;
+    border-radius: 0.5rem;
+    transition: background 0.2s;
+}
+
+.profile-dropdown div strong {
+    color: #f47db6;
+    font-weight: 500;
+}
+
 /* Controls Section */
 .controls-section {
     background: rgba(255, 255, 255, 0.1);
