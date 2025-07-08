@@ -103,6 +103,9 @@
     padding: 0.05rem 0.25rem;
     border-radius: 0.5rem;
     transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .profile-dropdown div strong {
@@ -114,9 +117,15 @@
     margin-bottom: 0;
 }
 
+.dropdown-divider {
+    border: none;
+    border-top: 1px solid rgba(190, 242, 100, 0.12);
+    margin: 0.75rem 0;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-10px);}
-    to { opacity: 1; transform: translateY(0); }
+    to { opacity: 1; transform: translateY(0);}
 }
 
 /* Controls Section */
