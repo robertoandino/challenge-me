@@ -78,6 +78,17 @@
     animation: fadeIn 0.25s;
 }
 
+.profile-dropdown::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    right: 2rem;
+    border-width: 0 10px 12px 10px;
+    border-style: solid;
+    border-color: transparent transparent rgba(30, 41, 59, 0.97) transparent;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.08));
+}
+
 .profile-dropdown h4 {
     margin-top: 0;
     margin-bottom: 1rem;
