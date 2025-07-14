@@ -13,3 +13,14 @@
         right: 2.5rem;
     }
 }
+
+/* Responsive Main Layout */
+@media (max-width: 700px) {
+    .page-content {
+        padding: 1rem 0.25rem;
+        max-width: 100vw;
+    }
+    section {
+        padding: 1rem 0.5rem;
+    }
+}
