@@ -1,0 +1,15 @@
+/* Responsive Dropdown */
+@media (max-width: 500px) {
+    .profile-dropdown {
+        right: 0.5rem;
+        left: 0.5rem;
+        min-width: unset;
+        max-width: unset;
+        width: auto;
+        padding: 1rem 0.5rem;
+        font-size: 1rem;
+    }
+    .profile-dropdown::before {
+        right: 2.5rem;
+    }
+}
