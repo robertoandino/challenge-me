@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { challenges } from "../data/challenges";
 import { ChallengeCategory } from "../data/Challenge";
 import "./Home.css";
+import "./responsive.css";
 
 const Home: React.FC = () => {
     // State to manage the current challenge
