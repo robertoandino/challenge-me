@@ -24,3 +24,13 @@
         padding: 1rem 0.5rem;
     }
 }
+
+@media (max-width: 400px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    .profile-dropdown {
+        font-size: 0.95rem;
+        padding: 0.75rem 0.25rem;
+    }
+}
