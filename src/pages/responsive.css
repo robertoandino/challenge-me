@@ -34,3 +34,21 @@
         padding: 0.75rem 0.25rem;
     }
 }
+
+/* Responsive Controls Grid */
+@media (max-width: 600px) {
+    .controls-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* Responsive Buttons and Inputs */
+@media (max-width: 500px) {
+    button,
+    select,
+    input {
+        font-size: 0.95rem;
+        padding: 0.5rem 0.75rem;
+    }
+}
