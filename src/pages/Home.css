@@ -368,7 +368,8 @@
 }
 
 .primary-button {
-    background: linear-gradient(to right, #e11d48, #be123c);
+    background: linear-gradient(to right, #e11d48 60%, #be123c 100%);
+    box-shadow: 0 2px 8px rgba(225,29,72,0.15);
     color: white;
     font-weight: 600;
     padding: 1rem 2rem;
