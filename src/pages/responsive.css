@@ -11,10 +11,11 @@ html, body {
         right: 0.5rem;
         left: 0.5rem;
         min-width: unset;
-        max-width: unset;
+        max-width: 95vw;
         width: auto;
         padding: 1rem 0.5rem;
         font-size: 1rem;
+        box-sizing: border-box;
     }
     .profile-dropdown::before {
         right: 2.5rem;
