@@ -64,5 +64,18 @@ html, body {
     input {
         font-size: 0.95rem;
         padding: 0.5rem 0.75rem;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 600px) {
+    .challenge-box,
+    .daily-challenge-section,
+    .completed-list-section {
+        max-width: 98vw;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 1rem 0.5rem;
     }
 }
