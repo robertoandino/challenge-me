@@ -106,3 +106,13 @@ html, body {
         padding: 1rem 0.5rem;
     }
 }
+
+@media (max-width: 400px) {
+    .main-title {
+        font-size: 1.5rem;
+    }
+    .challenge-text,
+    .daily-challenge-box {
+        font-size: 1rem;
+    }
+}
