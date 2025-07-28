@@ -28,6 +28,16 @@
 }
 
 /* Base Layout */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
 .main-container {
     min-height: 100vh;
     background: linear-gradient(to bottom right, #111827, #1F2937, #374151);
