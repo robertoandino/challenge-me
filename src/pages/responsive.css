@@ -48,6 +48,17 @@
         width: 100%;
         box-sizing: border-box;
     }
+    .main-title {
+        font-size: 1.5rem;
+    }
+    .challenge-text,
+    .daily-challenge-box {
+        font-size: 1rem;
+    }
+    .profile-dropdown {
+        font-size: 0.95rem;
+        padding: 0.75rem 0.25rem;
+    }
 }
 
 /* Responsive Buttons and Inputs */
