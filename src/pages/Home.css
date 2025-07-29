@@ -43,8 +43,6 @@ html, body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch;
     overflow: hidden;
     background: linear-gradient(to bottom right, #111827, #1F2937, #374151);
 }
@@ -62,12 +60,13 @@ html, body {
 }
 
 .page-content {
+    flex: 1;
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 /* Dropdown Menu */
