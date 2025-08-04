@@ -69,9 +69,10 @@ const Home: React.FC = () => {
         <main className="main-container">
             {/*Main Header*/}
             <header className="site-header">
-                <h1 className="main-title">Challenge me</h1>
-                <p className="subtitle">Get a random mental or physical challenge to energize your day.</p>
-
+                <div className="header-left">
+                    <h1 className="main-title">Challenge me</h1>
+                    <p className="subtitle">Get a random mental or physical challenge to energize your day.</p>
+                </div>
                 <div className="profile-menu-container">
                     <button
                         className="profile-button"
