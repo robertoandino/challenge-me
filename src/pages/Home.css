@@ -66,17 +66,11 @@ html, body {
 .page-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "challenge controls"
-        "daily completed";
-    gap: 1rem;
+    gap: 1.5rem;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 1rem;
-    height: calc(100vh - 100px);
-    box-sizing: border-box;
 }
 
 .page-content {
