@@ -47,7 +47,8 @@ html, body {
     box-sizing: border-box;
 }
 
-.left-column {
+.left-column,
+.right-column {
     display: flex;
     flex-direction: column;
     gap: 1rem;

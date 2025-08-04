@@ -92,20 +92,23 @@ const Home: React.FC = () => {
             </header>
 
             {/* Main Content Area */}
-            <div className="page-content">  
-                {/* Controls Section */}
-                <section className="controls-wrapper">
-                    <div className="controls-section">
-                        <div className="controls-header">
-                            <h2>Customize Your Challenge</h2>
-                            {streakCount > 0 && (
-                                <div className="streak-count">
-                                    🔥 Streak: {streakCount}
-                                </div>
-                            )}
-                        </div>
 
-                        <div className="controls-grid">  
+            {/* Right Column */}
+            <div className="page-content">
+                <aside className="right-column">
+                    {/* Controls Section */}
+                    <section className="controls-wrapper">
+                        <div className="controls-section">
+                            <div className="controls-header">
+                                <h2>Customize Your Challenge</h2>
+                                {streakCount > 0 && (
+                                    <div className="streak-count">
+                                        🔥 Streak: {streakCount}
+                                    </div>
+                                )}
+                            </div>
+
+                            <div className="controls-grid">  
                             <div className="category-controls">
                                 <h3>Choose Category</h3>
                                 <div className="category-buttons">
@@ -133,20 +136,21 @@ const Home: React.FC = () => {
                                     <option value="hard">Hard</option>
                                 </select>
                             </div>
-                        </div>   
-                    </div>                    
-                </section>
+                            </div>   
+                        </div>                    
+                    </section>
                 
-                {/* Daily Challenge Section */}
-                <section className="daily-challenge-section">
-                    <h2>🌞 Daily Challenge</h2>
-                    <div className="daily-challenge-box">
-                        <p>{dailyChallenge}</p>
-                    </div>
-                </section>
+                    {/* Daily Challenge Section */}
+                    <section className="daily-challenge-section">
+                        <h2>🌞 Daily Challenge</h2>
+                        <div className="daily-challenge-box">
+                            <p>{dailyChallenge}</p>
+                        </div>
+                    </section>
+                    </aside>  
 
-                {/* Left Column Section */}
-                <section className="left-column">
+                {/* Left Column */}
+                <main className="left-column">
                     {/* Challenge Display Section */}
                     <section className="challenge-section">
                         <div className={`challenge-container ${hasGenerated ? 'has-generated' : ''}`}>
@@ -224,7 +228,7 @@ const Home: React.FC = () => {
                             </button>
                         )}
                     </div>
-                </section>
+                </main>
             </div>
         </main>
     );
