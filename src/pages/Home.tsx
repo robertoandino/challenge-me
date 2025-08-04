@@ -136,7 +136,7 @@ const Home: React.FC = () => {
                         </div>   
                     </div>                    
                 </section>
-
+                
                 {/* Daily Challenge Section */}
                 <section className="daily-challenge-section">
                     <h2>🌞 Daily Challenge</h2>
@@ -145,61 +145,64 @@ const Home: React.FC = () => {
                     </div>
                 </section>
 
-                {/* Challenge Display Section */}
-                <section className="challenge-section">
-                    <div className={`challenge-container ${hasGenerated ? 'has-generated' : ''}`}>
-                        <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
-                            {isGenerating ? (
-                                <div className="loading-state">
-                                    <div className="loading-spinner"></div>
-                                    <p>Generating your challenge...</p>
-                                </div>
-                            ) : (
-                                <p className="challenge-text">{currentChallenge}</p>
-                            )}
+                {/* Left Column Section */}
+                <section className="left-column">
+                    {/* Challenge Display Section */}
+                    <section className="challenge-section">
+                        <div className={`challenge-container ${hasGenerated ? 'has-generated' : ''}`}>
+                            <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
+                                {isGenerating ? (
+                                    <div className="loading-state">
+                                        <div className="loading-spinner"></div>
+                                        <p>Generating your challenge...</p>
+                                    </div>
+                                ) : (
+                                    <p className="challenge-text">{currentChallenge}</p>
+                                )}
+                            </div>
                         </div>
-                    </div>
 
-                    {/* Progress tracker */}
-                    <div className="progress-info">
-                        <span>Challenges completed: {completedCount}</span>
-                        <div className="progress-bar-bg">
-                            <div
-                                className="progress-bar-fill"
-                                style={{ width: `${Math.min((completedCount / 20) * 100, 100)}%` }}
-                            />
+                        {/* Progress tracker */}
+                        <div className="progress-info">
+                            <span>Challenges completed: {completedCount}</span>
+                            <div className="progress-bar-bg">
+                                <div
+                                    className="progress-bar-fill"
+                                    style={{ width: `${Math.min((completedCount / 20) * 100, 100)}%` }}
+                                />
+                            </div>
                         </div>
-                    </div>
                     
-                    {/* Mark as Completed Button */}
-                    {hasGenerated && (
-                        <button
-                            className="complete-button"
-                            onClick={() => {
-                                setCompletedCount(prev => prev + 1);
-                                setCompletedChallenges(prev => 
-                                    prev.includes(currentChallenge) ? prev : [currentChallenge, ...prev]
-                                );
-                            }}
-                        >
-                            Mark as Completed
-                        </button>
-                    )}
+                        {/* Mark as Completed Button */}
+                        {hasGenerated && (
+                            <button
+                                className="complete-button"
+                                onClick={() => {
+                                    setCompletedCount(prev => prev + 1);
+                                    setCompletedChallenges(prev => 
+                                        prev.includes(currentChallenge) ? prev : [currentChallenge, ...prev]
+                                    );
+                                }}
+                            >
+                                Mark as Completed
+                            </button>
+                        )}
 
-                    {/* Challenges list */}
-                    {completedChallenges.length > 0 && (
-                        <div className="completed-list">
-                            <h4>Completed Challenges</h4>
-                            <ul>
-                                {completedChallenges.map((challenge, idx) => (
-                                    <li key={idx}>
-                                        <span role="img" aria-label="completed" style={{marginRight: '0.5rem'}}>✅</span>
-                                        {challenge}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    )}
+                        {/* Challenges list */}
+                        {completedChallenges.length > 0 && (
+                            <div className="completed-list">
+                                <h4>Completed Challenges</h4>
+                                <ul>
+                                    {completedChallenges.map((challenge, idx) => (
+                                        <li key={idx}>
+                                            <span role="img" aria-label="completed" style={{marginRight: '0.5rem'}}>✅</span>
+                                            {challenge}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </section>
 
                     {/* Generate/Copy Buttons */}        
                     <div className="button-group">
