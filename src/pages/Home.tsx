@@ -70,7 +70,7 @@ const Home: React.FC = () => {
             {/*Main Header*/}
             <header className="site-header">
                 <div className="header-left">
-                    <h1 className="main-title">Challenge me</h1>
+                    <h1 className="main-title">Challenge Me</h1>
                     <p className="subtitle">Get a random mental or physical challenge to energize your day.</p>
                 </div>
                 <div className="profile-menu-container">
