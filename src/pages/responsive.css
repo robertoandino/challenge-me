@@ -34,6 +34,12 @@
     }
 }
 
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+}
+
 @media (max-width: 400px) {
     .main-title {
         font-size: 2rem;
@@ -42,6 +48,13 @@
         font-size: 0.95rem;
         padding: 0.75rem 0.25rem;
     }
+    html {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1024px) {
+    html { font-size: 15px; }
 }
 
 /* Responsive Controls Grid */
@@ -112,15 +125,5 @@
         width: 100%;
         box-sizing: border-box;
         padding: 1rem 0.5rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .main-title {
-        font-size: 1.5rem;
-    }
-    .challenge-text,
-    .daily-challenge-box {
-        font-size: 1rem;
     }
 }
