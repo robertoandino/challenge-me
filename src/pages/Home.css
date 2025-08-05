@@ -38,6 +38,7 @@
 
 /* Base Layout */
 html, body {
+    font-size: 16px;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -71,7 +72,7 @@ html, body {
 }
 
 .page-content {
-    display: grid;
+    display: flex;
     grid-template-columns: 2fr 1fr;
     gap: 2rem;
     width: 100%;
