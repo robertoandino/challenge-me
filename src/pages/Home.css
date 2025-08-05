@@ -168,7 +168,7 @@ html, body {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
     border-radius: 1.5rem;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .controls-header {
@@ -186,9 +186,8 @@ html, body {
 
 .category-controls, 
 .difficulty-controls {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
 }
 
 .category-buttons {
@@ -196,6 +195,8 @@ html, body {
     flex-wrap: wrap;
     gap: 0.75rem;
     margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
 }
 
 .category-button {
