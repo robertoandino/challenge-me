@@ -97,7 +97,6 @@ html, body {
 }
 
 .profile-dropdown {
-    position: 1rem;
     top: 2.5rem;
     right: 0;
     background: rgba(30, 41, 59, 0.97);
