@@ -1,5 +1,6 @@
 /* Header Styles */
 .site-header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,6 +9,7 @@
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
     margin-bottom: 1rem;
+    z-index: 2000;
 }
 
 .header-left {
@@ -109,7 +111,7 @@ html, body {
     border: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 0.95rem;
     backdrop-filter: blur(12px);
-    z-index: 9999;
+    z-index: 3000;
 
     opacity: 0;
     transform: translateY(-8px);
