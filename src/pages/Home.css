@@ -97,18 +97,15 @@ html, body {
 }
 
 .profile-dropdown {
+    position: absolute;
     top: 2.5rem;
     right: 0;
     background: rgba(30, 41, 59, 0.97);
     color: #fff;
-    border-radius: 1.25rem;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 4px rgba(0, 0, 0, 0.25);
     padding: 1rem;
     min-width: 260px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    font-size: 0.95rem;
-    backdrop-filter: blur(12px);
-    z-index: 9999;
 }
 
 .profile-dropdown::before {
