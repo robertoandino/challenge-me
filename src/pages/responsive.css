@@ -84,7 +84,7 @@
     html { font-size: 15px; }
 }
 
-/* Responsive Controls Grid */
+/* Responsive Dropdown/Controls Grid */
 @media (max-width: 600px) {
     .controls-grid {
         grid-template-columns: 1fr;
@@ -121,30 +121,5 @@
     .difficulty-select {
         font-size: 0.85rem;
         padding: 0.4rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .challenge-box {
-        min-height: 60px;
-        padding: 0.75rem;
-    }
-    .daily-challenge-section {
-        padding: 1rem;
-        margin: 1rem auto;
-    }
-    .completed-list {
-        padding: 0.75rem;
-        font-size: 0.9rem;
-    }
-    button,
-    select,
-    input {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-        min-height: 40px;
-    }
-    .button-group {
-        gap: 0.5rem;
     }
 }
