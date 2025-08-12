@@ -99,15 +99,28 @@
     .controls-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
-        width: 100%;
-        box-sizing: border-box;
     }
     .main-title {
         font-size: 1.5rem;
     }
+    .challenge-box {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    .daily-challenge-section{
+        padding: 1rem;
+        margin: 1rem auto;
+    }
     .challenge-text,
     .daily-challenge-box {
         font-size: 1rem;
+    }
+    button,
+    select,
+    input {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+        min-height: 40px;
     }
     .profile-dropdown {
         left: 0.5rem;
