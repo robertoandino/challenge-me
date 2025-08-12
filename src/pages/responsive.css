@@ -100,8 +100,16 @@
         font-size: 1rem;
     }
     .profile-dropdown {
-        font-size: 0.95rem;
-        padding: 0.75rem 0.25rem;
+        left: 0.5rem;
+        right: 0.5rem;
+        width: auto;
+        max-width: calc(100% - 1rem);
+        font-size: 0.9rem;
+        padding: 0.75rem;
+        line-height: 1.4;
+    }
+    .profile-dropdown::before {
+        right: 2rem;
     }
     .controls-section {
         padding: 0.75rem;
