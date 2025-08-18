@@ -91,16 +91,18 @@ html, body {
 }
 
 .profile-button {
+    position: relative;
     background: none;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
     color: #fff;
+    z-index: 12000;
 }
 
 .profile-dropdown {
     position: absolute;
-    top: 2.5rem;
+    top: 2.8rem;
     right: 0;
     background: rgba(30, 41, 59, 0.97);
     color: #fff;
