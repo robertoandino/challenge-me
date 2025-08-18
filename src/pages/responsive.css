@@ -122,6 +122,11 @@
         padding: 0.5rem;
         min-height: 40px;
     }
+    .profile-menu-container {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.75rem;
+    }
     .profile-dropdown {
         left: 0.5rem;
         right: 0.5rem;
