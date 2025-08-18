@@ -138,7 +138,8 @@
         line-height: 1.4;
     }
     .profile-dropdown::before {
-        right: 2rem;
+        right: 1rem;
+        left: auto;
     }
     .controls-section {
         padding: 0.75rem;
