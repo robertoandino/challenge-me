@@ -180,9 +180,14 @@
     button,
     select,
     input {
-        font-size: 0.9rem;
-        padding: 0.5rem;
-        min-height: 40px;
+        width: 100%;
+        font-size: 0.95rem;
+        padding: 0.6rem;
+        border-radius: 0.5rem;
+    }
+    .button-group {
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
     .controls-section {
