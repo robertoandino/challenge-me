@@ -134,6 +134,10 @@
         padding: 0.75rem;
         font-size: 0.9rem;
     }
+    .profile-dropdown::before {
+        right: 1rem;
+        left: auto;
+    }
 
     .controls-grid {
         grid-template-columns: 1fr;
@@ -161,25 +165,7 @@
         padding: 0.5rem;
         min-height: 40px;
     }
-    .profile-menu-container {
-        position: absolute;
-        top: 0.5rem;
-        right: 0.75rem;
-    }
-    .profile-dropdown {
-        top: 3rem;
-        left: auto;
-        right: 0.25rem;
-        width: auto;
-        max-width: 85vw;
-        font-size: 0.9rem;
-        padding: 0.75rem;
-        line-height: 1.4;
-    }
-    .profile-dropdown::before {
-        right: 1rem;
-        left: auto;
-    }
+
     .controls-section {
         padding: 0.75rem;
     }
