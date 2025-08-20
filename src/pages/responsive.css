@@ -165,17 +165,16 @@
     .main-title {
         font-size: 1.5rem;
     }
-    .challenge-box {
-        padding: 1rem;
-        margin: 1rem auto;
-    }
+    .challenge-box,
     .daily-challenge-section{
         padding: 1rem;
-        margin: 1rem auto;
+        margin: 0 auto;
+        width: 100%;
     }
     .challenge-text,
     .daily-challenge-box {
         font-size: 1rem;
+        line-height: 1.4;
     }
     button,
     select,
