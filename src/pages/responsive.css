@@ -150,12 +150,24 @@
         padding: 0.75rem;
     }
 
-    section {
+    section,
+    .challenge-box,
+    .daily-challenge-section,
+    .daily-challenge-box {
         width: 100%;
+        max-width: 100%;
         padding: 1rem;
         margin: 0 auto;
-        border-radius: 0.75rem;
         box-sizing: border-box;
+    }
+
+    .button-group,
+    .category-buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        gap: 0.5rem;
     }
 
     .controls-grid {
@@ -165,17 +177,7 @@
     .main-title {
         font-size: 1.5rem;
     }
-    .challenge-box,
-    .daily-challenge-section{
-        padding: 1rem;
-        margin: 0 auto;
-        width: 100%;
-    }
-    .challenge-text,
-    .daily-challenge-box {
-        font-size: 1rem;
-        line-height: 1.4;
-    }
+
     button,
     select,
     input {
@@ -184,17 +186,8 @@
         padding: 0.6rem;
         border-radius: 0.5rem;
     }
-    .button-group {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
     .controls-section {
         padding: 0.75rem;
-    }
-    .category-button {
-        padding: 0.4rem 0.6rem;
-        font-size: 0.85rem;
     }
     .difficulty-select {
         font-size: 0.85rem;
