@@ -15,15 +15,21 @@
 }
 
 .main-title {
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 2rem;
+    font-weight: 700;
     color: white;
-    background: linear-gradient(90deg, #e11d48 40%, #be123c 100%);
+    background: linear-gradient(to right, #bef264, #4ade80);
     -webkit-background-clip: text;
+    -webkit-text-full: transparent;
     background-clip: text;
     color: transparent;
     margin: 0;
     letter-spacing: 0.04rem;
+}
+
+.profile-button:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
 }
 
 .subtitle {
