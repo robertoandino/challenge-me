@@ -282,7 +282,8 @@ html, body {
 }
 
 .challenge-box-generated {
-    animation: popIn 0.5s ease;
+    border-color: #bef264;
+    box-shadow: 0 0 20px rgba(190, 242, 100, 0.4);
 }
 
 .challenge-text {
@@ -294,7 +295,7 @@ html, body {
     text-align: center;
     opacity: 0;
     transform: scale(0.95);
-    animation: fadeIn 0.5s ease forwards;
+    animation: fadeIn 0.4s ease forwards;
     transition: opacity 0.3s ease;
 }
 
