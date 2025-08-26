@@ -420,15 +420,14 @@ html, body {
 }
 
 .primary-button {
-    background: linear-gradient(to right, #e11d48 60%, #be123c 100%);
-    box-shadow: 0 2px 8px rgba(225,29,72,0.15);
-    color: white;
+    background: linear-gradient(to right, #4ade80, #bef264);
+    color: #0f172a;
     font-weight: 600;
-    padding: 1rem 2rem;
-    border-radius: 1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
     border: none;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     font-size: 1rem;
 }
 
