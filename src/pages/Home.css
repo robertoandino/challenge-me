@@ -431,6 +431,10 @@ html, body {
     font-size: 1rem;
 }
 
+.primary-button:hover {
+    transform: translateY(-2px);
+}
+
 .secondary-button {
     background: transparent;
     color: #4ade80;
@@ -443,8 +447,8 @@ html, body {
     font-size: 1rem;
 }
 
-.primary-button:hover:not(:disabled),
 .secondary-button:hover {
+    background: rgba(74, 222, 128, 0.1);
     transform: translateY(-2px);
 }
 
