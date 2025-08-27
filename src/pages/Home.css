@@ -313,20 +313,18 @@ html, body {
 }
 
 .progress-bar-bg {
-    width: 100%;
-    max-width: 300px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 6px;
-    margin: 0.5rem auto;
-    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+    height: 8px;
+    margin-top: 0.5rem;
 }
 
 .progress-bar-fill {
     height: 100%;
-    background: linear-gradient(to right, #e11d48, #be123c);
-    border-radius: 6px;
-    transition: width 0.4s cubic-bezier(.4,0,.2,1)
+    border-radius: 9999px;
+    background: linear-gradient(to right, #4ade80, #bef264);
+    transition: width 0.5s ease;
+    box-shadow: 0 0 6px rgba(190, 242, 100, 0.6);
 }
 
 .complete-button {
