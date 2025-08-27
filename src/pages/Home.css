@@ -392,9 +392,12 @@ html, body {
 }
 
 .completed-list li {
-    margin-bottom: 0.25rem;
-    font-size: 1rem;
-    color: #fff;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.completed-list li:last-child {
+    border-bottom: none;
 }
 
 /* Loading States */
