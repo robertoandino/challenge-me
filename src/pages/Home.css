@@ -75,6 +75,17 @@ html, body {
     background: linear-gradient(to bottom right, #111827, #1F2937, #374151);
 }
 
+.section-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
 .page-content {
     display: flex;
     grid-template-columns: 2fr 1fr;
