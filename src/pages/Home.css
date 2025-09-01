@@ -369,6 +369,7 @@ html, body {
     padding: 1.5rem;
     text-align: center;
     color: #fff;
+    border-left: 4px solid #4ade80;
 }
 
 .daily-challenge-box {
@@ -391,6 +392,7 @@ html, body {
     border-radius: 0.75rem;
     padding: 1rem;
     border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 4px solid #24da66;
 }
 
 .completed-list h4 {
