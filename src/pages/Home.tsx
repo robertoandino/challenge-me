@@ -97,7 +97,7 @@ const Home: React.FC = () => {
             <div className="page-content">
                 <aside className="right-column">
                     {/* Controls Section */}
-                    <section className="controls-wrapper">
+                    <section className="section-card controls-wrapper">
                         <div className="controls-section">
                             <div className="controls-header">
                                 <h2>Customize Your Challenge</h2>
@@ -141,7 +141,7 @@ const Home: React.FC = () => {
                     </section>
                 
                     {/* Daily Challenge Section */}
-                    <section className="daily-challenge-section">
+                    <section className="section-card daily-challenge-section">
                         <h2>🌞 Daily Challenge</h2>
                         <div className="daily-challenge-box">
                             <p>{dailyChallenge}</p>
@@ -152,7 +152,7 @@ const Home: React.FC = () => {
                 {/* Left Column */}
                 <main className="left-column">
                     {/* Challenge Display Section */}
-                    <section className="challenge-section">
+                    <section className="section-card challenge-section">
                         <div className={`challenge-container ${hasGenerated ? 'has-generated' : ''}`}>
                             <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
                                 {isGenerating ? (
@@ -209,7 +209,7 @@ const Home: React.FC = () => {
                     </section>
 
                     {/* Generate/Copy Buttons */}        
-                    <div className="button-group">
+                    <div className="section-card button-group">
                         <button
                             onClick={generateChallenge}
                             className={`primary-button ${isGenerating ? 'generating' : ''}`}
