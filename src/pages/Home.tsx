@@ -93,8 +93,14 @@ const Home: React.FC = () => {
 
             {/* Stats Cards */}
             <section className="stats-cards">
-                <div>
-                    
+                <div className="stat-card">
+
+                </div>
+                <div className="stat-card">
+
+                </div>
+                <div className="stat-card">
+
                 </div>
             </section>
             {/* Main Content Area */}
