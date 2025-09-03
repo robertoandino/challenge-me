@@ -382,6 +382,16 @@ html, body {
     box-shadow: 0 0 12px rgba(74, 222, 128, 0.2);
 }
 
+/* Stats Cards Section*/
+.stats-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1.25rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
 /* Challenges list */
 .completed-list {
     margin-top: 1.5rem;

@@ -106,6 +106,7 @@ const Home: React.FC = () => {
                     <p>{difficulty}</p>
                 </div>
             </section>
+            
             {/* Main Content Area */}
 
             {/* Right Column */}
