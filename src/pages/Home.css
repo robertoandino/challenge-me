@@ -392,6 +392,17 @@ html, body {
     flex-wrap: wrap;
 }
 
+.stat-card {
+    flex: 1;
+    min-width: 160px;
+    background: rgba(30, 41, 59, 0.9);
+    color: #fff;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
 /* Challenges list */
 .completed-list {
     margin-top: 1.5rem;
