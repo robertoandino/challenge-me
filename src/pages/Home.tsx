@@ -4,12 +4,12 @@ import { ChallengeCategory } from "../data/Challenge";
 import "./Home.css";
 import "./responsive.css";
 import Header from "../components/Header";
-import StatCard from "../components/StatCard";
-import ChallengeBox from "../components/ChallengeBox";
-import ButtonGroup from "../components/ButtonGroup";
-import CategorySelector from "../components/CategorySelector";
-import ChallengeCard from "../components/ChallengeCard";
-import DailyChallenge from "../components/DailyChallenge";
+//import StatCard from "../components/StatCard";
+//import ChallengeBox from "../components/ChallengeBox";
+//import ButtonGroup from "../components/ButtonGroup";
+//import CategorySelector from "../components/CategorySelector";
+//import ChallengeCard from "../components/ChallengeCard";
+//import DailyChallenge from "../components/DailyChallenge";
 import profileMenu from "../components/ProfileMenu";
 
 
