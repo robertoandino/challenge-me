@@ -1,9 +1,9 @@
 import React from "react";
-import ProfileMenu from ".ProfileMenu";
+import ProfileMenu from "./ProfileMenu";
 
 interface HeaderProps {
     dailyChallenge: string;
-    completeCount: number;
+    completedCount: number;
     currentChallenge: string;
     profileOpen: boolean;
     setProfileOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -24,6 +24,25 @@ const Header: React.FC<HeaderProps> = ({
                     Get a random mental or physical challenge to energize your day!
                 </p>            
             </div>
+
+            <div className="profile-menu-container">
+                <button
+                    className="profile-button"
+                    onClick={() => setProfileOpen((open) => !open)}
+                >
+                    <span role="img" aria-label="profile">👤</span>
+                </button>
+
+                {profileOpen && (
+                    <ProfileMenu
+                        dailyChallenge={dailyChallenge}
+                        completedCount={completedCount}
+                        currentChallenge={currentChallenge}
+                    />
+                )}
+            </div>
         </header>
-    )
-}
+    );
+};
+
+export default Header;
