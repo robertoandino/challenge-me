@@ -10,7 +10,7 @@ import Header from "../components/Header";
 //import CategorySelector from "../components/CategorySelector";
 //import ChallengeCard from "../components/ChallengeCard";
 //import DailyChallenge from "../components/DailyChallenge";
-import profileMenu from "../components/ProfileMenu";
+//import profileMenu from "../components/ProfileMenu";
 
 
 const Home: React.FC = () => {
@@ -77,28 +77,13 @@ const Home: React.FC = () => {
     return (
         <main className="main-container">
             {/*Main Header*/}
-            <header className="site-header">
-                <div className="header-left">
-                    <h1 className="main-title">Challenge Me</h1>
-                    <p className="subtitle">Get a random mental or physical challenge to energize your day.</p>
-                </div>
-                <div className="profile-menu-container">
-                    <button
-                        className="profile-button"
-                        onClick={() => setProfileOpen((open) => !open)}
-                    >
-                        <span role="img" aria-label="profile">👤</span>
-                    </button>
-                    {profileOpen && (
-                        <div className="profile-dropdown">
-                            <h4>User Info</h4>
-                            <div><strong>Daily Challenge:</strong> {dailyChallenge} </div>
-                            <div><strong>Challenges Completed:</strong> {completedCount}</div>
-                            <div><strong>Current Challenge:</strong> {currentChallenge}</div>
-                        </div>
-                    )}
-                </div>
-            </header>
+            <Header
+                dailyChallenge={dailyChallenge}
+                completedCount={completedCount}
+                currentChallenge={currentChallenge}
+                profileOpen={profileOpen}
+                setProfileOpen={setProfileOpen}
+            />
 
             {/* Stats Cards */}
             <section className="stats-cards">
