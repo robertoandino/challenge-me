@@ -4,10 +4,10 @@ import { ChallengeCategory } from "../data/Challenge";
 import "./Home.css";
 import "./responsive.css";
 import Header from "../components/Header";
-//import StatCard from "../components/StatCard";
-//import ChallengeBox from "../components/ChallengeBox";
-//import ButtonGroup from "../components/ButtonGroup";
-//import CategorySelector from "../components/CategorySelector";
+import StatCard from "../components/StatCard";
+import ChallengeBox from "../components/ChallengeBox";
+import ButtonGroup from "../components/ButtonGroup";
+import CategorySelector from "../components/CategorySelector";
 //import ChallengeCard from "../components/ChallengeCard";
 //import DailyChallenge from "../components/DailyChallenge";
 //import profileMenu from "../components/ProfileMenu";
@@ -87,18 +87,9 @@ const Home: React.FC = () => {
 
             {/* Stats Cards */}
             <section className="stats-cards">
-                <div className="stat-card">
-                    <h3>🔥 Streak</h3>
-                    <p>{streakCount}</p>
-                </div>
-                <div className="stat-card">
-                    <h3>✅ Completed</h3>
-                    <p>{completedCount}</p>
-                </div>
-                <div className="stat-card">
-                    <h3>🎯 Difficulty</h3>
-                    <p>{difficulty}</p>
-                </div>
+                <StatCard title="🔥 Streak" value={streakCount} />
+                <StatCard title="✅ Completed" value={completedCount} />
+                <StatCard title="🎯 Difficulty" value={difficulty} />
             </section>
             
             {/* Main Content Area */}
