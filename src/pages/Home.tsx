@@ -5,11 +5,12 @@ import "./Home.css";
 import "./responsive.css";
 import Header from "../components/Header";
 import StatCard from "../components/StatCard";
-import ChallengeBox from "../components/ChallengeBox";
-import ButtonGroup from "../components/ButtonGroup";
+//import ChallengeBox from "../components/ChallengeBox";
+import DifficultySelector from "../components/DifficultySelector";
+//import ButtonGroup from "../components/ButtonGroup";
 import CategorySelector from "../components/CategorySelector";
 //import ChallengeCard from "../components/ChallengeCard";
-//import DailyChallenge from "../components/DailyChallenge";
+import DailyChallengeCard from "../components/DailyChallengeCard";
 //import profileMenu from "../components/ProfileMenu";
 
 
@@ -93,62 +94,20 @@ const Home: React.FC = () => {
             </section>
             
             {/* Main Content Area */}
-
             {/* Right Column */}
             <div className="page-content">
                 <aside className="right-column">
                     {/* Controls Section */}
-                    <section className="section-card controls-wrapper">
-                        <div className="controls-section">
-                            <div className="controls-header">
-                                <h2>Customize Your Challenge</h2>
-                                {streakCount > 0 && (
-                                    <div className="streak-count">
-                                        🔥 Streak: {streakCount}
-                                    </div>
-                                )}
-                            </div>
-
-                            <div className="controls-grid">  
-                            <div className="category-controls">
-                                <h3>Choose Category</h3>
-                                <div className="category-buttons">
-                                    {['all', 'physical', 'mental', 'creative', 'social'].map(category => (
-                                        <button
-                                            key={category}
-                                            className={`category-button ${selectedCategory === category ? 'active' : ''}`}
-                                            onClick={() => setSelectedCategory(category as ChallengeCategory | 'all')}
-                                        >
-                                            {category.charAt(0).toUpperCase() + category.slice(1)}
-                                        </button>
-                                    ))}
-                                </div>
-                            </div>
-                    
-                            <div className="difficulty-selector">
-                                <h3>Difficulty:</h3>
-                                <select
-                                    value={difficulty}
-                                    onChange={(e) => setDifficulty(e.target.value)}
-                                    className="difficulty-select"
-                                >
-                                    <option value="easy">Easy</option>
-                                    <option value="medium">Medium</option>
-                                    <option value="hard">Hard</option>
-                                </select>
-                            </div>
-                            </div>   
-                        </div>                    
-                    </section>
-                
-                    {/* Daily Challenge Section */}
-                    <section className="section-card daily-challenge-section">
-                        <h2>🌞 Daily Challenge</h2>
-                        <div className="daily-challenge-box">
-                            <p>{dailyChallenge}</p>
-                        </div>
-                    </section>
-                    </aside>  
+                    <CategorySelector
+                        selectedCategory={selectedCategory}
+                        setSelectedCategory={setSelectedCategory}
+                    />
+                    <DifficultySelector
+                        difficulty={difficulty}
+                        setDifficulty={setDifficulty}
+                    />
+                    <DailyChallengeCard dailyChallenge={dailyChallenge} />    
+                </aside>  
 
                 {/* Left Column */}
                 <main className="left-column">
