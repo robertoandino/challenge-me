@@ -5,9 +5,9 @@ import "./Home.css";
 import "./responsive.css";
 import Header from "../components/Header";
 import StatCard from "../components/StatCard";
-//import ChallengeBox from "../components/ChallengeBox";
+import ChallengeBox from "../components/ChallengeBox";
 import DifficultySelector from "../components/DifficultySelector";
-//import ButtonGroup from "../components/ButtonGroup";
+import ButtonGroup from "../components/ButtonGroup";
 import CategorySelector from "../components/CategorySelector";
 //import ChallengeCard from "../components/ChallengeCard";
 import DailyChallengeCard from "../components/DailyChallengeCard";
@@ -22,8 +22,8 @@ const Home: React.FC = () => {
     const [hasGenerated, setHasGenerated] = useState(false);
     // Challenge history state
     //const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
-    const [completedCount, setCompletedCount] = useState<number>(0);
-    const [completedChallenges, setCompletedChallenges] = useState<string[]>([]);
+    const [completedCount, /*setCompletedCount*/] = useState<number>(0);
+    //const [completedChallenges, setCompletedChallenges] = useState<string[]>([]);
     //const [showHistory, setShowHistory] = useState(false);
     // State to manage Category and difficulty
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
@@ -112,82 +112,17 @@ const Home: React.FC = () => {
                 {/* Left Column */}
                 <main className="left-column">
                     {/* Challenge Display Section */}
-                    <section className="section-card challenge-section">
-                        <div className={`challenge-container ${hasGenerated ? 'has-generated' : ''}`}>
-                            <div className={`challenge-box ${hasGenerated ? 'challenge-box-generated' : ''}`}>
-                                {isGenerating ? (
-                                    <div className="loading-state">
-                                        <div className="loading-spinner"></div>
-                                        <p>Generating your challenge...</p>
-                                    </div>
-                                ) : (
-                                    <p className="challenge-text">{currentChallenge}</p>
-                                )}
-                            </div>
-                        </div>
-
-                        {/* Progress tracker */}
-                        <div className="progress-info">
-                            <span>Challenges completed: {completedCount}</span>
-                            <div className="progress-bar-bg">
-                                <div
-                                    className="progress-bar-fill"
-                                    style={{ width: `${Math.min((completedCount / 20) * 100, 100)}%` }}
-                                />
-                            </div>
-                        </div>
-                    
-                        {/* Mark as Completed Button */}
-                        {hasGenerated && (
-                            <button
-                                className="complete-button"
-                                onClick={() => {
-                                    setCompletedCount(prev => prev + 1);
-                                    setCompletedChallenges(prev => 
-                                        prev.includes(currentChallenge) ? prev : [currentChallenge, ...prev]
-                                    );
-                                }}
-                            >
-                                Mark as Completed
-                            </button>
-                        )}
-
-                        {/* Challenges list */}
-                        {completedChallenges.length > 0 && (
-                            <div className="completed-list">
-                                <h4>Completed Challenges</h4>
-                                <ul>
-                                    {completedChallenges.map((challenge, idx) => (
-                                        <li key={idx}>
-                                            <span role="img" aria-label="completed" style={{marginRight: '0.5rem'}}>✅</span>
-                                            {challenge}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        )}
-                    </section>
-
-                    {/* Generate/Copy Buttons */}        
-                    <div className="section-card button-group">
-                        <button
-                            onClick={generateChallenge}
-                            className={`primary-button ${isGenerating ? 'generating' : ''}`}
-                            disabled={isGenerating}
-                        >
-                            {isGenerating ? 'Generating...' : 'Generate Challenge'}
-                        </button>
-
-                        {hasGenerated && (
-                            <button
-                                onClick={() => navigator.clipboard.writeText(currentChallenge)}
-                                className="secondary-button"
-                                title="Copy to clipboard"
-                            >
-                                <span>Copy Challenge</span>
-                            </button>
-                        )}
-                    </div>
+                    <ChallengeBox
+                        currentChallenge={currentChallenge}
+                        isGenerating={isGenerating}
+                        hasGenerated={hasGenerated}
+                    />
+                    <ButtonGroup
+                        isGenerating={isGenerating}
+                        hasGenerated={hasGenerated}
+                        onGenerate={generateChallenge}
+                        onCopy={() => navigator.clipboard.writeText(currentChallenge)}
+                    />
                 </main>
             </div>
         </main>
