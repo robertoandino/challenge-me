@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import "./ProgressRing.css";
 
 interface ProgressRingProps {
     value: number;

@@ -12,28 +12,34 @@ import CategorySelector from "../components/CategorySelector/CategorySelector";
 //import ChallengeCard from "../components/ChallengeCard";
 import DailyChallengeCard from "../components/DailyChallengeCard/DailyChallengeCard";
 //import profileMenu from "../components/ProfileMenu";
+import ProgressRing from "../components/ProgressRing/ProgressRing";
 
 
 const Home: React.FC = () => {
     // State to manage the current challenge
     const [currentChallenge, setCurrentChallenge] = useState<string>("Click the button to receieve a challenge!");
+    
     // State to manage the loading state
     const [isGenerating, setIsGenerating] = useState(false);
     const [hasGenerated, setHasGenerated] = useState(false);
+    
     // Challenge history state
     //const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
-    const [completedCount, /*setCompletedCount*/] = useState<number>(0);
+    const [completedCount, setCompletedCount] = useState<number>(0);
+    const [completedDatesSet, setCompletedDatesSet] = useState<Set<string>>(new Set())
     //const [completedChallenges, setCompletedChallenges] = useState<string[]>([]);
     //const [showHistory, setShowHistory] = useState(false);
+    
     // State to manage Category and difficulty
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
     const [difficulty, setDifficulty] = useState<string>('easy');
     const [streakCount, setStreakCount] = useState<number>(0);
+    
     // State to manage daily challenge
     const [dailyChallenge, setDailyChallenge] = useState<string>("");
+    
     // State to manage profile menu visibility
     const [profileOpen, setProfileOpen] = useState(false);
-
 
     const generateChallenge = () => {
         setIsGenerating(true);
@@ -75,6 +81,36 @@ const Home: React.FC = () => {
         setDailyChallenge(getDailyChallenge().text);
     }, [])
 
+    //Progress Ring / Heat map
+    //Helper function
+    function isoToday() {
+        return new Date().toISOString().slice(0, 10);
+    }
+
+    //load persisted state once
+    useEffect(() => {
+        try {
+            const raw = localStorage.getItem("challengeData");
+            if (raw) {
+                const parsed = JSON.parse(raw);
+                setCompletedCount(parsed.completedCount || 0);
+                const dates: string[] = parsed.completedDates || [];
+                setCompletedDatesSet(new Set(dates));
+            }
+        } catch (e) {
+            console.warn("Failed to parse challengeData", e);
+        }
+    }, [])
+
+    //save on changes
+    useEffect(() => {
+        const payload = {
+            completedCount,
+            completedDates: Array.from(completedDatesSet),
+        };
+        localStorage.setItem("challengeData", JSON.stringify(payload));
+    }, [completedCount, completedDatesSet]);
+
     return (
         <main className="main-container">
             {/*Main Header*/}
@@ -91,6 +127,11 @@ const Home: React.FC = () => {
                 <StatCard title="🔥 Streak" value={streakCount} />
                 <StatCard title="✅ Completed" value={completedCount} />
                 <StatCard title="🎯 Difficulty" value={difficulty} />
+            </section>
+
+            {/* User vitals */}
+            <section className="user-vitals">
+                <ProgressRing value={completedCount} goal={20} size={120} stroke={10} label="Monthly Goal" />
             </section>
             
             {/* Main Content Area */}
