@@ -58,8 +58,14 @@ const ProgressRing: React.FC<ProgressRingProps> = ({
                     fill="transparent"
                 />
             </svg>
+
+            <div className="progress-ring-center" aria-hidden>
+                <div className="progress-value">{value}</div>
+                <div className="progress-goal">/ {goal}</div>
+            </div>
+            <div className="progress-label">{label}</div>
         </div>
-    )
-}
+    );
+};
 
 export default ProgressRing;
