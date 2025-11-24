@@ -25,7 +25,41 @@ const ProgressRing: React.FC<ProgressRingProps> = ({
 
     return (
         <div className="progress-ring" style={{ width: size, height: size }}>
+            <svg width={size} height={size} className="progress-ring-svg" role="img" aria-label={`${label}: ${formattedPercent}%`}>
+                <defs>
+                    <linearGradient id="ringGrad" x1="0%" x2="100%">
+                        <stop offset="0%" stopColor="#c89f6d" />
+                        <stop offset="100%" stopColor="#7d8b67"/>
+                    </linearGradient>
+                </defs>
 
+                {/* Background Circle */}
+                <circle
+                    className="ring-bg"
+                    cx={size / 2}
+                    cy={size / 2}
+                    r={radius}
+                    strokeWidth={stroke}
+                    fill="transparent"    
+                />
+
+                {/* Progress Circle */}
+                <circle
+                    className="ring-progress"
+                    cx={size / 2}
+                    cy={size / 2}
+                    r={radius}
+                    strokeWidth={stroke}
+                    stroke="url(#ringGrad)"
+                    strokeLinecap="round"
+                    strokeDasharray={`${circumference}`}
+                    strokeDashoffset={dashOffset}
+                    transform={`rotate(-90 ${size / 2} ${size / 2})`}
+                    fill="transparent"
+                />
+            </svg>
         </div>
     )
 }
+
+export default ProgressRing;
