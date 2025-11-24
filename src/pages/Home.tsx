@@ -3,14 +3,14 @@ import { challenges } from "../data/challenges";
 import { ChallengeCategory } from "../data/Challenge";
 import "./Home.css";
 import "./responsive.css";
-import Header from "../components/Header";
-import StatCard from "../components/StatCard";
-import ChallengeBox from "../components/ChallengeBox";
-import DifficultySelector from "../components/DifficultySelector";
-import ButtonGroup from "../components/ButtonGroup";
-import CategorySelector from "../components/CategorySelector";
+import Header from "../components/Header/Header";
+import StatCard from "../components/StatCard/StatCard";
+import ChallengeBox from "../components/ChallengeBox/ChallengeBox";
+import DifficultySelector from "../components/DifficultySelector/DifficultySelector";
+import ButtonGroup from "../components/ButtonGroup/ButtonGroup";
+import CategorySelector from "../components/CategorySelector/CategorySelector";
 //import ChallengeCard from "../components/ChallengeCard";
-import DailyChallengeCard from "../components/DailyChallengeCard";
+import DailyChallengeCard from "../components/DailyChallengeCard/DailyChallengeCard";
 //import profileMenu from "../components/ProfileMenu";
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import ProfileMenu from "./ProfileMenu";
+import ProfileMenu from "../ProfileMenu/ProfileMenu";
 
 interface HeaderProps {
     dailyChallenge: string;
