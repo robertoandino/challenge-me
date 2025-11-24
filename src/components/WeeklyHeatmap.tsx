@@ -22,10 +22,31 @@ function last7Days(): Date[] {
 }
 
 const WeeklyHeatmap: React.FC<WeeklyHeatmapProps> = ({ completedDates, onToggleDate }) => {
-    //const days = useMemo(() => last7Days(), []);
+    const days = useMemo(() => last7Days(), []);
 
     return (
-        <p></p>
+        <div className="weekly-heatmap" role="grid" aria-label="Weekly completion heatmap">
+            <div className="heatmap-row" role="row">
+                {days.map((d) => {
+                    const iso = isoDate(d);
+                    const completed = completedDates.has(iso);
+                    const weekdayLabel = d.toLocaleDateString(undefined, { weekday: "short" }).slice(0, 3);
+                    
+                    return (
+                        <button
+                            key={iso}
+                            className={`heat-cell ${completed ? "heat-cell--filled" : "heat-cell--empty"}`}
+                            title={`${weekdayLabel} • ${iso} • ${completed ? "Completed" : "Not completed"}`}
+                            onClick={() => onToggleDate && onToggleDate(iso)}
+                            aria-pressed={completed}
+                            role="gridcell"
+                        >
+                            <span className="heat-day">{weekdayLabel}</span>
+                        </button>
+                    );
+                })}
+            </div>
+        </div>
     )
 }
 
