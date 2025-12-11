@@ -123,6 +123,17 @@ const Home: React.FC = () => {
         setCompletedCount((c) => c + 1);
     }
 
+    const toggleDate = (iso: string) => {
+        setCompletedDatesSet((prev) => {
+            const next = new Set(prev);
+            if(next.has(iso)) next.delete(iso);
+            else next.add(iso);
+            return next;
+        });
+
+        //setCompletedCount((c) => (completedDataSet.has(iso) ? Math.max(0, c - 1) : c + 1));
+    }
+
     return (
         <main className="main-container">
             {/*Main Header*/}
