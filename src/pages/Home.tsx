@@ -111,6 +111,18 @@ const Home: React.FC = () => {
         localStorage.setItem("challengeData", JSON.stringify(payload));
     }, [completedCount, completedDatesSet]);
 
+    const markComplete = () => {
+        const today = isoToday();
+        setCompletedDatesSet((prev) => {
+            const next = new Set(prev);
+            if(!next.has(today)){
+                next.add(today);
+            }
+            return next;
+        });
+        setCompletedCount((c) => c + 1);
+    }
+
     return (
         <main className="main-container">
             {/*Main Header*/}
