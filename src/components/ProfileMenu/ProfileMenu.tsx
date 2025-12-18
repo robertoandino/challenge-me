@@ -32,6 +32,11 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
                         <p>Cuztomise your avatar, name, etc. (Coming soon)</p>
                     </div>
                 )}
+
+                <button className="menu-item" onClick={() => toggleSection("stats")}>
+                    <span>📊</span> Stats
+                    <span className="arrow">{activeSection === "stats" ? "▲" : "▼"}</span>
+                </button>
             </div>
         </div>
     );
