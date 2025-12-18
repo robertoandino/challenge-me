@@ -1,4 +1,5 @@
 import React from "react";
+import "./ButtonGroups.css"
 
 interface ButtonGroupProps {
     isGenerating: boolean;
@@ -14,7 +15,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
     onCopy,
 }) => {
     return (
-        <div className="section-card button-group">
+        <div className="card button-group">
             <button
                 onClick={onGenerate}
                 className={`primary-button ${isGenerating ? "generating" : ""}`}
