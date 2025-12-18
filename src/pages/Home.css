@@ -360,49 +360,7 @@ html, body {
     background: linear-gradient(to right, #16a34a, #22c55e);
 }
 
-/* Stats Cards Section*/
-.stats-cards {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    gap: 1.25rem;
-    margin: 2rem 0;
-    flex-wrap: wrap;
-}
 
-.stat-card {
-    flex: 1;
-    min-width: 160px;
-    background: rgba(30, 41, 59, 0.9);
-    color: #fff;
-    border-radius: 1rem;
-    padding: 1.25rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    text-align: center;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
-}
-
-.stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-}
-
-.stat-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    color: #bef264;
-    letter-spacing: 0.5px;
-}
-
-.stat-card p {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
-    margin: 0;
-}
 
 /* Challenges list */
 .completed-list {
