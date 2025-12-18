@@ -7,6 +7,13 @@
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.daily-challenge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 .daily-challenge-box {
