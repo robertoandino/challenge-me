@@ -20,10 +20,8 @@ const Header: React.FC<HeaderProps> = ({
     return (
         <header className="site-header">
             <div className="header-left">
-                <h1 className="main-title">Challenge Me</h1>
-                <p className="subtitle">
-                    Get a random mental or physical challenge to energize your day!
-                </p>            
+                <div className="logo">🏆</div>
+                <h1 className="main-title">Challenge Me</h1>        
             </div>
 
             <div className="profile-menu-container">
