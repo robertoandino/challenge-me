@@ -18,10 +18,9 @@
 
 .daily-challenge-box {
     background: rgba(74, 222, 128, 0.05);
-    border: 1px solid rgba(74, 222, 128, 0.4);
     border-radius: 0.75rem;
     padding: 1rem;
     text-align: center;
     font-style: italic;
-    box-shadow: 0 0 12px rgba(74, 222, 128, 0.2);
+    box-shadow: 0 0 12px rgba(255, 74, 2, 0.726);
 }
