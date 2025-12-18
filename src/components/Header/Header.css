@@ -30,14 +30,14 @@
 }
 
 .logo {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-right: 1rem;
     display: flex;
     align-items: center;
 }
 
 .main-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     color: white;
     background: linear-gradient(to right, #f8fc25, #f85454);

@@ -1,14 +1,16 @@
 .daily-challenge-card {
-    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    margin-top: 1.5rem;
+    border-radius: 50px;
+    padding: 1.6rem;
     margin-bottom: 1.5rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     backdrop-filter: blur(6px);
+    width: 100%;
+    max-width: 600px;
+    margin: 1.5rem auto;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    font-size: 1.5rem;
 }
 
 .daily-challenge-card:hover {
@@ -17,10 +19,14 @@
 }
 
 .daily-challenge-box {
-    background: rgba(74, 222, 128, 0.05);
     border-radius: 0.75rem;
-    padding: 1rem;
+    margin-top: 2rem;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-style: italic;
-    box-shadow: 0 0 12px rgba(255, 74, 2, 0.726);
+    font-size: 1.4rem;
+    border-radius: 50px;
+    border-bottom: 1px solid rgba(228, 135, 30, 0.815);
 }
