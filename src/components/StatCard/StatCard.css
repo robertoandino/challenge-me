@@ -4,21 +4,26 @@
     align-items: stretch;
     gap: 1.25rem;
     margin: 2rem 0;
+    width: 100%;
+    max-width: 600px;
+    margin: 1.5rem auto;
     flex-wrap: wrap;
 }
 
 .stat-card {
     flex: 1;
-    min-width: 160px;
     background: rgba(30, 41, 59, 0.9);
     color: #fff;
     border-radius: 1rem;
-    padding: 1.25rem;
+    padding: 1.2rem;
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     text-align: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     border: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(8px);
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
 }
 
 .stat-card:hover {
@@ -27,10 +32,10 @@
 }
 
 .stat-card h3 {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: #bef264;
+    color: #f0f1ec;
     letter-spacing: 0.5px;
 }
 
@@ -39,4 +44,9 @@
     font-weight: bold;
     color: #fff;
     margin: 0;
+}
+
+.stat-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }

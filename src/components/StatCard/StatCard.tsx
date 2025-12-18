@@ -17,7 +17,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, value}) => {
     return (
         <div className="stat-card">
             <div className="stat-icon">{getIcon(title)}</div>
-            <h3>{title}</h3>
+            {/*<h3>{title}</h3>*/}
             <p>{value}</p>
         </div>
     );
