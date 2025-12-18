@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 interface ProfileMenuProps {
     dailyChallenge: string;
@@ -11,12 +12,27 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
     completedCount,
     currentChallenge,
 }) => {
+    const [activeSection, setActiveSection] = useState<string | null>(null);
+
+    const toggleSection = (section: string) => {
+        setActiveSection(activeSection === section ? null : section);
+    }
+
+    console.log({ dailyChallenge, completedCount, currentChallenge });
+
     return (
         <div className="profile-dropdown">
-            <h4>User Info</h4>
-            <div><strong>Daily Challenge:</strong> {dailyChallenge}</div>
-            <div><strong>Challenges Completed:</strong> {completedCount}</div>
-            <div><strong>Current Challenge:</strong> {currentChallenge}</div>
+            <div className="menu-list">
+                <button className="menu-item" onClick={() => toggleSection("profile")}>
+                    <span>👤</span> Profile
+                    <span className="arrow">{activeSection === "profile" ? "▲" : "▼"}</span>
+                </button>
+                {activeSection === "profile" && (
+                    <div className="submenu">
+                        <p>Cuztomise your avatar, name, etc. (Coming soon)</p>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
