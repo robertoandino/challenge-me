@@ -37,6 +37,25 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
                     <span>📊</span> Stats
                     <span className="arrow">{activeSection === "stats" ? "▲" : "▼"}</span>
                 </button>
+                {activeSection === "stats" && (
+                    <div className="submenu">
+                        <div>Completed: {completedCount}</div>
+                        <div>Daily: {dailyChallenge}</div>
+                    </div>
+                )}
+
+                <button className="menu-item" onClick={() => toggleSection("challenges")}>
+                    <span>🎯</span> Challenges
+                    <span className="arrow">{activeSection === "challenges" ? "▲" : "▼"}</span>
+                </button>
+                {activeSection === "challenges" && (
+                    <div className="submenu">
+                        <div> current: {currentChallenge}</div>
+                        <p>Manage challengs (Coming soon)</p>
+                    </div>
+                )}
+
+
             </div>
         </div>
     );
