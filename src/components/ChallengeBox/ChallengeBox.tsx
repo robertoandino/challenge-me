@@ -1,4 +1,5 @@
 import React from "react";
+import "./ChallengeBox.css"
 
 interface ChallengeBoxProps {
     currentChallenge: string;

@@ -211,65 +211,6 @@ html, body {
     gap: 1rem;
 }
 
-/* Challenge Section */
-.challenge-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideUp 0.5s ease forwards;
-}
-
-.challenge-box {
-    font-size: 1.2rem;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
-    border-radius: 0.75rem;
-    padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1rem;
-    transition: all 0.3s ease;
-    min-height: 100px;
-    width: 95%;
-    max-width: 95%;
-    left: 0 !important;
-    right: 0 !important;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.challenge-box:hover {
-    transform: translateY(-2px);
-    border-color: rgba(225, 29, 72, 0.3);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.challenge-box-generated {
-    border-color: #bef264;
-    box-shadow: 0 0 20px rgba(190, 242, 100, 0.4);
-}
-
-.challenge-text {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 500;
-    line-height: 1.75;
-    margin: 0;
-    text-align: center;
-    opacity: 0;
-    transform: scale(0.95);
-    animation: fadeIn 0.4s ease forwards;
-    transition: opacity 0.3s ease;
-}
-
 .error-text {
     color: #ef4444;
     font-size: 1rem;
