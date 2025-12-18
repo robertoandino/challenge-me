@@ -1,4 +1,5 @@
 import React from 'react';
+import "./DifficultySelector.css"
 
 interface DifficultySelectorProps {
     difficulty: string;
