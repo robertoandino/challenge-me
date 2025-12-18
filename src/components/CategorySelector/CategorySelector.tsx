@@ -1,5 +1,6 @@
 import React from "react";
 import { ChallengeCategory } from "../../data/Challenge";
+import "./CategorySelector.css";
 
 interface CategorySelectorProps {
     selectedCategory: ChallengeCategory | "all";
