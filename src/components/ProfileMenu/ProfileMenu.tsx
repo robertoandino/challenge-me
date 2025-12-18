@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import "./ProfileMenu.css"
 
 interface ProfileMenuProps {
     dailyChallenge: string;

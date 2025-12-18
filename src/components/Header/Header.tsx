@@ -21,7 +21,7 @@ const Header: React.FC<HeaderProps> = ({
         <header className="site-header">
             <div className="header-left">
                 <div className="logo">🏆</div>
-                <h1 className="main-title">Challenge Me</h1>        
+                <h1 className="main-title">Challenge</h1>        
             </div>
 
             <div className="profile-menu-container">

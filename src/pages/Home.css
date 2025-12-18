@@ -1,5 +1,5 @@
 /* Base Layout */
-html, body {
+/*html, body {
     font-size: 16px;
     width: 100%;
     margin: 0;
@@ -10,7 +10,7 @@ html, body {
     overflow-y: auto;
     scroll-behavior: smooth;
     box-sizing: border-box;
-}
+}*/
 
 .left-column {
    background: rgba(255, 255, 255, 0.05);
