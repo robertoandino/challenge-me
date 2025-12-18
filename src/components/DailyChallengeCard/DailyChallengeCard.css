@@ -1,0 +1,20 @@
+.daily-challenge-section {
+    margin: 2rem auto 1.5rem auto;
+    max-width: 32rem;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    color: #fff;
+    border-left: 4px solid #4ade80;
+}
+
+.daily-challenge-box {
+    background: rgba(74, 222, 128, 0.05);
+    border: 1px solid rgba(74, 222, 128, 0.4);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    text-align: center;
+    font-style: italic;
+    box-shadow: 0 0 12px rgba(74, 222, 128, 0.2);
+}

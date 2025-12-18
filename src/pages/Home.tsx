@@ -12,7 +12,7 @@ import CategorySelector from "../components/CategorySelector/CategorySelector";
 //import ChallengeCard from "../components/ChallengeCard";
 import DailyChallengeCard from "../components/DailyChallengeCard/DailyChallengeCard";
 //import profileMenu from "../components/ProfileMenu";
-import ProgressRing from "../components/ProgressRing/ProgressRing";
+//import ProgressRing from "../components/ProgressRing/ProgressRing";
 
 
 const Home: React.FC = () => {
@@ -145,6 +145,8 @@ const Home: React.FC = () => {
                 setProfileOpen={setProfileOpen}
             />
 
+            <DailyChallengeCard dailyChallenge={dailyChallenge} /> 
+
             {/* Stats Cards */}
             <section className="stats-cards">
                 <StatCard title="🔥 Streak" value={streakCount} />
@@ -153,9 +155,9 @@ const Home: React.FC = () => {
             </section>
 
             {/* User vitals */}
-            <section className="user-vitals">
+            {/*<section className="user-vitals">
                 <ProgressRing value={completedCount} goal={20} size={120} stroke={10} label="Monthly Goal" />
-            </section>
+            </section>*/}
             
             {/* Main Content Area */}
             {/* Right Column */}
@@ -170,7 +172,6 @@ const Home: React.FC = () => {
                         difficulty={difficulty}
                         setDifficulty={setDifficulty}
                     />
-                    <DailyChallengeCard dailyChallenge={dailyChallenge} />    
                 </aside>  
 
                 {/* Left Column */}

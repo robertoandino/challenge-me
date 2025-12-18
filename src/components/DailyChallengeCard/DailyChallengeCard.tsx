@@ -1,4 +1,5 @@
 import React from "react";
+import "./DailyChallengeCard.css";
 
 interface DailyChallengeCardProps {
     dailyChallenge: string;
