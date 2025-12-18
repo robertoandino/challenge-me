@@ -1,0 +1,58 @@
+/* Header Styles */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #0f172a, #2a2b46);
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 1000;
+}
+
+.header-left {
+    max-width: 75%;
+}
+
+.main-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    background: linear-gradient(to right, #bef264, #4ade80);
+    -webkit-background-clip: text;
+    -webkit-text-full: transparent;
+    background-clip: text;
+    color: transparent;
+    margin: 0;
+    letter-spacing: 0.04rem;
+}
+
+.profile-button:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: #d1d5db;
+    max-width: 36rem;
+    margin: 0.5rem auto 0 auto;
+    line-height: 1.75;
+}
+
+.profile-menu-container {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    z-index: 100;
+}
+
+.profile-button {
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    z-index: 12000;
+}
