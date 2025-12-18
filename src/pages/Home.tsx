@@ -149,9 +149,9 @@ const Home: React.FC = () => {
 
             {/* Stats Cards */}
             <section className="stats-cards">
-                <StatCard title="🔥 Streak" value={streakCount} />
-                <StatCard title="✅ Completed" value={completedCount} />
-                <StatCard title="🎯 Difficulty" value={difficulty} />
+                <StatCard title="Streak" value={streakCount} />
+                <StatCard title="Completed" value={completedCount} />
+                <StatCard title="Difficulty" value={difficulty} />
             </section>
 
             {/* User vitals */}
