@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({
                     className="profile-button"
                     onClick={() => setProfileOpen((open) => !open)}
                 >
-                    <span role="img" aria-label="profile">👤</span>
+                    <span role="img" aria-label="profile">🔥</span>
                 </button>
 
                 {profileOpen && (

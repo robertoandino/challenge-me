@@ -4,15 +4,23 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 3rem;
-    background: linear-gradient(135deg, #0f172a, #2a2b46);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    -webkit-background-filter: blur(10px); /* For Safari */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1); /*Depth*/
     color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 2px solid rgba(255, 74, 2, 0.726);
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 50px; /* Rounded corners */
     margin: 1rem 2rem; /* Margin around the header */
+    transition: transform 0.2s ease;
+}
+
+.site-header:hover {
+    transform: translateY(-2px);
 }
 
 .header-left {
@@ -32,13 +40,14 @@
     font-size: 2rem;
     font-weight: 700;
     color: white;
-    background: linear-gradient(to right, #bef264, #4ade80);
+    background: linear-gradient(to right, #f8fc25, #f85454);
     -webkit-background-clip: text;
     -webkit-text-full: transparent;
     background-clip: text;
     color: transparent;
     margin: 0;
-    letter-spacing: 0.04rem;
+    letter-spacing: 0.06rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .profile-button:hover {
