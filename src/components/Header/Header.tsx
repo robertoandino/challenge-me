@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({
     return (
         <header className="site-header">
             <div className="header-left">
-                <div className="logo">🏆</div>
+                <div className="logo">⚡</div>
                 <h1 className="main-title">Challenge</h1>        
             </div>
 

@@ -6,35 +6,15 @@
     border-radius: 0.75rem;
     box-shadow: 0 8px 4px rgba(0, 0, 0, 0.25);
     padding: 1rem;
-    min-width: 300px;
+    min-width: 250px;
     border: 1px solid rgba(255, 255, 255, 0.08);
     font-size: 1rem;
     backdrop-filter: blur(12px);
     z-index: 11000;
     opacity: 0;
-    transform: translateY(-8px);
     animation: fadeIn 0.25s ease forwards;
 }
 
-.profile-dropdown::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    right: 1.5rem;
-    border-width: 0 8px 10px 8px;
-    border-style: solid;
-    border-color: transparent transparent rgba(30, 41, 59, 0.97) transparent;
-    filter: drop-shadow(0 2px 2px rgba(0,0,0,0.08));
-}
-
-.profile-dropdown h4 {
-    margin-top: 0;
-    margin-bottom: 1rem;
-    color: #bef264;
-    font-size: 2rem;
-    letter-spacing: 0.02em;
-    font-weight: 600;
-}
 
 .menu-list {
     display: flex;
@@ -70,7 +50,7 @@
 
 .arrow {
     font-size: 0.8rem;
-    color: #bef264;
+    color: rgba(255, 74, 2, 0.726);;
 }
 
 .submenu {
@@ -78,7 +58,7 @@
     padding: 0.5rem 1rem;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 0.5rem;
-    border-left: 3px solid #bef264;
+    border-left: 3px solid rgba(255, 74, 2, 0.726);;
     animation: slideDown 0.3s ease;
 }
 
