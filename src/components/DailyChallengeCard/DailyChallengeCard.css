@@ -1,12 +1,12 @@
-.daily-challenge-section {
-    margin: 2rem auto 1.5rem auto;
-    max-width: 32rem;
-    background: rgba(255, 255, 255, 0.08);
+.daily-challenge-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 1rem;
     padding: 1.5rem;
-    text-align: center;
-    color: #fff;
-    border-left: 4px solid #4ade80;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    backdrop-filter: blur(6px);
 }
 
 .daily-challenge-box {

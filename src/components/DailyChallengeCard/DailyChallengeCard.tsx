@@ -1,5 +1,5 @@
 import React from "react";
-import "./DailyChallengeCard.css";
+import "./DailyChallengeCard.css"
 
 interface DailyChallengeCardProps {
     dailyChallenge: string;
@@ -7,9 +7,9 @@ interface DailyChallengeCardProps {
 
 const DailyChallengeCard: React.FC<DailyChallengeCardProps> = ({ dailyChallenge}) => {
     return (
-        <section className="section-card daily-challenge-card">
+        <section className="daily-challenge-card">
             <h2>🌞 Daily Challenge</h2>
-            <div className="daily-challegen-box">
+            <div className="daily-challenge-box">
                 <p>{dailyChallenge}</p>
             </div>
         </section>
