@@ -51,7 +51,17 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
                 {activeSection === "challenges" && (
                     <div className="submenu">
                         <div> current: {currentChallenge}</div>
-                        <p>Manage challengs (Coming soon)</p>
+                        <p>Manage challenges (Coming soon)</p>
+                    </div>
+                )}
+
+                <button className="menu-item" onClick={() => toggleSection("settings")}>
+                    <span>⚙️</span> Settings
+                    <span className="arrow">{activeSection === "settings" ? "▲" : "▼"}</span>
+                </button>
+                {activeSection === "settings" && (
+                    <div className = "submenu">
+                        <p>Theme, notifications, etc. (Coming soon)</p>
                     </div>
                 )}
 
