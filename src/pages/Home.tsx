@@ -83,9 +83,9 @@ const Home: React.FC = () => {
 
     //Progress Ring / Heat map
     //Helper function
-    function isoToday() {
+    {/*function isoToday() {
         return new Date().toISOString().slice(0, 10);
-    }
+    }*/}
 
     //load persisted state once
     useEffect(() => {
@@ -111,7 +111,7 @@ const Home: React.FC = () => {
         localStorage.setItem("challengeData", JSON.stringify(payload));
     }, [completedCount, completedDatesSet]);
 
-    const markComplete = () => {
+    {/** const markComplete = () => {
         const today = isoToday();
         setCompletedDatesSet((prev) => {
             const next = new Set(prev);
@@ -121,9 +121,9 @@ const Home: React.FC = () => {
             return next;
         });
         setCompletedCount((c) => c + 1);
-    }
+    }*/}
 
-    const toggleDate = (iso: string) => {
+    {/*const toggleDate = (iso: string) => {
         setCompletedDatesSet((prev) => {
             const next = new Set(prev);
             if(next.has(iso)) next.delete(iso);
@@ -132,7 +132,7 @@ const Home: React.FC = () => {
         });
 
         //setCompletedCount((c) => (completedDataSet.has(iso) ? Math.max(0, c - 1) : c + 1));
-    }
+    }*/}
 
     return (
         <main className="main-container">
