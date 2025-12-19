@@ -21,7 +21,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
                 className={`primary-button ${isGenerating ? "generating" : ""}`}
                 disabled={isGenerating}
             >
-                {isGenerating ? "Generating..." : "Generate Challenge"}
+                {isGenerating ? "Generating..." : "Time to Train"}
             </button>
 
             {hasGenerated && (
@@ -30,7 +30,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
                     className="secondary-button"
                     title="Copy to clipboard"
                 >
-                    <span>Copy Challenge</span>
+                    <span>Copy</span>
                 </button>
             )}
         </div>

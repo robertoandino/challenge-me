@@ -26,13 +26,12 @@
 }
 
 .challenge-box {
-    font-size: 1.2rem;
     text-align: center;
     backdrop-filter: blur(8px);
     border-radius: 0.75rem;
     padding: 2rem;
     border-left: 1px solid rgba(228, 135, 30, 0.815);
-     border-right: 1px solid rgba(228, 135, 30, 0.815);
+    border-right: 1px solid rgba(228, 135, 30, 0.815);
     border-radius: 1rem;
     transition: all 0.3s ease;
     min-height: 100px;
