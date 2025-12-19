@@ -1,44 +1,42 @@
 import React, { useState, useEffect } from "react";
-import { challenges } from "../data/challenges";
-import { ChallengeCategory } from "../data/Challenge";
+import { challenges } from "../../data/challenges";
+import { ChallengeCategory } from "../../data/Challenge";
 import "./Home.css";
-import "./responsive.css";
-import Header from "../components/Header/Header";
-import StatCard from "../components/StatCard/StatCard";
-import ChallengeBox from "../components/ChallengeBox/ChallengeBox";
-//import DifficultySelector from "../components/DifficultySelector/DifficultySelector";
-import ButtonGroup from "../components/ButtonGroup/ButtonGroup";
-//import CategorySelector from "../components/CategorySelector/CategorySelector";
-//import ChallengeCard from "../components/ChallengeCard";
-import DailyChallengeCard from "../components/DailyChallengeCard/DailyChallengeCard";
+import "../responsive.css";
+import Header from "../../components/Header/Header";
+import StatCard from "../../components/StatCard/StatCard";
+import ChallengeBox from "../../components/ChallengeBox/ChallengeBox";
+import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
+import DailyChallengeCard from "../../components/DailyChallengeCard/DailyChallengeCard";
 //import profileMenu from "../components/ProfileMenu";
 //import ProgressRing from "../components/ProgressRing/ProgressRing";
 
 
 const Home: React.FC = () => {
-    // State to manage the current challenge
+    //Current challenge
     const [currentChallenge, setCurrentChallenge] = useState<string>("Click the button to receieve a challenge!");
     
-    // State to manage the loading state
+    //Loading state
     const [isGenerating, setIsGenerating] = useState(false);
     const [hasGenerated, setHasGenerated] = useState(false);
-    
-    // Challenge history state
-    //const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
+
+    //Streak
     const [completedCount, setCompletedCount] = useState<number>(0);
     const [completedDatesSet, setCompletedDatesSet] = useState<Set<string>>(new Set())
-    //const [completedChallenges, setCompletedChallenges] = useState<string[]>([]);
-    //const [showHistory, setShowHistory] = useState(false);
     
-    // State to manage stats and filters
+    //History
+    const [challengeHistory, setChallengeHistory] = useState<String[]>([]);
+    console.log(challengeHistory);
+
+    //Stats
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
     const [difficulty, setDifficulty] = useState<string>('easy');
     const [streakCount, setStreakCount] = useState<number>(0);
     
-    // State to manage daily challenge
+    //Daily Challenge
     const [dailyChallenge, setDailyChallenge] = useState<string>("");
     
-    // State to manage profile menu visibility
+    //Profile Menu
     const [profileOpen, setProfileOpen] = useState(false);
 
     //Difficulty Selection logic
@@ -59,6 +57,7 @@ const Home: React.FC = () => {
         );
     };
 
+    //Generate Challenge Logic
     const generateChallenge = () => {
         setIsGenerating(true);
 
@@ -79,13 +78,14 @@ const Home: React.FC = () => {
             const newChallenge = filteredChallenges[randomIndex];
 
             setCurrentChallenge(newChallenge.text);
-            //setChallengeHistory(prev => [newChallenge.text, ...prev].slice(0, 5));
+            setChallengeHistory(prev => [newChallenge.text, ...prev].slice(0, 5));
             setStreakCount(prev => prev + 1);
             setIsGenerating(false);
             setHasGenerated(true);
         }, 500);
     };
 
+    //Daily Challenge logic
     function getDailyChallenge() {
         const today = new Date();
         //date as a string in YYYY-MM-DD format
@@ -98,12 +98,6 @@ const Home: React.FC = () => {
     useEffect(() => {
         setDailyChallenge(getDailyChallenge().text);
     }, [])
-
-    //Progress Ring / Heat map
-    //Helper function
-    {/*function isoToday() {
-        return new Date().toISOString().slice(0, 10);
-    }*/}
 
     //load persisted state once
     useEffect(() => {
@@ -128,29 +122,6 @@ const Home: React.FC = () => {
         };
         localStorage.setItem("challengeData", JSON.stringify(payload));
     }, [completedCount, completedDatesSet]);
-
-    {/** const markComplete = () => {
-        const today = isoToday();
-        setCompletedDatesSet((prev) => {
-            const next = new Set(prev);
-            if(!next.has(today)){
-                next.add(today);
-            }
-            return next;
-        });
-        setCompletedCount((c) => c + 1);
-    }*/}
-
-    {/*const toggleDate = (iso: string) => {
-        setCompletedDatesSet((prev) => {
-            const next = new Set(prev);
-            if(next.has(iso)) next.delete(iso);
-            else next.add(iso);
-            return next;
-        });
-
-        //setCompletedCount((c) => (completedDataSet.has(iso) ? Math.max(0, c - 1) : c + 1));
-    }*/}
 
     return (
         <main className="main-container">
@@ -191,11 +162,6 @@ const Home: React.FC = () => {
                 />
             </section>
 
-            {/* User vitals */}
-            {/*<section className="user-vitals">
-                <ProgressRing value={completedCount} goal={20} size={120} stroke={10} label="Monthly Goal" />
-            </section>*/}
-            
             {/* Challenge Display Section */}
             <div className="challenge-content">
                 {/* Challenge Display Section */}
