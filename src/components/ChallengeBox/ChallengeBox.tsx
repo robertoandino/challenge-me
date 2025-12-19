@@ -18,7 +18,6 @@ const ChallengeBox: React.FC<ChallengeBoxProps> = ({
                 {isGenerating ? (
                     <div className="loading-state">
                         <div className="loading-spinner"></div>
-                        <p>Generating your challenge...</p>
                     </div>
                 ) : (
                     <p className="challenge-text">{currentChallenge}</p>
