@@ -1,0 +1,19 @@
+.daily-challenge-box {
+    width: 100%;
+    max-width: 600px;
+    margin: 3rem auto;
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+    font-size: 1.8rem;
+    border-radius: 50px;
+    border-top: 1px solid rgba(228, 135, 30, 0.815);
+}
+
+.daily-challenge-box:hover {
+    transform: translateY(-1px);
+    border-color: rgba(247, 61, 15, 0.562);
+}

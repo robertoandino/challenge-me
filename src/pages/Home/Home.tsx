@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { challenges } from "../../data/challenges";
 import { ChallengeCategory } from "../../data/Challenge";
+import { quotes } from "../../data/quotes";
 import "./Home.css";
 import "../responsive.css";
 import Header from "../../components/Header/Header";
 import StatCard from "../../components/StatCard/StatCard";
 import ChallengeBox from "../../components/ChallengeBox/ChallengeBox";
 import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
-import DailyChallengeCard from "../../components/DailyChallengeCard/DailyChallengeCard";
+import DailyQuoteCard from "../../components/DailyQuoteCard/DailyQuoteCard";
 //import profileMenu from "../components/ProfileMenu";
 //import ProgressRing from "../components/ProgressRing/ProgressRing";
 
@@ -27,6 +28,9 @@ const Home: React.FC = () => {
     //History
     const [challengeHistory, setChallengeHistory] = useState<String[]>([]);
     console.log(challengeHistory);
+
+    //Quotes
+    const [dailyQuote, setDailyQuote] = useState<string>("");
 
     //Stats
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
@@ -85,7 +89,7 @@ const Home: React.FC = () => {
         }, 500);
     };
 
-    //Daily Challenge logic
+    //Daily Challenge logic NOT USED
     function getDailyChallenge() {
         const today = new Date();
         //date as a string in YYYY-MM-DD format
@@ -93,6 +97,22 @@ const Home: React.FC = () => {
         const index = daySeed % challenges.length;
         return challenges[index];
     }
+
+    //Daily Quote logic
+    function getDailyQuote() {
+        const today = new Date();
+
+        //stable daily number
+        const daySeed = today.getFullYear() * 10000 + (today.getMonth() + 1)
+        const index = daySeed % quotes.length;
+
+        return quotes[index];
+    };
+
+    //Daily quote effect
+    useEffect(() => {
+        setDailyQuote(getDailyQuote());
+    }, [])
 
     //Daily challenge effect
     useEffect(() => {
@@ -134,7 +154,7 @@ const Home: React.FC = () => {
                 setProfileOpen={setProfileOpen}
             />
 
-            <DailyChallengeCard dailyChallenge={dailyChallenge} /> 
+            <DailyQuoteCard dailyQuote={dailyQuote} /> 
 
             {/* Stats Cards */}
             <section className="stats-cards">
