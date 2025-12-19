@@ -19,7 +19,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info}) => {
 
     return (
         <div 
-            className="stat-card"
+            className={`stat-card ${onClick ? "stat-card-button" : ""}`}
             onClick={onClick}
             role={onClick ? "button" : undefined}
             tabIndex={onClick ? 0 : undefined}
