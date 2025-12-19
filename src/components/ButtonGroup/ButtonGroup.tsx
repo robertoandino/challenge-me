@@ -15,7 +15,7 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
     onCopy,
 }) => {
     return (
-        <div className="card button-group">
+        <div className="button-group-card">
             <button
                 onClick={onGenerate}
                 className={`primary-button ${isGenerating ? "generating" : ""}`}

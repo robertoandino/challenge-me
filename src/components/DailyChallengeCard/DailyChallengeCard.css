@@ -26,7 +26,7 @@
     font-style: italic;
     font-size: 1.4rem;
     border-radius: 50px;
-    border-bottom: 1px solid rgba(228, 135, 30, 0.815);
+    border-top: 1px solid rgba(228, 135, 30, 0.815);
 }
 
 .daily-challenge-box:hover {

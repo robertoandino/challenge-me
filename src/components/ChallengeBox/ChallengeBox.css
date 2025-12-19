@@ -31,7 +31,8 @@
     backdrop-filter: blur(8px);
     border-radius: 0.75rem;
     padding: 2rem;
-    border-top: 1px solid rgba(228, 135, 30, 0.815);
+    border-left: 1px solid rgba(228, 135, 30, 0.815);
+     border-right: 1px solid rgba(228, 135, 30, 0.815);
     border-radius: 1rem;
     transition: all 0.3s ease;
     min-height: 100px;
@@ -53,10 +54,6 @@
     transform: translateY(-2px);
     border-color: rgba(247, 61, 15, 0.562);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-}
-
-.challenge-box-generated {
-    border-top: 1px solid rgba(228, 135, 30, 0.815);
 }
 
 .challenge-text {

@@ -1,25 +1,26 @@
-.card {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+.button-group-card {
+    border-radius: 20px;
+    border-left: 1px solid rgba(228, 135, 30, 0.815);
+    border-right: 1px solid rgba(228, 135, 30, 0.815);
+    padding: 1.6rem;
+    height: 56 px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 810px;
+    margin: 2rem auto;
     backdrop-filter: blur(6px);
     transition: transform 0.2s ease, box-shadow 0.3s ease;
-}
-
-.section-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-
-/* Button Styles */
-.button-group {
-    display: flex;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
     gap: 0.75rem;
+    display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+}
+
+.button-group-card:hover {
+    transform: translateY(-1px);
+    border-color: rgba(247, 61, 15, 0.562);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 .primary-button {
@@ -27,7 +28,7 @@
     color: #0f172a;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
+    border-radius: 50px;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
