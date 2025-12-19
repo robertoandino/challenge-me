@@ -11,6 +11,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, value}) => {
         if (title.includes("Streak")) return "🔥";
         if (title.includes("Completed")) return "✅";
         if (title.includes("Difficulty")) return "🎯";
+        if (title.includes("Category")) return "📚";
         return "📊";
     }
 

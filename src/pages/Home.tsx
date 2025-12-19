@@ -30,7 +30,7 @@ const Home: React.FC = () => {
     //const [completedChallenges, setCompletedChallenges] = useState<string[]>([]);
     //const [showHistory, setShowHistory] = useState(false);
     
-    // State to manage Category and difficulty
+    // State to manage stats and filters
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
     const [difficulty, setDifficulty] = useState<string>('easy');
     const [streakCount, setStreakCount] = useState<number>(0);
@@ -152,6 +152,7 @@ const Home: React.FC = () => {
                 <StatCard title="Streak" value={streakCount} />
                 <StatCard title="Completed" value={completedCount} />
                 <StatCard title="Difficulty" value={difficulty} />
+                <StatCard title="Category" value={selectedCategory} />
             </section>
 
             {/* User vitals */}
