@@ -1,6 +1,6 @@
-.daily-challenge-box {
+.daily-quote-box {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
     margin: 3rem auto;
     margin-top: 2rem;
     text-align: center;
@@ -8,12 +8,23 @@
     justify-content: center;
     align-items: center;
     font-style: italic;
-    font-size: 1.8rem;
     border-radius: 50px;
     border-top: 1px solid rgba(228, 135, 30, 0.815);
 }
 
-.daily-challenge-box:hover {
+.daily-quote-box:hover {
     transform: translateY(-1px);
     border-color: rgba(247, 61, 15, 0.562);
+}
+
+.quote-text{
+    font-size: 1.7rem;
+}
+
+.quote-author {
+    display: block;
+    margin-top: 4.5rem;
+    text-align: right;
+    font-size: 1rem;
+    opacity: 0.75rem;
 }

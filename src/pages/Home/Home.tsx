@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { challenges } from "../../data/challenges";
 import { ChallengeCategory } from "../../data/Challenge";
-import { quotes } from "../../data/quotes";
+import { quotes, Quote } from "../../data/quotes";
 import "./Home.css";
 import "../responsive.css";
 import Header from "../../components/Header/Header";
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
     console.log(challengeHistory);
 
     //Quotes
-    const [dailyQuote, setDailyQuote] = useState<string>("");
+    const [dailyQuote, setDailyQuote] = useState<Quote | null>(null);
 
     //Stats
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
@@ -104,6 +104,7 @@ const Home: React.FC = () => {
 
         //stable daily number
         const daySeed = today.getFullYear() * 10000 + (today.getMonth() + 1)
+        
         const index = daySeed % quotes.length;
 
         return quotes[index];
