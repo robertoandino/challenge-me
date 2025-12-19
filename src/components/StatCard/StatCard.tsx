@@ -5,9 +5,10 @@ interface StatCardProps {
     title: string;
     value: string | number;
     onClick?: () => void;
+    info?: string;
 }
 
-const StatCard: React.FC<StatCardProps> = ({ title, value, onClick}) => {
+const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info}) => {
     const getIcon = (title: string) => {
         if (title.includes("Streak")) return "🔥";
         if (title.includes("Completed")) return "✅";
@@ -24,8 +25,14 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, onClick}) => {
             tabIndex={onClick ? 0 : undefined}
         >    
             <div className="stat-icon">{getIcon(title)}</div>
-            {/*<h3>{title}</h3>*/}
             <p>{value}</p>
+
+            {/**Tooltip*/}
+            {info && (
+                <div className="stat-tooltip">
+                    {info}
+                </div>
+            )}
         </div>
     );
 };

@@ -167,17 +167,27 @@ const Home: React.FC = () => {
 
             {/* Stats Cards */}
             <section className="stats-cards">
-                <StatCard title="Streak" value={streakCount} />
-                <StatCard title="Completed" value={completedCount} />
+                <StatCard 
+                    title="Streak" 
+                    value={streakCount} 
+                    info="Streak"
+                />
+                <StatCard 
+                    title="Completed" 
+                    value={completedCount} 
+                    info="Completed"    
+                />
                 <StatCard 
                     title="Difficulty" 
                     value={difficulty} 
                     onClick={cycleDifficulty}
+                    info="Difficulty"
                 />
                 <StatCard 
                     title="Category" 
                     value={selectedCategory} 
                     onClick={cycleCategory}
+                    info="Category"
                 />
             </section>
 
