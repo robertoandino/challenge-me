@@ -1,4 +1,16 @@
-/* Challenge Section */
+.challenge-content {
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.05);
+   border-radius: 1rem;
+   padding: 2rem;
+   backdrop-filter: blur(6px);
+}
+
 .challenge-container {
     display: flex;
     flex-direction: column;

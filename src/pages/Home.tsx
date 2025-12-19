@@ -6,9 +6,9 @@ import "./responsive.css";
 import Header from "../components/Header/Header";
 import StatCard from "../components/StatCard/StatCard";
 import ChallengeBox from "../components/ChallengeBox/ChallengeBox";
-import DifficultySelector from "../components/DifficultySelector/DifficultySelector";
+//import DifficultySelector from "../components/DifficultySelector/DifficultySelector";
 import ButtonGroup from "../components/ButtonGroup/ButtonGroup";
-import CategorySelector from "../components/CategorySelector/CategorySelector";
+//import CategorySelector from "../components/CategorySelector/CategorySelector";
 //import ChallengeCard from "../components/ChallengeCard";
 import DailyChallengeCard from "../components/DailyChallengeCard/DailyChallengeCard";
 //import profileMenu from "../components/ProfileMenu";
@@ -186,36 +186,20 @@ const Home: React.FC = () => {
                 <ProgressRing value={completedCount} goal={20} size={120} stroke={10} label="Monthly Goal" />
             </section>*/}
             
-            {/* Main Content Area */}
-            {/* Right Column */}
-            <div className="page-content">
-                <aside className="right-column">
-                    {/* Controls Section */}
-                    <CategorySelector
-                        selectedCategory={selectedCategory}
-                        setSelectedCategory={setSelectedCategory}
-                    />
-                    <DifficultySelector
-                        difficulty={difficulty}
-                        setDifficulty={setDifficulty}
-                    />
-                </aside>  
-
-                {/* Left Column */}
-                <main className="left-column">
-                    {/* Challenge Display Section */}
-                    <ChallengeBox
-                        currentChallenge={currentChallenge}
-                        isGenerating={isGenerating}
-                        hasGenerated={hasGenerated}
-                    />
-                    <ButtonGroup
-                        isGenerating={isGenerating}
-                        hasGenerated={hasGenerated}
-                        onGenerate={generateChallenge}
-                        onCopy={() => navigator.clipboard.writeText(currentChallenge)}
-                    />
-                </main>
+            {/* Challenge Display Section */}
+            <div className="challenge-content">
+                {/* Challenge Display Section */}
+                <ChallengeBox
+                    currentChallenge={currentChallenge}
+                    isGenerating={isGenerating}
+                    hasGenerated={hasGenerated}
+                />
+                <ButtonGroup
+                    isGenerating={isGenerating}
+                    hasGenerated={hasGenerated}
+                    onGenerate={generateChallenge}
+                    onCopy={() => navigator.clipboard.writeText(currentChallenge)}
+                />
             </div>
         </main>
     );

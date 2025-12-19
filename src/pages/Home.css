@@ -12,13 +12,6 @@
     box-sizing: border-box;
 }*/
 
-.left-column {
-   background: rgba(255, 255, 255, 0.05);
-   border-radius: 1rem;
-   padding: 2rem;
-   backdrop-filter: blur(6px);
-}
-
 .main-container {
     min-height: 100vh;
     display: flex;
@@ -40,17 +33,6 @@
 .section-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-}
-
-.page-content {
-    display: flex;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
 }
 
 /* Controls Section */
