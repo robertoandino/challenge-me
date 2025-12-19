@@ -1,14 +1,19 @@
 .challenge-content {
     gap: 2rem;
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 1rem;
-    box-sizing: border-box;
-    background: rgba(255, 255, 255, 0.05);
-   border-radius: 1rem;
-   padding: 2rem;
-   backdrop-filter: blur(6px);
+    padding: 2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0);
+    backdrop-filter: blur(6px);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.challenge-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
 }
 
 .challenge-container {
@@ -23,11 +28,10 @@
 .challenge-box {
     font-size: 1.2rem;
     text-align: center;
-    background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(8px);
     border-radius: 0.75rem;
     padding: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(228, 135, 30, 0.815);
     border-radius: 1rem;
     transition: all 0.3s ease;
     min-height: 100px;
@@ -47,13 +51,12 @@
 
 .challenge-box:hover {
     transform: translateY(-2px);
-    border-color: rgba(225, 29, 72, 0.3);
+    border-color: rgba(247, 61, 15, 0.562);
     box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
 .challenge-box-generated {
-    border-color: #bef264;
-    box-shadow: 0 0 20px rgba(190, 242, 100, 0.4);
+    border-top: 1px solid rgba(228, 135, 30, 0.815);
 }
 
 .challenge-text {
