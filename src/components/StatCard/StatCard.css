@@ -27,6 +27,7 @@
 .stat-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    border-top: 1px solid rgba(228, 135, 30, 0.815);
 }
 
 .stat-card h3 {
