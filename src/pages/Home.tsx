@@ -41,6 +41,24 @@ const Home: React.FC = () => {
     // State to manage profile menu visibility
     const [profileOpen, setProfileOpen] = useState(false);
 
+    //Difficulty Selection logic
+    const cycleDifficulty = () => {
+        setDifficulty(prev =>
+            prev === "easy" ? "medium" :
+            prev === "medium" ? "hard" : "easy"
+        );
+    };
+
+    //Category Selection logic
+    const cycleCategory = () => {
+        setSelectedCategory(prev => 
+            prev === "all" ? "physical" :
+            prev === "physical" ? "mental" :
+            prev === "mental" ? "creative" :
+            prev === "creative" ? "social" : "all"
+        );
+    };
+
     const generateChallenge = () => {
         setIsGenerating(true);
 
@@ -151,8 +169,16 @@ const Home: React.FC = () => {
             <section className="stats-cards">
                 <StatCard title="Streak" value={streakCount} />
                 <StatCard title="Completed" value={completedCount} />
-                <StatCard title="Difficulty" value={difficulty} />
-                <StatCard title="Category" value={selectedCategory} />
+                <StatCard 
+                    title="Difficulty" 
+                    value={difficulty} 
+                    onClick={cycleDifficulty}
+                />
+                <StatCard 
+                    title="Category" 
+                    value={selectedCategory} 
+                    onClick={cycleCategory}
+                />
             </section>
 
             {/* User vitals */}
