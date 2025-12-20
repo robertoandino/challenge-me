@@ -1,5 +1,6 @@
 import React from "react";
 import "./StatCard.css";
+import Animations from "./animations";
 
 interface StatCardProps {
     title: string;
@@ -33,8 +34,8 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info, showRe
             {/**Animation */}
             {showReaction && (
                 <div className="streal-reaction">
-                    {streak === 0 && true}
-                    {streak >= 10 && true}
+                    {streak === 0 && <Animations type="sad"/>}
+                    {streak >= 10 && <Animations type="fireworks"/>}
                 </div>
             )}
 

@@ -6,10 +6,19 @@ interface AnimationsProps {
 }
 
 const Animations: React.FC<AnimationsProps> = ({ type }) => {
-
-    return(
-        <p>{type}</p>
-    )
+    switch (type) {
+        case "sad":
+            return  <div className="sad-faces"> 
+                        😞 😔 😢
+                    </div>;
+        case "fireworks":
+            return  <div className="fireworks"> 
+                        🎆 🎇 ✨
+                    </div>
+        default:
+            return null
+    }
+    
 }
 
 export default Animations;
