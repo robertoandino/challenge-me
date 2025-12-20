@@ -5,10 +5,11 @@ interface StatCardProps {
     title: string;
     value: string | number;
     onClick?: () => void;
+    showReaction?: boolean;
     info?: string;
 }
 
-const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info}) => {
+const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info, showReaction}) => {
     const getIcon = (title: string) => {
         if (title.includes("Streak")) return "🔥";
         if (title.includes("Completed")) return "✅";
@@ -17,6 +18,8 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info}) => {
         return "📊";
     }
 
+    const streak = Number(value);
+    
     return (
         <div 
             className={`stat-card ${onClick ? "stat-card-button" : ""}`}
@@ -26,6 +29,14 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info}) => {
         >    
             <div className="stat-icon">{getIcon(title)}</div>
             <p>{value}</p>
+
+            {/**Animation */}
+            {showReaction && (
+                <div className="streal-reaction">
+                    {streak === 0 && true}
+                    {streak >= 10 && true}
+                </div>
+            )}
 
             {/**Tooltip*/}
             {info && (

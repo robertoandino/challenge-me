@@ -176,6 +176,7 @@ const Home: React.FC = () => {
                 <StatCard 
                     title="Streak" 
                     value={streakCount}
+                    showReaction={showStreakReaction}
                     onClick={handleStreakClick} 
                     info="Streak"           
                 />
