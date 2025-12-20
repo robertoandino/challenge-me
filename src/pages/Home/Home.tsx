@@ -31,6 +31,7 @@ const Home: React.FC = () => {
     
     //Streak
     const [showStreakReaction, setShowStreakReaction] = useState(false);
+    console.log(showStreakReaction);
 
     //Quotes
     const [dailyQuote, setDailyQuote] = useState<Quote | null>(null);
