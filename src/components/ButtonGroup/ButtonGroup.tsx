@@ -20,8 +20,9 @@ const ButtonGroup: React.FC<ButtonGroupProps> = ({
                 onClick={onGenerate}
                 className={`primary-button ${isGenerating ? "generating" : ""}`}
                 disabled={isGenerating}
+                title="Generate Challenge"
             >
-                {isGenerating ? "Generating..." : "Time to Train"}
+                {isGenerating ? "Generating..." : "👆"}
             </button>
 
             {hasGenerated && (

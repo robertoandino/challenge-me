@@ -15,7 +15,7 @@ import DailyQuoteCard from "../../components/DailyQuoteCard/DailyQuoteCard";
 
 const Home: React.FC = () => {
     //Current challenge
-    const [currentChallenge, setCurrentChallenge] = useState<string>("Click the button to receieve a challenge!");
+    const [currentChallenge, setCurrentChallenge] = useState<string>("Time To Train");
     
     //Loading state
     const [isGenerating, setIsGenerating] = useState(false);
