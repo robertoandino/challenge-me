@@ -9,6 +9,7 @@ const Animations: React.FC<AnimationsProps> = ({ type }) => {
     switch (type) {
         case "sad":
             return  <div className="sad-faces"> 
+                        {/**First row*/}
                         {Array.from({ length: 6 }).map((_, i) => (
                             <span key={i} className="sad-emoji">😢</span>
                         ))}
