@@ -4,23 +4,23 @@ import "./ChallengeBox.css"
 interface ChallengeBoxProps {
     currentChallenge: string;
     isGenerating: boolean;
-    hasGenerated: boolean;
+    //hasGenerated: boolean;
 }
 
 const ChallengeBox: React.FC<ChallengeBoxProps> = ({
     currentChallenge,
     isGenerating,
-    hasGenerated,
+    //hasGenerated,
 }) => {
     return (
-        <div className={`challenge-container ${hasGenerated ? "has-generated" : ""}`}>
-            <div className={`challenge-box ${hasGenerated ? "challenge-box-generated" : ""}`}>
+        <div className="challenge-container">
+            <div className="challenge-box">
                 {isGenerating ? (
                     <div className="loading-state">
                         <div className="loading-spinner"></div>
                     </div>
                 ) : (
-                    <p className="challenge-text">{currentChallenge}</p>
+                    <p key={currentChallenge} className="challenge-text">{currentChallenge}</p>
                 )}
             </div>
         </div>

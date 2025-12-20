@@ -189,7 +189,7 @@ const Home: React.FC = () => {
                 <ChallengeBox
                     currentChallenge={currentChallenge}
                     isGenerating={isGenerating}
-                    hasGenerated={hasGenerated}
+                    //hasGenerated={hasGenerated}
                 />
                 <ButtonGroup
                     isGenerating={isGenerating}
