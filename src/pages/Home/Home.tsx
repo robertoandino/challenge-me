@@ -28,6 +28,9 @@ const Home: React.FC = () => {
     //History
     const [challengeHistory, setChallengeHistory] = useState<String[]>([]);
     console.log(challengeHistory);
+    
+    //Streak
+    const [showStreakReaction, setShowStreakReaction] = useState(false);
 
     //Quotes
     const [dailyQuote, setDailyQuote] = useState<Quote | null>(null);
@@ -110,6 +113,16 @@ const Home: React.FC = () => {
         return quotes[index];
     };
 
+    //Streak Card logic
+    function handleStreakClick() {
+        setShowStreakReaction(true);
+
+        //auto hide after animation
+        setTimeout(() => {
+            setShowStreakReaction(false);
+        }, 1500);
+    };
+
     //Daily quote effect
     useEffect(() => {
         setDailyQuote(getDailyQuote());
@@ -161,8 +174,9 @@ const Home: React.FC = () => {
             <section className="stats-cards">
                 <StatCard 
                     title="Streak" 
-                    value={streakCount} 
-                    info="Streak"
+                    value={streakCount}
+                    onClick={handleStreakClick} 
+                    info="Streak"           
                 />
                 <StatCard 
                     title="Completed" 
