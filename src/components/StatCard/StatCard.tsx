@@ -33,7 +33,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info, showRe
 
             {/**Animation */}
             {showReaction && (
-                <div className="streal-reaction">
+                <div className="streak-reaction">
                     {streak < 5 && <Animations type="sad"/>}
                     {streak >= 5 && <Animations type="fireworks"/>}
                 </div>

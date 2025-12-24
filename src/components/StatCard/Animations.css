@@ -32,23 +32,37 @@
 
 .fireworks {
     position: absolute;
-    inset: -10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    animation: pop 1s ease-out forwards;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
+    border-radius: 50%;
+    animation: burstFromCorner 1.2s ease-in-out forwards;
+    opacity: 0;
 }
 
-@keyframes pop {
+/* Top-Left corner */
+.fireworks.top-left {
+    top: 10px;
+    left: 10px;
+}
+
+/* Top-Right corner */
+.fireworks.top-right {
+    top: 10px;
+    right: 10px;
+}
+
+@keyframes burstFromCorner {
     0% {
-        transform: scale(0.6);
-        opacity: 0;
-    }
-    60% {
-        transform: scale(1.2);
+        transform: scale(0);
         opacity: 1;
     }
+    50% {
+        transform: scale(1.5) translateY(-30px) translateX(var(--direction, 0));
+        opacity: 0.8;
+    }
     100% {
-        transform: scale(1);
+        transform: scale(0) translateY(-60px) translateX(var(--direction, 0));
+        opacity: 0;
     }
 }
