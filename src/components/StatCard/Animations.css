@@ -43,7 +43,7 @@
     height: 18px;
     background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
     border-radius: 50%;
-    animation: burstFromCorner 1.2s ease-in-out forwards;
+    animation: burstFromCorner 1.7s ease-in-out forwards;
     opacity: 0;
 }
 
@@ -56,7 +56,7 @@
     height: 18px;
     background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
     border-radius: 50%;
-    animation: burstFromCorner 1.4s ease-in-out forwards;
+    animation: burstFromCorner 1.7s ease-in-out forwards;
     opacity: 0;
 }
 
