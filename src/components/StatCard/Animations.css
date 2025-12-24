@@ -41,7 +41,7 @@
     left: 0;
     width: 18px;
     height: 18px;
-    background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
+    background: radial-gradient(circle, #ff0000, #ff4500, #ffd700, #ffffff);
     border-radius: 50%;
     animation: burstFromCorner 1.7s ease-in-out forwards;
     opacity: 0;
@@ -54,7 +54,7 @@
     right: 0;
     width: 18px;
     height: 18px;
-    background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
+    background: radial-gradient(circle, #ff0000, #ff4500, #ffd700, #ffffff);
     border-radius: 50%;
     animation: burstFromCorner 1.7s ease-in-out forwards;
     opacity: 0;
@@ -67,7 +67,7 @@
     right: 0;
     width: 18px;
     height: 18px;
-    background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
+    background: radial-gradient(circle, #ff0000, #ff4500, #ffd700, #ffffff);
     border-radius: 50%;
     animation: burstFromCorner 1.7s ease-in-out forwards;
     opacity: 0;
@@ -80,7 +80,7 @@
     left: 0;
     height: 18px;
     width: 18px;
-    background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
+    background: radial-gradient(circle, #ff0000, #ff4500, #ffd700, #ffffff);
     border-radius: 50%;
     animation: burstFromCorner 1.7s ease-in-out forwards;
     opacity: 0;
