@@ -87,16 +87,29 @@
 }
 
 @keyframes burstFromCorner {
-    0% {
-        transform: scale(0);
+    0% { /* Glow Starts */
+        transform: scale(0) rotate(0deg);
         opacity: 1;
+        box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
     }
-    50% {
-        transform: scale(1.5) translateY(-30px) translateX(var(--direction, 0));
+    25% { /* Red Glow */
+        transform: scale(1) rotate(90deg) translateY(-10px) translateX(var(--direction, 0));
+        opacity: 0.9;
+        box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7);
+    }
+    50% { /* Yellow Glow */ 
+        transform: scale(1.5) rotate(180deg) translateY(-30px) translateX(var(--direction, 0));
         opacity: 0.8;
+        box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.7);
     }
-    100% {
-        transform: scale(0) translateY(-60px) translateX(var(--direction, 0));
+    75% { /* White Glow */
+        transform: scale(1) rotate(270deg) translateY(-45px) translateX(var(--direction, 0));
+        opacity: 0.6;
+        box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
+    }
+    100% { /* Fade Glow*/
+        transform: scale(0) rotate(360deg) translateY(-60px) translateX(var(--direction, 0));
         opacity: 0;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
 }
