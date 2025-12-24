@@ -16,8 +16,8 @@ const Animations: React.FC<AnimationsProps> = ({ type }) => {
                     </div>;
         case "fireworks":
             return  <div className="fireworks">
-                        <div className="fireworks top-left" style={{ '--direction': '-20px' } as React.CSSProperties}></div>
-                        <div className="fireworks top-right" style={{ '--direction': '20px' } as React.CSSProperties}></div>
+                        <div className="fireworks top-left" style={{ '--direction': '-30px' } as React.CSSProperties}></div>
+                        <div className="fireworks top-right" style={{ '--direction': '30px' } as React.CSSProperties}></div>
                     </div>
         default:
             return null

@@ -20,7 +20,7 @@
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     backdrop-filter: blur(8px);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     border-radius: 30px;
 }
 
