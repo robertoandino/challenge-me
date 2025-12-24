@@ -18,11 +18,17 @@ const Animations: React.FC<AnimationsProps> = ({ type }) => {
             return  <div className="fireworks">
                         <div className="fireworks top-left" style={{ '--direction': '-30px' } as React.CSSProperties}></div>
                         <div className="fireworks top-middle-left" style={{ '--direction': '-1px' } as React.CSSProperties}>
-                            <div className="star-extra star-1"></div>
-                            <div className="star-extra star-2"></div>
+                            <div className="star-extra star-1-2"></div>
+                            <div className="star-extra star-2-2"></div>
                         </div>
-                        <div className="fireworks top-right" style={{ '--direction': '30px' } as React.CSSProperties}></div>
-                        <div className="fireworks top-middle-right" style={{ '--direction': '1px'} as React.CSSProperties}></div>
+                        <div className="fireworks top-right" style={{ '--direction': '30px' } as React.CSSProperties}>
+            
+                        </div>
+                        <div className="fireworks top-middle-right" style={{ '--direction': '1px'} as React.CSSProperties}>
+                            <div className="star-extra star-1-3"></div>
+                            <div className="star-extra star-2-3"></div>
+                            <div className="star-extra star-3-3"></div>
+                        </div>
                     </div>
         default:
             return null
