@@ -48,12 +48,38 @@
 }
 
 /* Top-Right corner */
-.fireworks.top-right {
+.fireworks.top-right{
     position: absolute;
     top: -80px;
     right: 0;
     width: 18px;
     height: 18px;
+    background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
+    border-radius: 50%;
+    animation: burstFromCorner 1.7s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* Top-middle-right */
+.fireworks.top-middle-right {
+    position: absolute;
+    top: -95px;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
+    border-radius: 50%;
+    animation: burstFromCorner 1.7s ease-in-out forwards;
+    opacity: 0;
+}
+
+/* Top-middle-left */
+.fireworks.top-middle-left {
+    position: absolute;
+    top: -95px;
+    left: 0;
+    height: 18px;
+    width: 18px;
     background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
     border-radius: 50%;
     animation: burstFromCorner 1.7s ease-in-out forwards;
