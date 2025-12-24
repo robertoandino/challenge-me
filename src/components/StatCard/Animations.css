@@ -96,11 +96,18 @@
     z-index: 1;
 }
 
+/* 1st fireball star */
+.star-extra.star-1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
 /* 2nd fireball stars */
 .star-extra.star-1-2 {
     top: 50%;
     left: 30%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .star-extra.star-2-2 {
