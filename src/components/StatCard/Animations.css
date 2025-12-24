@@ -39,8 +39,8 @@
     position: absolute;
     top: -80px;
     left: 0;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     background: radial-gradient(circle, #ff0000, #ff4500, #ffd700, #ffffff);
     border-radius: 50%;
     animation: burstFromCorner 1.7s ease-in-out forwards;
@@ -52,8 +52,8 @@
     position: absolute;
     top: -80px;
     right: 0;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     background: radial-gradient(circle, #ff0000, #ff4500, #ffd700, #ffffff);
     border-radius: 50%;
     animation: burstFromCorner 1.7s ease-in-out forwards;
@@ -65,8 +65,8 @@
     position: absolute;
     top: -95px;
     right: 0;
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     background: radial-gradient(circle, #ff0000, #ff4500, #ffd700, #ffffff);
     border-radius: 50%;
     animation: burstFromCorner 1.7s ease-in-out forwards;
@@ -78,8 +78,8 @@
     position: absolute;
     top: -95px;
     left: 0;
-    height: 18px;
-    width: 18px;
+    height: 20px;
+    width: 20px;
     background: radial-gradient(circle, #ff0000, #ff4500, #ffd700, #ffffff);
     border-radius: 50%;
     animation: burstFromCorner 1.7s ease-in-out forwards;
@@ -95,8 +95,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 10px;
-    height: 10px;
+    width: 8px;
+    height: 8px;
     background: black;
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     transform: translate(-50%, -50%);
@@ -105,27 +105,22 @@
 
 @keyframes burstFromCorner {
     0% { /* Glow Starts */
-        transform: scale(0) rotate(0deg);
+        transform: scale(0) ;
         opacity: 1;
         box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
     }
     25% { /* Red Glow */
-        transform: scale(1) rotate(90deg) translateY(-10px) translateX(var(--direction, 0));
+        transform: scale(1) translateY(-10px) translateX(var(--direction, 0));
         opacity: 0.9;
         box-shadow: 0 0 10px 5px rgba(255, 0, 0, 0.7);
     }
     50% { /* Yellow Glow */ 
-        transform: scale(1.5) rotate(180deg) translateY(-30px) translateX(var(--direction, 0));
+        transform: scale(1.5) translateY(-30px) translateX(var(--direction, 0));
         opacity: 0.8;
         box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0.7);
     }
-    75% { /* White Glow */
-        transform: scale(1) rotate(270deg) translateY(-45px) translateX(var(--direction, 0));
-        opacity: 0.6;
-        box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.7);
-    }
     100% { /* Fade Glow*/
-        transform: scale(0) rotate(360deg) translateY(-60px) translateX(var(--direction, 0));
+        transform: scale(0) rotate(180deg) translateY(-60px) translateX(var(--direction, 0));
         opacity: 0;
         box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
