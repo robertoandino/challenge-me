@@ -1,6 +1,6 @@
 import React from "react";
 import "./StatCard.css";
-import Animations from "./animations";
+import Animations from "./Animations";
 
 interface StatCardProps {
     title: string;
