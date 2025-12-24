@@ -37,10 +37,10 @@
 /* Top-Left corner */
 .fireworks.top-left {
     position: absolute;
-    top: 0;
+    top: -80px;
     left: 0;
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
     border-radius: 50%;
     animation: burstFromCorner 1.2s ease-in-out forwards;
@@ -50,13 +50,13 @@
 /* Top-Right corner */
 .fireworks.top-right {
     position: absolute;
-    top: 0;
+    top: -80px;
     right: 0;
-    width: 15px;
-    height: 15px;
+    width: 18px;
+    height: 18px;
     background: radial-gradient(circle, #ff6b6b, #feca57, #48dbfb);
     border-radius: 50%;
-    animation: burstFromCorner 1.2s ease-in-out forwards;
+    animation: burstFromCorner 1.4s ease-in-out forwards;
     opacity: 0;
 }
 
