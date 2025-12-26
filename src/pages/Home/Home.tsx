@@ -21,10 +21,6 @@ const Home: React.FC = () => {
     const [isGenerating, setIsGenerating] = useState(false);
     const [hasGenerated, setHasGenerated] = useState(false);
 
-    //Streak
-    const [completedCount, setCompletedCount] = useState<number>(0);
-    const [completedDatesSet, setCompletedDatesSet] = useState<Set<string>>(new Set())
-    
     //History
     const [challengeHistory, setChallengeHistory] = useState<String[]>([]);
     console.log(challengeHistory);
@@ -40,6 +36,8 @@ const Home: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | 'all'>('all');
     const [difficulty, setDifficulty] = useState<string>('easy');
     const [streakCount, setStreakCount] = useState<number>(0);
+    const [completedCount, setCompletedCount] = useState<number>(0);
+    const [completedDatesSet, setCompletedDatesSet] = useState<Set<string>>(new Set())
     
     //Daily Challenge
     const [dailyChallenge, setDailyChallenge] = useState<string>("");
@@ -92,6 +90,11 @@ const Home: React.FC = () => {
             setHasGenerated(true);
         }, 500);
     };
+
+    //Mark Completed logic
+    const handleCompletedClick = () => {
+        console.log("Completed Clicked");
+    } 
 
     //Daily Challenge logic NOT USED
     function getDailyChallenge() {
@@ -182,7 +185,8 @@ const Home: React.FC = () => {
                 />
                 <StatCard 
                     title="Completed" 
-                    value={completedCount} 
+                    value={completedCount}
+                    onClick={handleCompletedClick} 
                     info="Completed"    
                 />
                 <StatCard 
