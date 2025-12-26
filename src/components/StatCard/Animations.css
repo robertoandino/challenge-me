@@ -4,11 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .sad-emoji {
-    animation: slideDown 3s ease forwards;
+    animation: slideDown 2s ease forwards;
     opacity: 0;
 }
 
@@ -25,7 +25,7 @@
         opacity: 0;
     }
     to {
-        transform: translateY(250px);
+        transform: translateY(160px);
         opacity: 1;
     }
 }
