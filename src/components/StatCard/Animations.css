@@ -20,12 +20,12 @@
 .sad-emoji:nth-child(6) { animation-delay: 0.5s; }
 
 @keyframes slideDown {
-    from {
-        transform: translateY(-20);
+    0% {
+        transform: translateY(-20px);
         opacity: 0;
     }
-    to {
-        transform: translateY(160px);
+    100% {
+        transform: translateY(155px);
         opacity: 1;
     }
 }
