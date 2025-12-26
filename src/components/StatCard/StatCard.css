@@ -78,6 +78,12 @@
     z-index: 10;
 }
 
+.stat-card.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 /*Show on hover || focus*/
 .stat-card:hover .stat-tooltip,
 .stat-card:focus .stat-tooltip {

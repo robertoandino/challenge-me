@@ -11,7 +11,7 @@ interface StatCardProps {
     disabled?: boolean;
 }
 
-const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info, showReaction}) => {
+const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info, showReaction, disabled }) => {
     const getIcon = (title: string) => {
         if (title.includes("Streak")) return "🔥";
         if (title.includes("Completed")) return "✅";
@@ -24,8 +24,8 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info, showRe
     
     return (
         <div 
-            className={`stat-card ${onClick ? "stat-card-button" : ""}`}
-            onClick={onClick}
+            className={`stat-card ${onClick ? "stat-card-button" : ""} ${disabled ? "disabled" : ""}`}
+            onClick={disabled ? undefined :onClick}
             role={onClick ? "button" : undefined}
             tabIndex={onClick ? 0 : undefined}
         >    
