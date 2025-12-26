@@ -17,6 +17,9 @@ const Home: React.FC = () => {
     //Current challenge
     const [currentChallenge, setCurrentChallenge] = useState<string>("Time To Train");
     
+    //Completed challenge
+    const [isChallengeCompleted, setIsChallengeCompleted] = useState(false);
+
     //Loading state
     const [isGenerating, setIsGenerating] = useState(false);
     const [hasGenerated, setHasGenerated] = useState(false);
@@ -88,6 +91,7 @@ const Home: React.FC = () => {
             const newChallenge = filteredChallenges[randomIndex];
 
             setCurrentChallenge(newChallenge.text);
+            setIsChallengeCompleted(false);
             setChallengeHistory(prev => [newChallenge.text, ...prev].slice(0, 5));
             setStreakCount(prev => prev + 1);
             setIsGenerating(false);
@@ -104,6 +108,9 @@ const Home: React.FC = () => {
         //Persistence
         const today = new Date().toISOString().slice(0, 10);
         setCompletedDatesSet(prev => new Set(prev).add(today));
+
+        //Challenge Completed?
+        setIsChallengeCompleted(true)
 
         //Toast
         setShowCompletedToast(true);
@@ -203,7 +210,7 @@ const Home: React.FC = () => {
                     value={completedCount}
                     onClick={handleCompletedClick} 
                     info="Completed"    
-                    disabled={completedDisabled}
+                    disabled={isChallengeCompleted}
                 />
                 {showCompletedToast && (
                     <div className="completion-toast">✅ Challenge Completed!</div>
