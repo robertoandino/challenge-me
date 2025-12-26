@@ -24,7 +24,10 @@ const Animations: React.FC<AnimationsProps> = ({ type }) => {
                             <div className="star-extra star-2-2"></div>
                         </div>
                         <div className="fireworks top-right" style={{ '--direction': '30px' } as React.CSSProperties}>
-            
+                            <div className="star-extra star-1-4"></div>
+                            <div className="star-extra star-2-4"></div>
+                            <div className="star-extra star-3-4"></div>
+                            <div className="star-extra star-4-4"></div>
                         </div>
                         <div className="fireworks top-middle-right" style={{ '--direction': '1px'} as React.CSSProperties}>
                             <div className="star-extra star-1-3"></div>
