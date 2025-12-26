@@ -93,7 +93,7 @@ const Home: React.FC = () => {
 
     //Mark Completed logic
     const handleCompletedClick = () => {
-        console.log("Completed Clicked");
+        setCompletedCount(prev => prev + 1);
     } 
 
     //Daily Challenge logic NOT USED
