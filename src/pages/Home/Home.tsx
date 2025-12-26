@@ -39,6 +39,10 @@ const Home: React.FC = () => {
     const [completedCount, setCompletedCount] = useState<number>(0);
     const [completedDatesSet, setCompletedDatesSet] = useState<Set<string>>(new Set())
     
+    //New
+    const [showCompletedToast, setShowCompletedToast] = useState(false);
+    const [completedDisabled, setCompletedDisabled] = useState(false);
+
     //Daily Challenge
     const [dailyChallenge, setDailyChallenge] = useState<string>("");
     
@@ -93,7 +97,18 @@ const Home: React.FC = () => {
 
     //Mark Completed logic
     const handleCompletedClick = () => {
+        if (completedDisabled) return;
+        setCompletedDisabled(true);
         setCompletedCount(prev => prev + 1);
+
+        //Persistence
+        const today = new Date().toISOString().slice(0, 10);
+        setCompletedDatesSet(prev => new Set(prev).add(today));
+
+        //Toast
+        setShowCompletedToast(true);
+        setTimeout(() => setShowCompletedToast(false), 2000);
+        setTimeout(() => setCompletedDisabled(false), 1000)
     } 
 
     //Daily Challenge logic NOT USED
