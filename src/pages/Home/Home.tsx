@@ -203,7 +203,11 @@ const Home: React.FC = () => {
                     value={completedCount}
                     onClick={handleCompletedClick} 
                     info="Completed"    
+                    disabled={completedDisabled}
                 />
+                {showCompletedToast && (
+                    <div className="completion-toast">✅ Challenge Completed!</div>
+                )}
                 <StatCard 
                     title="Difficulty" 
                     value={difficulty} 

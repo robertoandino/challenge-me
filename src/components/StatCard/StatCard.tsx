@@ -8,6 +8,7 @@ interface StatCardProps {
     onClick?: () => void;
     showReaction?: boolean;
     info?: string;
+    disabled?: boolean;
 }
 
 const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info, showReaction}) => {
