@@ -199,14 +199,14 @@ const Home: React.FC = () => {
             {/* Stats Cards */}
             <section className="stats-cards">
                 <StatCard 
-                    title="Streak" 
+                    title="Streak Count" 
                     value={streakCount}
                     showReaction={showStreakReaction}
                     onClick={handleStreakClick} 
                     info="Streak"           
                 />
                 <StatCard 
-                    title="Completed" 
+                    title="Mark as completed" 
                     value={completedCount}
                     onClick={handleCompletedClick} 
                     info="Completed"    
@@ -216,13 +216,13 @@ const Home: React.FC = () => {
                     <div className="completion-toast">✅ Challenge Completed!</div>
                 )}
                 <StatCard 
-                    title="Difficulty" 
+                    title="Select Difficulty" 
                     value={difficulty} 
                     onClick={cycleDifficulty}
                     info="Difficulty"
                 />
                 <StatCard 
-                    title="Category" 
+                    title="Select Category" 
                     value={selectedCategory} 
                     onClick={cycleCategory}
                     info="Category"

@@ -28,6 +28,7 @@ const StatCard: React.FC<StatCardProps> = ({ title, value, onClick, info, showRe
             onClick={disabled ? undefined :onClick}
             role={onClick ? "button" : undefined}
             tabIndex={onClick ? 0 : undefined}
+            title={title}
         >    
             <div className="stat-icon">{getIcon(title)}</div>
             <p>{value}</p>
