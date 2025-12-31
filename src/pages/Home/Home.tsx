@@ -132,7 +132,7 @@ const Home: React.FC = () => {
         const today = new Date();
 
         //stable daily number
-        const daySeed = today.getFullYear() * 10000 + (today.getMonth() + 1)
+        const daySeed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
         
         const index = daySeed % quotes.length;
 
@@ -151,24 +151,32 @@ const Home: React.FC = () => {
 
     //Daily quote effect
     useEffect(() => {
+        const today = new Date().toISOString().slice(0, 10);
+        setDailyQuote(getDailyQuote());
+    }, []);
+
+    /*
+    useEffect(() => {
         setDailyQuote(getDailyQuote());
     }, [])
-
+    */
+   
     //Daily challenge effect
     useEffect(() => {
         setDailyChallenge(getDailyChallenge().text);
     }, [])
+    
 
     //load persisted state once
     useEffect(() => {
-        try {
-            const raw = localStorage.getItem("challengeData");
-            if (raw) {
-                const parsed = JSON.parse(raw);
-                setCompletedCount(parsed.completedCount || 0);
-                const dates: string[] = parsed.completedDates || [];
-                setCompletedDatesSet(new Set(dates));
-            }
+    try {
+        const raw = localStorage.getItem("challengeData");
+        if (raw) {
+            const parsed = JSON.parse(raw);
+            setCompletedCount(parsed.completedCount || 0);
+            const dates: string[] = parsed.completedDates || [];
+            setCompletedDatesSet(new Set(dates));
+        }
         } catch (e) {
             console.warn("Failed to parse challengeData", e);
         }
@@ -210,7 +218,7 @@ const Home: React.FC = () => {
                     value={completedCount}
                     onClick={handleCompletedClick} 
                     info="Completed"    
-                    disabled={!hasGenerated || isChallengeCompleted}
+                    disabled={!hasGenerated ||  isChallengeCompleted}
                 />
                 {showCompletedToast && (
                     <div className="completion-toast">✅ Challenge Completed!</div>
