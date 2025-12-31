@@ -153,6 +153,8 @@ const Home: React.FC = () => {
     useEffect(() => {
         const today = new Date().toISOString().slice(0, 10);
         setDailyQuote(getDailyQuote());
+        //for vercel deployment
+        console.log(today);
     }, []);
 
     /*
@@ -160,7 +162,7 @@ const Home: React.FC = () => {
         setDailyQuote(getDailyQuote());
     }, [])
     */
-   
+
     //Daily challenge effect
     useEffect(() => {
         setDailyChallenge(getDailyChallenge().text);
