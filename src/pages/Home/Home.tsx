@@ -210,7 +210,7 @@ const Home: React.FC = () => {
                     value={completedCount}
                     onClick={handleCompletedClick} 
                     info="Completed"    
-                    disabled={isChallengeCompleted}
+                    disabled={!hasGenerated || isChallengeCompleted}
                 />
                 {showCompletedToast && (
                     <div className="completion-toast">✅ Challenge Completed!</div>
