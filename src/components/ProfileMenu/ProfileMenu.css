@@ -15,7 +15,6 @@
     animation: fadeIn 0.25s ease forwards;
 }
 
-
 .menu-list {
     display: flex;
     flex-direction: column;
@@ -37,6 +36,7 @@
     transition: background 0.2s, transform 0.1s;
     cursor: pointer;
 }
+
 
 .menu-item:hover {
     background: rgba(190, 242, 100, 0.1);
