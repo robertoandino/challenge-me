@@ -1,0 +1,9 @@
+.profile-page {
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #111827, #1F2937, #374151);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
