@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import "./ProfileMenu.css"
 
@@ -14,6 +15,7 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
     currentChallenge,
 }) => {
     const [activeSection, setActiveSection] = useState<string | null>(null);
+    const navigate = useNavigate();
 
     const toggleSection = (section: string) => {
         setActiveSection(activeSection === section ? null : section);
@@ -24,7 +26,7 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
     return (
         <div className="profile-dropdown">
             <div className="menu-list">
-                <button className="menu-item" onClick={() => toggleSection("profile")}>
+                <button className="menu-item" onClick={() => navigate('/profile')}>
                     <span>👤</span> Profile
                     <span className="arrow">{activeSection === "profile" ? "▲" : "▼"}</span>
                 </button>
