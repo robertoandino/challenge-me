@@ -1,6 +1,7 @@
 .daily-quote-box {
     width: 100%;
-    max-width: 800px;
+    max-width: 950px;
+    min-width: 300px;
     margin: 3rem auto;
     margin-top: 2rem;
     text-align: center;
