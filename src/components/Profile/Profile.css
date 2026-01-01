@@ -31,7 +31,7 @@
 
 /* Main Profile card */
 .profile-card {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.062);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 1rem;
     padding: 2rem;
@@ -76,7 +76,7 @@
 }
 
 .profile-section h2 {
-    color: #f29d64;
+    color: rgba(189, 70, 40, 0.822);
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
