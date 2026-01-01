@@ -26,7 +26,7 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
     return (
         <div className="profile-dropdown">
             <div className="menu-list">
-                <button className="menu-item" onClick={() => toggleSection("profile")}>{/*navigate('/profile')}>*/}
+                <button className="menu-item" onClick={() => toggleSection("profile")}>
                     <span>👤</span> Profile
                     <span className="arrow">{activeSection === "profile" ? "▲" : "▼"}</span>
                 </button>
@@ -34,6 +34,7 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
                     <div className="submenu">
                         <div>Name:</div>
                         <div>Bio:</div>
+                        <div className="bio" onClick={() => navigate('/profile')}>Blog</div>
                     </div>
                 )}
                 <button className="menu-item" onClick={() => toggleSection("stats")}>

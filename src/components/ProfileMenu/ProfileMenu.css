@@ -50,7 +50,11 @@
 
 .arrow {
     font-size: 0.8rem;
-    color: rgba(255, 74, 2, 0.726);;
+    color: rgba(235, 225, 221, 0.726);;
+}
+
+.bio {
+    cursor: pointer;
 }
 
 .submenu {
