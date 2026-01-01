@@ -26,8 +26,9 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
     return (
         <div className="profile-dropdown">
             <div className="menu-list">
-                <button className="menu-item" onClick={() => navigate('/profile')}>
+                <button className="menu-item" onClick={() => toggleSection("profile")}>{/*navigate('/profile')}>*/}
                     <span>👤</span> Profile
+                    <span className="arrow">{activeSection === "profile" ? "▲" : "▼"}</span>
                 </button>
 
                 <button className="menu-item" onClick={() => toggleSection("stats")}>
