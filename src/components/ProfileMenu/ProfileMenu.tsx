@@ -30,7 +30,12 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
                     <span>👤</span> Profile
                     <span className="arrow">{activeSection === "profile" ? "▲" : "▼"}</span>
                 </button>
-
+                {activeSection === "profile" && (
+                    <div className="submenu">
+                        <div>Name:</div>
+                        <div>Bio:</div>
+                    </div>
+                )}
                 <button className="menu-item" onClick={() => toggleSection("stats")}>
                     <span>📊</span> Stats
                     <span className="arrow">{activeSection === "stats" ? "▲" : "▼"}</span>
