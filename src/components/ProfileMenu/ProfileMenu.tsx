@@ -32,8 +32,8 @@ const ProfileMenu: React.FC<ProfileMenuProps> = ({
                 </button>
                 {activeSection === "profile" && (
                     <div className="submenu">
-                        <div>Name:</div>
-                        <div>Bio:</div>
+                        <div>John Smith</div>
+                        <div>Athlete</div>
                         <div className="bio" onClick={() => navigate('/profile')}>Blog</div>
                     </div>
                 )}

@@ -55,6 +55,8 @@
 
 .bio {
     cursor: pointer;
+    margin-top: 1rem !important;
+    color: orange;
 }
 
 .submenu {
@@ -63,7 +65,7 @@
     background: rgba(255, 255, 255, 0.05);
     border-radius: 0.5rem;
     border-left: 3px solid rgba(255, 74, 2, 0.726);;
-    animation: slideDown 0.3s ease;
+    animation: fadeIn 0.3s ease;
 }
 
 .submenu p, .submenu div {
