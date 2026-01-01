@@ -10,10 +10,12 @@ const Profile: React.FC = () => {
     //Data from home component
     const { completedCount = 0, streakCount = 0 } = location.state || {};
 
-    //User info state
-    const [name, setName] = useState('Your Name');
-    const [bio, setBio] = useState('Tell us about yourself!');
-    const [theme, setTheme] = useState('dark'); //future use
+    //User info state Hardcoded
+    const name = "Your name"; 
+    const bio = "Tell us about yourself";
+
+    //future use
+    const [theme, setTheme] = useState('dark'); 
 
     console.log(completedCount + streakCount);
 
@@ -35,23 +37,8 @@ const Profile: React.FC = () => {
 
                 <section className="profile-section">
                     <h2>User Info</h2>
-                    <label>
-                        Name:
-                        <input
-                            type="text"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
-                            className="profile-input"
-                        />
-                    </label>
-                    <label>
-                        Bio:
-                        <textarea
-                            value={bio}
-                            onChange={(e) => setBio(e.target.value)}
-                            className="profile-textarea"
-                        />
-                    </label>
+                    <p><strong>Name:</strong> {name}</p>
+                    <p><strong>Bio:</strong> {bio}</p>
                 </section>
 
                 <section className="profile-section">
