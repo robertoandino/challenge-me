@@ -127,3 +127,14 @@
     background: rgba(242, 145, 100, 0.5);
     transform: translateY(-2px);
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-page {
+        padding: 1rem;
+    }
+    .profile-header, .profile-section, .save-button {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+}
