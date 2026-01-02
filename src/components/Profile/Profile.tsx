@@ -32,6 +32,7 @@ const Profile: React.FC = () => {
             <div className="profile-card">
                 <div className="profile-header">
                     <img src={avatar} alt="avatar" className="avatar"/>
+                    <p className="profile-tagline">Consistency beats motivation.</p>
                 </div>
 
                 <section className="profile-section">
@@ -41,6 +42,8 @@ const Profile: React.FC = () => {
                 </section>
 
                 <section className="profile-section">
+                    <h2>Stats</h2>
+                    <div className="profile-stats">
                     <div className="profile-stat-card">
                         <span className="stat-icon">✅</span>
                         <div>
@@ -53,6 +56,7 @@ const Profile: React.FC = () => {
                         <div>
                             <p className="stat-value">{streakCount}</p>
                         </div>
+                    </div>
                     </div>
                 </section>
 
