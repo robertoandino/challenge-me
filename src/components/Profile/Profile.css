@@ -59,7 +59,7 @@
 }
 
 .profile-header:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.35);
     border-top: 1px solid rgba(241, 231, 231, 0.815);
 }
@@ -71,6 +71,12 @@
     border: 4px solid rgba(255, 255, 255, 0.8);
     margin-top: -55px;
     background: #000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.08) rotate(360deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
 }
 
 .profile-tagline {
@@ -95,7 +101,7 @@
 }
 
 .profile-section:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.35);
     border-top: 1px solid rgba(228, 37, 30, 0.815);
 }
