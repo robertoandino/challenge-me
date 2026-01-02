@@ -59,6 +59,37 @@ const TrainingLogModal: React.FC<TrainingLogModalProps> = ({
                     </div>
                 </section>
 
+                {/*Mood After*/}
+                <section>
+                    <h4>Mood After</h4>
+                    <div className="mood-row">
+                        {moods.map((mood) => (
+                            <button
+                                key={mood}
+                                className={`mood-btn ${moodAfter === mood ? "active" : ""}`}
+                                onClick={() => setMoodAfter(mood)}
+                            >
+                                {mood}
+                            </button>
+                        ))}
+                    </div>
+                </section>
+
+                {/*Difficulty*/}
+                <section>
+                    <h4>Difficulty</h4>
+                    <div className="difficulty-row">
+                        {[1, 2, 3, 4, 5].map((level) => (
+                            <span
+                                key={level}
+                                className={`difficulty-dot ${
+                                    difficulty && difficulty >= level ? "filled" : ""
+                                }`}
+                                onClick={() => setDifficulty(level as any)}
+                            />
+                        ))}
+                    </div>
+                </section>
 
             </div>
         </div>
