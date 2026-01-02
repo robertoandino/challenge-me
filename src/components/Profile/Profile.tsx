@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import "./Profile.css";
 import avatar from "../../assets/avatar.jpg";
 //import TrainingLogModal from "../TrainingLogModal/TrainingLogModal";
+import { TrainingLog } from '../../types/TrainingLog.ts';
 
 const Profile: React.FC = () => {
     const location = useLocation();
@@ -19,6 +20,18 @@ const Profile: React.FC = () => {
     const [theme, setTheme] = useState('dark'); 
 
     console.log(completedCount + streakCount);
+
+    //Logs to LocalStorage future use
+    const [logs, setLogs] = useState<TrainingLog[]>(() => {
+        const stored = localStorage.getItem("trainingLogs");
+        return stored ? JSON.parse(stored) : [];
+    })
+
+    const saveLog = (log: TrainingLog) => {
+        const updated = [log, ...logs];
+        setLogs(updated);
+        localStorage.setItem("trainingLogs", JSON.stringify(updated));
+    };
 
     return(
         <div className="profile-page">

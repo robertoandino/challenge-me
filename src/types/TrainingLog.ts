@@ -1,9 +1,9 @@
 export interface TrainingLog {
     id: string;
-    date: string; // YYYY-MM-DD
+    date: string; 
     challenge: string;
-    moodBefore: "😞" | "😐" | "🙂" | "💪";
-    moodAfter: "😞" | "😐" | "🙂" | "💪";
-    difficulty: 1 | 2 | 3 | 4 | 5;
-    takeaway: string;
+    moodBefore: string;
+    moodAfter: string;
+    difficulty: number;
+    takeaway?: string;
 }
