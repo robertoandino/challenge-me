@@ -1,7 +1,7 @@
 /* Main Div */
 .profile-page {
     min-height: 100vh;
-    background: linear-gradient(to bottom right, #111827, #1F2937, #374151);
+    background: linear-gradient(135deg, #eb300a2d, #1d0e72);
     color: white;
     padding: 2rem;
     display: flex;
