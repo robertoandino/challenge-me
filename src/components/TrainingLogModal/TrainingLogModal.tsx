@@ -38,7 +38,30 @@ const TrainingLogModal: React.FC<TrainingLogModalProps> = ({
     }
 
     return (
-        <div>Coming soon</div>
+        <div className="log-overlay">
+            <div className="log-modal">
+                <h2>Log Your Training</h2>
+                <p className="challenge-name">{challengeTitle}</p>
+            
+                {/*Mood Before*/}
+                <section>
+                    <h4>Mood Before</h4>
+                    <div className="mood-row">
+                        {moods.map((mood) => (
+                            <button
+                                key={mood}
+                                className={`mood-btn ${moodBefore === mood ? "active" : ""}`}
+                                onClick={() => setMoodBefore(mood)}
+                            >
+                                {mood}
+                            </button>
+                        ))}
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
     );
 }
 
