@@ -19,12 +19,6 @@ const Profile: React.FC = () => {
 
     console.log(completedCount + streakCount);
 
-    const handleSave = () => {
-        //Save localStorage or state (for now, just log)
-        localStorage.setItem('userProfile', JSON.stringify({ name, bio, theme }));
-        alert('Profile saved!');
-    }
-
     return(
         <div className="profile-page">
             <button className="back-button" onClick={() => window.history.back()}>← Back</button>
@@ -67,7 +61,7 @@ const Profile: React.FC = () => {
                     </div>
                 </section>
 
-                <section className="profile-section">
+                <section className="profile-section settings">
                     <h2>Settings</h2>
                     <label>
                         Theme:
@@ -82,7 +76,6 @@ const Profile: React.FC = () => {
                     </label>
                 </section>
 
-                <button className="save-button" onClick={handleSave}>Save Changes</button>
             </div>
         </div>
     );
