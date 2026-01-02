@@ -54,6 +54,13 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     max-width: 600px;
     width: 100%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-header:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    border-top: 1px solid rgba(241, 231, 231, 0.815);
 }
 
 .avatar {
@@ -77,6 +84,13 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     max-width: 550px;
     width: 100%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    border-top: 1px solid rgba(228, 37, 30, 0.815);
 }
 
 .profile-section h2 {
@@ -113,6 +127,26 @@
     min-height: 60px;
 }
 
+/*Stats section*/
+
+.profile-stat-card {
+    display: flex;
+    align-items: center;
+    margin-top: 8px;
+    gap: 1rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 535px;
+    width: 100%;
+}
+
+.stat-icon {
+    font-size: 25px;
+}
+
 /* Save Button */
 .save-button {
     width: 100%;
@@ -128,7 +162,7 @@
 }
 
 .save-button:hover {
-    background: rgba(242, 145, 100, 0.5);
+    background: rgba(240, 70, 70, 0.5);
     transform: translateY(-2px);
 }
 

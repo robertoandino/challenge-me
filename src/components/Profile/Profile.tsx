@@ -45,7 +45,6 @@ const Profile: React.FC = () => {
                         <span className="stat-icon">✅</span>
                         <div>
                             <p className="stat-value">{completedCount}</p>
-                            <p className="stat-label">Completed</p>
                         </div>
                     </div>
 
@@ -53,7 +52,6 @@ const Profile: React.FC = () => {
                         <span className="stat-icon">🔥</span>
                         <div>
                             <p className="stat-value">{streakCount}</p>
-                            <p className="stat-label">Streak</p>
                         </div>
                     </div>
                 </section>
