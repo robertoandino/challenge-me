@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import { useLocation } from "react-router-dom";
 import "./Profile.css";
 import avatar from "../../assets/avatar.jpg";
+import TrainingLogModal from "../TrainingLogModal/TrainingLogModal";
 
 const Profile: React.FC = () => {
     const location = useLocation();
@@ -63,7 +64,6 @@ const Profile: React.FC = () => {
 
                 <section className="profile-section">
                     <h2>Training Log</h2>
-
                 </section>
 
                 <section className="profile-section settings">
