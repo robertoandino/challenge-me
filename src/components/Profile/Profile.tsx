@@ -41,9 +41,21 @@ const Profile: React.FC = () => {
                 </section>
 
                 <section className="profile-section">
-                    <h2>Stats</h2>
-                    <p>Completed Challenges: {completedCount}</p>
-                    <p>Current Streak: {streakCount}</p>
+                    <div className="profile-stat-card">
+                        <span className="stat-icon">✅</span>
+                        <div>
+                            <p className="stat-value">{completedCount}</p>
+                            <p className="stat-label">Completed</p>
+                        </div>
+                    </div>
+
+                    <div className="profile-stat-card">
+                        <span className="stat-icon">🔥</span>
+                        <div>
+                            <p className="stat-value">{streakCount}</p>
+                            <p className="stat-label">Streak</p>
+                        </div>
+                    </div>
                 </section>
 
                 <section className="profile-section">
