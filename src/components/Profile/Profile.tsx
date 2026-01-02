@@ -46,15 +46,22 @@ const Profile: React.FC = () => {
                     <div className="profile-stats">
                     <div className="profile-stat-card">
                         <span className="stat-icon">✅</span>
-                        <div>
+                        <div className="stat-info">
                             <p className="stat-value">{completedCount}</p>
+                            <p className="stat-label">Completed Challenges</p>
                         </div>
                     </div>
 
                     <div className="profile-stat-card">
                         <span className="stat-icon">🔥</span>
-                        <div>
+                        <div className="stat-info">
                             <p className="stat-value">{streakCount}</p>
+                            <p className="stat-label">
+                                {streakCount === 0
+                                    ? "Start today"
+                                    : `${streakCount}-day streak`
+                                }
+                            </p>
                         </div>
                     </div>
                     </div>
