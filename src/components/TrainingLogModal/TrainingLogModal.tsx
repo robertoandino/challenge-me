@@ -75,7 +75,7 @@ const TrainingLogModal: React.FC<TrainingLogModalProps> = ({
                     </div>
                 </section>
 
-                {/*Difficulty*/}
+                {/* Difficulty*/}
                 <section>
                     <h4>Difficulty</h4>
                     <div className="difficulty-row">
@@ -90,7 +90,28 @@ const TrainingLogModal: React.FC<TrainingLogModalProps> = ({
                         ))}
                     </div>
                 </section>
+                
+                {/* Takeaway */}
+                <section>
+                    <h4>Takeaway</h4>
+                    <input
+                        type="text"
+                        maxLength={120}
+                        placeholder="one thing you noticed today..."
+                        value={takeaway}
+                        onChange={(e) => setTakeaway(e.target.value)}
+                    />
+                </section>
 
+                {/* Actions */}
+                <div className="log-actions">
+                    <button onClick={onClose} className="cancel-btn">
+                        Skip
+                    </button>
+                    <button onClick={handleSave} className="save-btn">
+                        Save Log
+                    </button>
+                </div>
             </div>
         </div>
     );
