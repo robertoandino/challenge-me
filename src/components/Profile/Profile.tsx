@@ -61,6 +61,11 @@ const Profile: React.FC = () => {
                     </div>
                 </section>
 
+                <section className="profile-section">
+                    <h2>Training Log</h2>
+
+                </section>
+
                 <section className="profile-section settings">
                     <h2>Settings</h2>
                     <label>
