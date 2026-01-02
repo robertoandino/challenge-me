@@ -11,8 +11,8 @@ const Profile: React.FC = () => {
     const { completedCount = 0, streakCount = 0 } = location.state || {};
 
     //User info state Hardcoded
-    const name = "Your name"; 
-    const bio = "Tell us about yourself";
+    const name = "John Smith"; 
+    const bio = "Athlete";
 
     //future use
     const [theme, setTheme] = useState('dark'); 
@@ -32,13 +32,12 @@ const Profile: React.FC = () => {
             <div className="profile-card">
                 <div className="profile-header">
                     <img src={avatar} alt="avatar" className="avatar"/>
-                    <h1>Profile</h1>
                 </div>
 
                 <section className="profile-section">
                     <h2>User Info</h2>
-                    <p><strong>Name:</strong> {name}</p>
-                    <p><strong>Bio:</strong> {bio}</p>
+                    <p>{name}</p>
+                    <p>{bio}</p>
                 </section>
 
                 <section className="profile-section">
