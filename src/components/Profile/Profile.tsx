@@ -77,6 +77,29 @@ const Profile: React.FC = () => {
 
                 <section className="profile-section">
                     <h2>Training Log</h2>
+                    
+                    {logs.length === 0 ? (
+                        <p className="training-log">
+                            No entires yet. Complete challenges to build your journey.
+                        </p>
+                    ) : (
+                        <div className="training-log">
+                            {logs.map((log) => (
+                                <div key={log.id} className="log-entry">
+                                    <div className="log-header">
+                                        <span className="log-date">{log.date}</span>
+                                        <span className="log-difficulty">
+                                            {"●".repeat(log.difficulty)}
+                                        </span>
+                                    </div>
+
+                                    <p className="log-challenge">{log.challenge}</p>
+
+                                    
+                                </div>
+                            ))}
+                        </div>
+                    )}
                 </section>
 
                 <section className="profile-section settings">
