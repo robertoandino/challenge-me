@@ -12,6 +12,15 @@ import DailyQuoteCard from "../../components/DailyQuoteCard/DailyQuoteCard";
 //import profileMenu from "../components/ProfileMenu";
 //import ProgressRing from "../components/ProgressRing/ProgressRing";
 
+interface PersistedChallengeState {
+    currentChallenge: string;
+    streakCount: number;
+    completedCount: number;
+    difficulty: string;
+    selectedCategory: ChallengeCategory | "all"
+    challengeHistory: string[];
+    completedDates: string[];
+}
 
 const Home: React.FC = () => {
     //Current challenge
@@ -172,16 +181,22 @@ const Home: React.FC = () => {
 
     //load persisted state once
     useEffect(() => {
-    try {
-        const raw = localStorage.getItem("challengeData");
-        if (raw) {
-            const parsed = JSON.parse(raw);
+        try {
+            const raw = localStorage.getItem("challengeState");
+            if (!raw) return;
+
+            const parsed: PersistedChallengeState = JSON.parse(raw);
+
+            setCurrentChallenge(parsed.currentChallenge || "Time to Train");
+            setStreakCount(parsed.streakCount || 0);
             setCompletedCount(parsed.completedCount || 0);
-            const dates: string[] = parsed.completedDates || [];
-            setCompletedDatesSet(new Set(dates));
-        }
+            setDifficulty(parsed.difficulty || "easy");
+            setSelectedCategory(parsed.selectedCategory || "all");
+            setChallengeHistory(parsed.challengeHistory || []);
+            setCompletedDatesSet(new Set(parsed.completedDates || []));
+            setHasGenerated(!!parsed.currentChallenge);
         } catch (e) {
-            console.warn("Failed to parse challengeData", e);
+            console.warn("Failed to load challenge state", e);
         }
     }, [])
 
