@@ -188,25 +188,61 @@
     margin-right: 18px;
 }
 
-/* Save Button */
-.save-button {
-    width: 100%;
-    padding: 0.75rem;
-    background: rgba(242, 152, 100, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: white;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    backdrop-filter: blur(4px);
-    max-width: 600px;
+/*Training Log Section*/
+.training-log {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.save-button:hover {
-    background: rgba(240, 70, 70, 0.5);
-    transform: translateY(-2px);
+.log-entry {
+    background: rgba(255, 255, 255, 0.04);
+    border-left: 3px solid rgba(240, 70, 70, 0.8);
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    transition: transform 0.2s ease;
 }
 
+.log-entry:hover {
+    transform: translateX(4px);
+}
+
+.log-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.log-difficulty {
+    letter-spacing: 2px;
+}
+
+.log-challenge {
+    font-weight: bold;
+    margin: 0.25rem 0;
+}
+
+.log-mood {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.arrow {
+    opacity: 0.6;
+}
+
+.log-takeaway {
+    margin-top: 0.25rem;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.empty-log {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
 
 /* Animations */
 @keyframes fadeUp {

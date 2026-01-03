@@ -33,6 +33,9 @@ const Profile: React.FC = () => {
         localStorage.setItem("trainingLogs", JSON.stringify(updated));
     };
 
+    //vercel
+    console.log(saveLog)
+
     return(
         <div className="profile-page">
             <button className="back-button" onClick={() => window.history.back()}>← Back</button>
