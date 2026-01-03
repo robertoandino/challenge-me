@@ -34,7 +34,7 @@ const Home: React.FC = () => {
     const [hasGenerated, setHasGenerated] = useState(false);
 
     //History
-    const [challengeHistory, setChallengeHistory] = useState<String[]>([]);
+    const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
     console.log(challengeHistory);
     
     //Streak
@@ -179,7 +179,7 @@ const Home: React.FC = () => {
     }, [])
     
 
-    //load persisted state once
+    //Load persisted state once
     useEffect(() => {
         try {
             const raw = localStorage.getItem("challengeState");
@@ -200,14 +200,18 @@ const Home: React.FC = () => {
         }
     }, [])
 
-    //save on changes
+    //Save Auto
     useEffect(() => {
-        const payload = {
+        const payload: PersistedChallengeState = {
+            currentChallenge,
+            streakCount,
             completedCount,
+            difficulty,
+            selectedCategory,
+            challengeHistory,
             completedDates: Array.from(completedDatesSet),
-        };
-        localStorage.setItem("challengeData", JSON.stringify(payload));
-    }, [completedCount, completedDatesSet]);
+        }
+    })
 
     return (
         <main className="main-container">
