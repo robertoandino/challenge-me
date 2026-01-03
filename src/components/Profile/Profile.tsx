@@ -95,7 +95,15 @@ const Profile: React.FC = () => {
 
                                     <p className="log-challenge">{log.challenge}</p>
 
-                                    
+                                    <div className="log-mood">
+                                        <span>{log.moodBefore}</span>
+                                        <span className="arrow">→</span>
+                                        <span>{log.moodAfter}</span>
+                                    </div>
+
+                                    {log.takeaway && (
+                                        <p className="log-takeway">"{log.takeaway}"</p>
+                                    )}
                                 </div>
                             ))}
                         </div>
