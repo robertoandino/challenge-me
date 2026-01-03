@@ -104,6 +104,7 @@ const Home: React.FC = () => {
         if (completedDisabled) return;
         setCompletedDisabled(true);
         setCompletedCount(prev => prev + 1);
+        setStreakCount(prev => prev + 1);
 
         //Persistence
         const today = new Date().toISOString().slice(0, 10);
