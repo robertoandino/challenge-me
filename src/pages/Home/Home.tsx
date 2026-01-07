@@ -111,7 +111,7 @@ const Home: React.FC = () => {
     //Mark Completed logic
     const handleCompletedClick = () => {
         if (completedDisabled) return;
-        
+
         setCompletedDisabled(true);
         setCompletedCount(prev => prev + 1);
         setStreakCount(prev => prev + 1);
@@ -182,11 +182,11 @@ const Home: React.FC = () => {
 
     //Load persisted state once
     useEffect(() => {
-        try {
-            const raw = localStorage.getItem("challengeState");
-            if (!raw) return;
+        const raw = localStorage.getItem("challengeState");
+        if (!raw) return;
 
-            const parsed: PersistedChallengeState = JSON.parse(raw);
+        try {
+            const parsed = JSON.parse(raw) as Partial<ChallengeState>;
 
             setCurrentChallenge(parsed.currentChallenge || "Time to Train");
             setStreakCount(parsed.streakCount || 0);
@@ -196,10 +196,14 @@ const Home: React.FC = () => {
             setChallengeHistory(parsed.challengeHistory || []);
             setCompletedDatesSet(new Set(parsed.completedDates || []));
             setHasGenerated(!!parsed.currentChallenge);
+
+            if (parsed.completedDates) {
+                setCompletedDatesSet(new Set(parsed.completedDates));
+            }
         } catch (e) {
             console.warn("Failed to load challenge state", e);
         }
-    }, [])
+    }, []);
 
     //Save Auto
     useEffect(() => {
