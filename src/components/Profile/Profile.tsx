@@ -1,16 +1,14 @@
-import React, {useState} from "react";
-import { useLocation } from "react-router-dom";
+import React, {useState, useEffect} from "react";
+//import { useLocation } from "react-router-dom";
 import "./Profile.css";
 import avatar from "../../assets/avatar.jpg";
 //import TrainingLogModal from "../TrainingLogModal/TrainingLogModal";
 import { TrainingLog } from '../../types/TrainingLog.ts';
 
 const Profile: React.FC = () => {
-    const location = useLocation();
-    //const navigate = useNavigate();
-
-    //Data from home component
-    const { completedCount = 0, streakCount = 0 } = location.state || {};
+    //States
+    const [completedCount, setCompletedCount] = useState<number>(0);
+    const [streakCount, setStreakCount] = useState<number>(0);
 
     //User info state Hardcoded
     const name = "John Smith"; 
@@ -18,8 +16,6 @@ const Profile: React.FC = () => {
 
     //future use
     const [theme, setTheme] = useState('dark'); 
-
-    console.log(completedCount + streakCount);
 
     //Logs to LocalStorage future use
     const [logs, setLogs] = useState<TrainingLog[]>(() => {
@@ -35,6 +31,24 @@ const Profile: React.FC = () => {
 
     //vercel
     console.log(saveLog)
+
+    //Local Storage data
+    useEffect(() => {
+        const raw = localStorage.getItem("challengeState");
+        if (!raw) return;
+
+        try {
+            const parsed = JSON.parse(raw) as {
+                streakCount?: number;
+                completedCount?: number;
+            };
+
+            setStreakCount(parsed.streakCount ?? 0);
+            setCompletedCount(parsed.completedCount ?? 0);
+        } catch (err) {
+            console.warn("Failed to parse challengeState", err);
+        }
+    }, []);
 
     return(
         <div className="profile-page">
