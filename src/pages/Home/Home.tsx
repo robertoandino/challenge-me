@@ -240,7 +240,7 @@ const Home: React.FC = () => {
     ]);
 
     //Clear Data
-    const clearChallengeDate = () => {
+    const clearChallengeData = () => {
         //Clear Storage
         localStorage.removeItem("challengeState");
 
@@ -317,6 +317,11 @@ const Home: React.FC = () => {
                     onCopy={() => navigator.clipboard.writeText(currentChallenge)}
                 />
             </div>
+
+            {/*Temporary Reset Button*/}
+            <button onClick={clearChallengeData} className="reset-button">
+                Reset Progress
+            </button>
         </main>
     );
 };
