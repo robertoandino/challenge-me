@@ -11,6 +11,8 @@ import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
 import DailyQuoteCard from "../../components/DailyQuoteCard/DailyQuoteCard";
 //import profileMenu from "../components/ProfileMenu";
 //import ProgressRing from "../components/ProgressRing/ProgressRing";
+import TrainingLogModal from "../../components/TrainingLogModal/TrainingLogModal";
+import { TrainingLog } from "../../types/TrainingLog";
 
 interface ChallengeState {
     currentChallenge: string;
@@ -63,6 +65,9 @@ const Home: React.FC = () => {
     
     //Profile Menu
     const [profileOpen, setProfileOpen] = useState(false);
+
+    //Modal Log
+    const [showLogModal, setShowLogModal] = useState(false);
 
     //Difficulty Selection logic
     const cycleDifficulty = () => {
@@ -126,10 +131,13 @@ const Home: React.FC = () => {
         //Challenge Completed?
         setIsChallengeCompleted(true)
 
+        //Modal
+        setShowLogModal(true);
+        
         //Toast
         setShowCompletedToast(true);
         setTimeout(() => setShowCompletedToast(false), 2000);
-        setTimeout(() => setCompletedDisabled(false), 1000)
+        setTimeout(() => setCompletedDisabled(false), 1000);
     } 
 
     //Daily Challenge logic NOT USED
@@ -255,6 +263,18 @@ const Home: React.FC = () => {
         setHasGenerated(false);
         setIsChallengeCompleted(false);
     }
+
+    //SaveLog
+    const handleSaveLog = (log: TrainingLog) => {
+        const existingLogs = JSON.parse(
+            localStorage.getItem("trainingLogs") || "[]"
+        ) as TrainingLog[];
+
+        localStorage.setItem(
+            "trainingLogs",
+            JSON.stringify([log, ...existingLogs])
+        );     
+    };
 
     return (
         <main className="main-container">
