@@ -12,7 +12,7 @@ import DailyQuoteCard from "../../components/DailyQuoteCard/DailyQuoteCard";
 //import profileMenu from "../components/ProfileMenu";
 //import ProgressRing from "../components/ProgressRing/ProgressRing";
 
-interface PersistedChallengeState {
+interface ChallengeState {
     currentChallenge: string;
     streakCount: number;
     completedCount: number;
@@ -207,7 +207,7 @@ const Home: React.FC = () => {
 
     //Save Auto
     useEffect(() => {
-        const payload: PersistedChallengeState = {
+        const payload: ChallengeState = {
             currentChallenge,
             streakCount,
             completedCount,
