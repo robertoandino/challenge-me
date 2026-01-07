@@ -239,6 +239,23 @@ const Home: React.FC = () => {
         completedDatesSet,
     ]);
 
+    //Clear Data
+    const clearChallengeDate = () => {
+        //Clear Storage
+        localStorage.removeItem("challengeState");
+
+        //Reset State
+        setCurrentChallenge("Time To Train");
+        setStreakCount(0);
+        setCompletedCount(0);
+        setDifficulty("easy");
+        setSelectedCategory("all");
+        setChallengeHistory([]);
+        setCompletedDatesSet(new Set());
+        setHasGenerated(false);
+        setIsChallengeCompleted(false);
+    }
+
     return (
         <main className="main-container">
             {/*Main Header*/}
