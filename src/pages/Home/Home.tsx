@@ -320,7 +320,7 @@ const Home: React.FC = () => {
 
             {/*Temporary Reset Button*/}
             <button onClick={clearChallengeData} className="reset-button">
-                Reset Progress
+                Reset Progress (Dev Temp)
             </button>
         </main>
     );
