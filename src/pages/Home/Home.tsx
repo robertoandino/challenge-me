@@ -36,6 +36,9 @@ const Home: React.FC = () => {
     //History
     const [challengeHistory, setChallengeHistory] = useState<string[]>([]);
     console.log(challengeHistory);
+
+    //For Data pesistence
+    const [hydrated, setHydrated] = useState(false);
     
     //Streak
     const [showStreakReaction, setShowStreakReaction] = useState(false);
@@ -179,17 +182,20 @@ const Home: React.FC = () => {
         setDailyChallenge(getDailyChallenge().text);
     }, [])
     
-
     //Load persisted state once
     useEffect(() => {
         const raw = localStorage.getItem("challengeState");
-        if (!raw) return;
+        
+        if (!raw) {
+            setHydrated(true);
+            return;
+        }
 
         try {
             const parsed = JSON.parse(raw) as Partial<ChallengeState>;
 
             setCurrentChallenge(parsed.currentChallenge || "Time to Train");
-            setStreakCount(parsed.streakCount || 0);
+            setStreakCount(parsed.streakCount ?? 0);
             setCompletedCount(parsed.completedCount || 0);
             setDifficulty(parsed.difficulty || "easy");
             setSelectedCategory(parsed.selectedCategory || "all");
@@ -202,11 +208,15 @@ const Home: React.FC = () => {
             }
         } catch (e) {
             console.warn("Failed to load challenge state", e);
+        } finally {
+            setHydrated(true);
         }
     }, []);
 
     //Save Auto
     useEffect(() => {
+        if (!hydrated) return;
+
         const payload: ChallengeState = {
             currentChallenge,
             streakCount,
@@ -219,6 +229,7 @@ const Home: React.FC = () => {
 
         localStorage.setItem("challengeState", JSON.stringify(payload));
     }, [
+        hydrated,
         currentChallenge,
         streakCount,
         completedCount,
