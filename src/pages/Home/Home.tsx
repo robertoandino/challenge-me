@@ -338,6 +338,15 @@ const Home: React.FC = () => {
                 />
             </div>
 
+            {/*Training Log Modal*/}
+            {showLogModal && (
+                <TrainingLogModal
+                    challengeTitle={currentChallenge}
+                    onClose={() => setShowLogModal(false)}
+                    onSave={handleSaveLog}
+                />
+            )}
+
             {/*Temporary Reset Button*/}
             <button onClick={clearChallengeData} className="reset-button">
                 Reset Progress (Dev Temp)
