@@ -210,8 +210,18 @@ const Home: React.FC = () => {
             selectedCategory,
             challengeHistory,
             completedDates: Array.from(completedDatesSet),
-        }
-    })
+        };
+
+        localStorage.setItem("challengeState", JSON.stringify(payload));
+    }, [
+        currentChallenge,
+        streakCount,
+        completedCount,
+        difficulty,
+        selectedCategory,
+        challengeHistory,
+        completedDatesSet,
+    ]);
 
     return (
         <main className="main-container">
