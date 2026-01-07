@@ -102,7 +102,7 @@ const Home: React.FC = () => {
             setCurrentChallenge(newChallenge.text);
             setIsChallengeCompleted(false);
             setChallengeHistory(prev => [newChallenge.text, ...prev].slice(0, 5));
-            setStreakCount(prev => prev + 1);
+            //setStreakCount(prev => prev + 1);
             setIsGenerating(false);
             setHasGenerated(true);
         }, 500);
@@ -111,6 +111,7 @@ const Home: React.FC = () => {
     //Mark Completed logic
     const handleCompletedClick = () => {
         if (completedDisabled) return;
+        
         setCompletedDisabled(true);
         setCompletedCount(prev => prev + 1);
         setStreakCount(prev => prev + 1);
