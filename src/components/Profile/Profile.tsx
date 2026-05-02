@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 //import { useLocation } from "react-router-dom";
 import "./Profile.css";
-import avatar from "../../assets/avatar.jpg";
+//import avatar from "../../assets/avatar.jpg";
 //import TrainingLogModal from "../TrainingLogModal/TrainingLogModal";
 import { TrainingLog } from '../../types/TrainingLog.ts';
 
@@ -14,6 +14,13 @@ const Profile: React.FC = () => {
     //User info state Hardcoded
     const name = "John Smith"; 
     const bio = "Athlete"; 
+
+    //Derive initials from name dynamically
+    const initials = name
+        .split(" ")
+        .map((n) => n[0])
+        .join("");
+    
 
     //Logs to LocalStorage future use
     const [logs, setLogs] = useState<TrainingLog[]>(() => {
@@ -58,16 +65,16 @@ const Profile: React.FC = () => {
             <button className="back-button" onClick={() => window.history.back()}>← Back</button>
             
             <div className="profile-card">
-                <div className="profile-header">
-                    <img src={avatar} alt="avatar" className="avatar"/>
-                    <p className="profile-tagline">Consistency beats motivation.</p>
-                </div>
 
-                <section className="profile-section">
-                    <h2>User Info</h2>
-                    <p>{name}</p>
-                    <p>{bio}</p>
-                </section>
+                {/* Hero Section */}
+                <div className="hero">
+                    <div className="avatar-wrap">
+                        <div className="avatar-initials" aria-lavel={`Avatar for ${name}`}>
+                            {initials}
+                        </div>
+                        
+                    </div>
+                </div>
 
                 <section className="profile-section">
                     <h2>Stats</h2>
