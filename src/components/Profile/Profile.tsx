@@ -132,20 +132,24 @@ const Profile: React.FC = () => {
 
                 {/** Settings Section */}
                 <section className="profile-section settings">
-                    <h2>Settings</h2>
-                    <label>
-                        Theme:
-                        <select
-                            value={theme}
-                            onChange={() => setTheme("dark")}
-                            className="profile-select"
-                        >
-                            <option value="dark">Dark</option>
-                            <option value="light">Light</option>
-                        </select>
-                    </label>
-                </section>
+                    <p className="sec-label">Settings</p>
+                    <div className="settings-row">
+                        <div>
+                            <p className="settings-label">Dark mode</p>
+                            <p className="settings-sub">Toggle appearance</p>
+                        </div>
 
+                        <label className="toggle" aria-label="Toggle dark mode">
+                            <input
+                                type="checkbox"
+                                checked={theme === "dark"}
+                                onChange={(e) => setTheme(e.target.checked ? "dark" : "light")}
+                            />
+                            <div className="toggle-track" />
+                            <div className="toggle-thumb"/> 
+                        </label>
+                    </div>
+                </section>
             </div>
         </div>
     );
