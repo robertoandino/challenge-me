@@ -244,6 +244,18 @@
     font-size: 0.9rem;
 }
 
+/* Theme to root */
+:root {
+    --bg-page: #0f0f11;
+    --text-primary: #f0effe;
+    --accent: #7F77DD;
+}
+
+[data-theme="light"] {
+    --bg-page: #f4f3fa;
+    --text-primary: #1a1830;
+} 
+
 /* Animations */
 @keyframes fadeUp {
     from {

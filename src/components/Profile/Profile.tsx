@@ -9,13 +9,11 @@ const Profile: React.FC = () => {
     //States
     const [completedCount, setCompletedCount] = useState<number>(0);
     const [streakCount, setStreakCount] = useState<number>(0);
+    const [theme, setTheme] = useState<"dark" | "light">("dark");
 
     //User info state Hardcoded
     const name = "John Smith"; 
-    const bio = "Athlete";
-
-    //future use
-    const [theme, setTheme] = useState('dark'); 
+    const bio = "Athlete"; 
 
     //Logs to LocalStorage future use
     const [logs, setLogs] = useState<TrainingLog[]>(() => {
@@ -29,8 +27,13 @@ const Profile: React.FC = () => {
         localStorage.setItem("trainingLogs", JSON.stringify(updated));
     };
 
-    //vercel
-    console.log(saveLog)
+    //Suppress unused warning until wired up.
+    void saveLog;
+
+    //Apply theme to root element
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme)
+    }, [theme]);
 
     //Local Storage data
     useEffect(() => {
@@ -127,13 +130,14 @@ const Profile: React.FC = () => {
                     )}
                 </section>
 
+                {/** Settings Section */}
                 <section className="profile-section settings">
                     <h2>Settings</h2>
                     <label>
                         Theme:
                         <select
                             value={theme}
-                            onChange={(e) => setTheme(e.target.value)}
+                            onChange={() => setTheme("dark")}
                             className="profile-select"
                         >
                             <option value="dark">Dark</option>
