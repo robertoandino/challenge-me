@@ -31,17 +31,15 @@
 }
 
 
-/* Main Profile card */
+/* Profile card */
 .profile-card {
-    background: rgba(255, 255, 255, 0.062);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    padding: 2rem;
-    max-width: 600px;
-    width: 100%;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    animation: fadeUp 0.8s ease forwards;
+    background: var(--bg-card);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    max-width: 480px;
+    margin: 0 auto;
+    overflow: hidden;
+    transition: background 0.3s ease;
 }
 
 /* Profile header */

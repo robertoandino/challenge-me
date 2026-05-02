@@ -72,10 +72,16 @@ const Profile: React.FC = () => {
                         <div className="avatar-initials" aria-lavel={`Avatar for ${name}`}>
                             {initials}
                         </div>
-                        
+                        <div className="status-dot" title="Active" />
+                    </div>
+                    <div className="hero-info">
+                        <h1 className="hero-name">{name}</h1>
+                        <p className="hero-bio">{bio}</p>
+                        <p className="hero-tagline">Consistency beats motivation.</p>
                     </div>
                 </div>
 
+                {/* Stats Section */}
                 <section className="profile-section">
                     <h2>Stats</h2>
                     <div className="profile-stats">
