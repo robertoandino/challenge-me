@@ -278,7 +278,17 @@
 
 [data-theme="light"] {
     --bg-page: #f4f3fa;
+    --bg-card: #ffffff;
+    --bg-surface: #f8f7fe;
+    --bg-tile: #f0effe;
+
     --text-primary: #1a1830;
+    --text-secondary: #5a5872;
+    --text-tertiary: #9896b0;
+    --text-accent: #534AB7;
+
+    --border: rgba(0, 0, 0, 0.07);
+    --border-hover: rgba(0, 0, 0, 0.14);
 } 
 
 /* Animations */
