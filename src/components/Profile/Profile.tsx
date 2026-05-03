@@ -62,7 +62,19 @@ const Profile: React.FC = () => {
 
     return(
         <div className="profile-page">
-            <button className="back-button" onClick={() => window.history.back()}>← Back</button>
+            {/* Back Button */}
+            <button className="back-btn" onClick={() => window.history.back()}>
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path
+                        d="M9 2L4 7L9 12"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    />
+                </svg>
+                Back
+            </button>
             
             <div className="profile-card">
 

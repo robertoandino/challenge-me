@@ -12,24 +12,24 @@
 }
 
 /* Back button */
-.back-button {
-    align-self: flex-start;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
     cursor: pointer;
-    margin-bottom: 1rem;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    backdrop-filter: blur(4px);
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--text-secondary);
+    padding: 0;
+    margin-bottom: 20px;
+    transition: color 0.15s ease;
 }
 
-.back-button:hover {
-    background: rgba(202, 56, 30, 0.479);
-    transform: translateY(-5px);
+.back-btn:hover {
+    color: var(--text-primary);
 }
-
 
 /* Profile card */
 .profile-card {
