@@ -144,50 +144,29 @@
     margin-bottom: 14px;
 }
 
-/*Stats section*/
-.profile-stats {
+/* Stats grid */
+.stats-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.stat-tile {
+    background: var(--bg-tile);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+}
+
+.stat-icon-row {
     display: flex;
     align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
 }
 
-.profile-stat-card {
-    display: flex;
-    align-items: center;
-    margin-top: 8px;
-    gap: 1rem;
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-}
+/* Small colored dot icon */
 
-.profile-stat-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-    border-top: 1px solid rgba(228, 37, 30, 0.815);
-}
-
-
-.stat-icon {
-    font-size: 25px;
-}
-
-.stat-info {
-    display: flex;
-    align-items: center;
-}
-
-.stat-value {
-    margin-right: 18px;
-}
-
-/*Training Log Section*/
+/* Training Log Section */
 .training-log {
     display: flex;
     flex-direction: column;

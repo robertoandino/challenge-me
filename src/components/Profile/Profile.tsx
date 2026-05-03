@@ -95,28 +95,28 @@ const Profile: React.FC = () => {
 
                 {/* Stats Section */}
                 <section className="profile-section">
-                    <h2>Stats</h2>
-                    <div className="profile-stats">
-                    <div className="profile-stat-card">
-                        <span className="stat-icon">✅</span>
-                        <div className="stat-info">
-                            <p className="stat-value">{completedCount}</p>
-                            <p className="stat-label">Completed Challenges</p>
-                        </div>
-                    </div>
+                    <p className="sec-label">Stats</p>
+                    <div className="stats-grid">
 
-                    <div className="profile-stat-card">
-                        <span className="stat-icon">🔥</span>
-                        <div className="stat-info">
-                            <p className="stat-value">{streakCount}</p>
-                            <p className="stat-label">
-                                {streakCount === 0
-                                    ? "Start today"
-                                    : `${streakCount}-day streak`
-                                }
+                        <div className="stat-tile">
+                            <div className="stat-icon-row">
+                                <div className="dot-icon dot-green" aria-hidden="true">✓</div>
+                                <span className="stat-type-label">Completed</span>
+                            </div>
+                            <p className="stat-num">{completedCount}</p>
+                            <p className="stat-meta">challenges done</p>
+                        </div>
+
+                        <div className="stat-tile">
+                            <div className="stat-icon-row">
+                                <div className="dot-icon dot-purple" aria-hidden="true">↑</div>
+                                <span className="stat-type-label">Streak</span>
+                            </div>
+                            <p className="stat-num streak">{streakCount}</p>
+                            <p className="stat-meta">
+                                {streakCount === 0 ? "Start today" : `${streakCount}-day streak`}
                             </p>
                         </div>
-                    </div>
                     </div>
                 </section>
 
