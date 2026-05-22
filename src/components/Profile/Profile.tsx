@@ -23,9 +23,10 @@ const Profile: React.FC = () => {
         return (localStorage.getItem("theme") as "dark" | "light") ?? "dark";
     });
 
-    //User info state Hardcoded
-    const name = "John Smith"; 
-    const bio = "Athlete"; 
+    //User info + edit state
+    const [isEditing, setIsEditing] = useState(false);
+    const [name, setName] = useState("John Smith");
+    const [bio, setBio] = useState("Athlete");
 
     //Derive initials from name dynamically
     const initials = name
