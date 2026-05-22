@@ -9,6 +9,15 @@ const Profile: React.FC = () => {
     //States
     const [completedCount, setCompletedCount] = useState<number>(0);
     const [streakCount, setStreakCount] = useState<number>(0);
+    const [hoursLogged, setHoursLogged] = useState<number>(0);
+    const [weeklyGoal] = useState<number>(5);
+    const [weeklyDone, setWeeklyDone] = useState<number>(0);
+
+    //For vercel
+    console.log(hoursLogged, weeklyGoal, weeklyDone);
+    setHoursLogged(0);
+    setWeeklyDone(0);
+
     const [theme, setTheme] = useState<"dark" | "light">("dark");
 
     //User info state Hardcoded
