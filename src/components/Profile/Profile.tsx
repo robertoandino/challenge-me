@@ -28,6 +28,11 @@ const Profile: React.FC = () => {
     const [name, setName] = useState("John Smith");
     const [bio, setBio] = useState("Athlete");
 
+    //Notifications toggle
+    const [notifications, setNotifications] = useState<boolean>(() => {
+        return localStorage.getItem("notifications") !== "false";
+    });
+
     //Derive initials from name dynamically
     const initials = name
         .split(" ")
