@@ -81,7 +81,7 @@ const Profile: React.FC = () => {
                 {/* Hero Section */}
                 <div className="hero">
                     <div className="avatar-wrap">
-                        <div className="avatar-initials" aria-lavel={`Avatar for ${name}`}>
+                        <div className="avatar-initials" aria-label={`Avatar for ${name}`}>
                             {initials}
                         </div>
                         <div className="status-dot" title="Active" />
@@ -147,7 +147,7 @@ const Profile: React.FC = () => {
                                     </div>
 
                                     {log.takeaway && (
-                                        <p className="log-takeway">"{log.takeaway}"</p>
+                                        <p className="log-takeaway">"{log.takeaway}"</p>
                                     )}
                                 </div>
                             ))}
