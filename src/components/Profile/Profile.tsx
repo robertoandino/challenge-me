@@ -14,11 +14,14 @@ const Profile: React.FC = () => {
     const [weeklyDone, setWeeklyDone] = useState<number>(0);
 
     //For vercel
-    console.log(hoursLogged, weeklyGoal, weeklyDone);
-    setHoursLogged(0);
-    setWeeklyDone(0);
+    //console.log(hoursLogged + weeklyGoal + weeklyDone);
+    //setHoursLogged(0);
+    //setWeeklyDone(0);
 
-    const [theme, setTheme] = useState<"dark" | "light">("dark");
+    //Theme state initilialises from localStorage so user preference persists across sessions. Defaults to dark.
+    const [theme, setTheme] = useState<"dark" | "light">(() => {
+        return (localStorage.getItem("theme") as "dark" | "light") ?? "dark";
+    });
 
     //User info state Hardcoded
     const name = "John Smith"; 
