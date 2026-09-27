@@ -5,6 +5,22 @@ import "./Profile.css";
 //import TrainingLogModal from "../TrainingLogModal/TrainingLogModal";
 import { TrainingLog } from '../../types/TrainingLog.ts';
 
+//Badge Definitions
+type Badge = {
+    id: string;
+    label: string;
+    icon: string;
+    isUnlocked: (stats: { streak: number; completed: number }) => boolean;
+}
+
+const BADGES: Badge[] = [
+    { id: "first-step", label: "First Challenge", icon: "★", isUnlocked: (s) => s.completed >= 1 },
+    { id: "streak-7", label: "7-Day Streak", icon: "🔥", isUnlocked: (s) => s.streak >= 7 },
+    { id: "streak-30", label: "30-Day Streak", icon: "⚡", isUnlocked: (s) => s.streak >= 30 },
+    { id: "done-10", label: "10 completed", icon: "◆", isUnlocked: (s) => s.completed >= 10 },
+    { id: "done-50", label: "50 completed", icon: "◈", isUnlocked: (s) => s.completed >= 50},
+];
+
 const Profile: React.FC = () => {
     //States
     const [completedCount, setCompletedCount] = useState<number>(0);
