@@ -5,7 +5,7 @@ import "./Profile.css";
 //import TrainingLogModal from "../TrainingLogModal/TrainingLogModal";
 import { TrainingLog } from '../../types/TrainingLog.ts';
 
-/* Badges */
+/* ----------- Badges ------------ */
 
 type Stats = { streak: number; completed: number };
 
@@ -24,6 +24,25 @@ const BADGES: Badge[] = [
     { id: "done-10", label: "10 completed", hint: "Complete 10 challenges", icon: "◆", isUnlocked: (s) => s.completed >= 10 },
     { id: "done-50", label: "50 completed", hint: "Complete 50 challenges", icon: "◈", isUnlocked: (s) => s.completed >= 50},
 ];
+
+/* ----------- Storage + date helpers ------------ */
+
+const readJSON = <T,>(key: string, fallback: T): T => {
+    try {
+        const raw = localStorage.getItem(key);
+        return raw ? (JSON.parse(raw) as T) : fallback;
+    } catch {
+        return fallback;
+    }
+};
+
+const writeJSON = (key: string, value: unknown) => {
+    try {
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch {
+        /* storage unavaible: keep going in memory */
+    }
+}
 
 const Profile: React.FC = () => {
     //States
