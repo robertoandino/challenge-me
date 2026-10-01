@@ -1,3 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,500;12..96,700&display=swap");
+
+/* Tokens (dark is the default; light overrides via <html data-theme="light">) */
+:root {
+    --pf-bg: #0e1424;
+    --pf-panel: #151c31;
+    --pf-line: #243051;
+    --pf-text: #e8ecf5;
+    --pf-muted: #8d99b9;
+    --pf-accent: #6c86ff;
+    --pf-on-accent: #0e1424;
+    --pf-h0: #1b2440;
+    --pf-h1: #2b3f8f;
+    --pf-h2: #4560e0;
+    --pf-h3: #7f95ff;
+}
+
+:root[data-theme="light"] {
+    --pf-bg: #f2f4fa;
+    --pf-panel: #ffffff;
+    --pf-line: #dde2f0;
+    --pf-text: #121a33;
+    --pf-muted: #5b6683;
+    --pf-accent: #2f4bdb;
+    --pf-on-accent: #ffffff;
+    --pf-h0: #e6eaf5;
+    --pf-h1: #b9c5fa;
+    --pf-h2: #7f95f0;
+    --pf-h3: #2f4bdb;
+}
+
+/* Page */
+.pf-page {
+    min-height: 100vh;
+    background: var(--pf-bg);
+    color: var(--pf-text);
+    font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 20px 16px 72px;
+    box-sizing: border-box;
+}
+
+.pf-page *,
+.pf-page *::before,
+.pf-page *::after {
+    box-sizing: border-box;
+}
+
+.pf-shell {
+    max-width: 680px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+
+
 /* Main Div */
 .profile-page {
     min-height: 100vh;
