@@ -42,7 +42,32 @@ const writeJSON = (key: string, value: unknown) => {
     } catch {
         /* storage unavaible: keep going in memory */
     }
+};
+
+// "2026-10-01 parses as UTC by default, which can land on the previous day locally."
+const parseLogDate = (s: string): Date | null => {
+    const m = /^(\d{4})-(\d{2})/.exec(s);
+    const d = m ? new Date(+m[1], +m[2] - 1, +m[3]) : new Date(s);
+    return Number.isNaN(d.getTime()) ? null : d;
 }
+
+const dayKey = (d: Date) => `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
+
+const startOfWeek = (d: Date) => {
+    const x = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+    x.setDate(x.getDate() - ((x.getDay() + 6) % 7)); //Monday start
+    return x;
+}
+
+const formatDay = (d: Date) =>
+    d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+
+const WEEKS = 12;
+const PREVIEW_COUNT = 5;
+
+type THEME = "dark" | "light";
+
+/* ----------- Component ------------ */
 
 const Profile: React.FC = () => {
     //States
