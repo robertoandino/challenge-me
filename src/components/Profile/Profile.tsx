@@ -65,11 +65,11 @@ const formatDay = (d: Date) =>
 const WEEKS = 12;
 const PREVIEW_COUNT = 5;
 
-type THEME = "dark" | "light";
+type Theme = "dark" | "light";
 
 /* ----------- Component ------------ */
 
-const Profile: React.FC = () => {
+/*const Profile: React.FC = () => {
     //States
     const [completedCount, setCompletedCount] = useState<number>(0);
     const [streakCount, setStreakCount] = useState<number>(0);
@@ -144,7 +144,8 @@ const Profile: React.FC = () => {
 
     return(
         <div className="profile-page">
-            {/* Back Button */}
+            {/* Back Button */
+            /*
             <button className="back-btn" onClick={() => window.history.back()}>
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path
@@ -160,8 +161,9 @@ const Profile: React.FC = () => {
             
             <div className="profile-card">
 
-                {/* Hero Section */}
-                <div className="hero">
+                {/* Hero Section */
+               /*
+               <div className="hero">
                     <div className="avatar-wrap">
                         <div className="avatar-initials" aria-label={`Avatar for ${name}`}>
                             {initials}
@@ -175,7 +177,8 @@ const Profile: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Stats Section */}
+                {/* Stats Section */
+                /*
                 <section className="profile-section">
                     <p className="sec-label">Stats</p>
                     <div className="stats-grid">
@@ -237,8 +240,9 @@ const Profile: React.FC = () => {
                     )}
                 </section>
 
-                {/** Settings Section */}
-                <section className="profile-section settings">
+                {/** Settings Section */
+               /*
+               <section className="profile-section settings">
                     <p className="sec-label">Settings</p>
                     <div className="settings-row">
                         <div>
@@ -260,5 +264,136 @@ const Profile: React.FC = () => {
             </div>
         </div>
     );
+/*}*/
+
+function Profile() {
+    const [theme, setTheme] = useState<Theme>(() => {
+        try {
+            return localStorage.getItem("theme") === "light" ? "light" : "dark";
+        } catch {
+            return "dark";
+        }
+    });
+
+    const [profile, setProfile] = useState(() =>
+        readJSON("profile", { name: "John Smith", bio: "Athlete" })
+    );
+    const [isEditing, setIsEditing] = useState(false)
+    const [draft, setdraft] = useState(profile);
+
+    const [weeklyGoal, setWeeklyGoal] = useState<number>(() => readJSON("weeklyGoal", 5));
+    const [showAll, setShowAll] = useState(false);
+
+    //Read once on mount: challengeState is written elsewhere in the app.
+    const [stats] = useState<Stats>(() => {
+        const s = readJSON<{ streakCount?: number; completedCount?: number }>("challengeState", {});
+        return { streak: s.streakCount ?? 0, completed: s.completedCount ?? 0 };
+    })
+
+    const [logs] = useState<TrainingLog[]>(() => {
+        const stored = readJSON<TrainingLog[]>("trainingLogs", []);
+        return Array.isArray(stored) ? stored : [];
+    })
+
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+        try {
+            localStorage.setItem("theme", theme)
+        } catch {
+            /* ignore */
+        }
+    }, [theme]);
+
+    /* Heatmap cells (last 12 weeks, Monday-first) + this week's count */
+    const { cells, weeklyDone } = useMemo(() => {
+        const counts = new Map<string, number>();
+        for (const log of logs) {
+            const d = parseLogDate(log.date);
+            if (d) counts.set(dayKey(d), (counts.get(dayKey(d)) ?? 0) + 1);
+        }
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+        const start = startOfWeek(today);
+        start.setDate(start.getDate() - 7 * (WEEKS - 1));
+
+        const cells = Array.from({ length: WEEKS * 7 }, (_, i) => {
+            const date = new Date(start);
+            date.setDate(start.getDate() + i);
+            return { date, count: counts.get(dayKey(date)) ?? 0, future: date > today };
+        });
+
+        const weeklyDone = cells.slice(-7).reduce((n, c) => n + c.count, 0);
+        return { cells, weeklyDone };
+    }, [logs]);
+
+    const activeDays = cells.filter((c) => c.count > 0).length;
+    const weeklyPct = Math.min(100, Math.round((weeklyDone / weeklyGoal) * 100));
+    const UnlockedCount = BADGES.filter((b) => b.isUnlocked(stats)).length;
+
+    const initials =
+        profile.name
+            .split(" ")
+            .filter(Boolean)
+            .slice(0, 2)
+            .map((n) => n[0])
+            .join("")
+            .toUpperCase() || "?";
+
+    const visibleLogs = showAll ? logs : logs.slice(0, PREVIEW_COUNT);
+
+    const startEdit = () => {
+        setdraft(profile);
+        setIsEditing(true);
+    };
+
+    const saveProfile = (e: React.FormEvent) => {
+        e.preventDefault();
+        const next = { name: draft.name.trim(), bio: draft.bio.trim() };
+        if (!next.name) return;
+        setProfile(next);
+        writeJSON("profile", next);
+        setIsEditing(false);
+    };
+
+    const changeGoal = (delta: number) => {
+        const next = Math.max(1, Math.min(14, weeklyGoal + delta));
+        setWeeklyGoal(next);
+        writeJSON("weeklyGoal", next);
+    };
+
+    return (
+        <div className="pf-page">
+            <div className="pf-shell">
+                {/* Top bar */}
+                <header className="pf-topbar">
+                    <button className="pf-btn" onClick={() => window.history.back()}>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                            <path d="M9 2L4 7L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        Back
+                    </button>
+
+                    <button
+                        className="pf-btn pf-btn-icon"
+                        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                        aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+                    >
+                        {theme === "dark" ? (
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="4" />
+                                <path d="M12 2v2M12 20v2M4.9 4.911.4 1.4M17.7 17.711.4 1.4M2 12h2M20 12h2M4 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+                            </svg>
+                        ) : (
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                                <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+                            </svg>
+                        )}
+                    </button>
+                </header>
+            </div>
+        </div>
+    )
 }
+
 export default Profile;
