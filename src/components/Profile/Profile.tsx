@@ -1,24 +1,28 @@
-import React, {useState, useEffect} from "react";
+import { useMemo, useState, useEffect} from "react";
 //import { useLocation } from "react-router-dom";
 import "./Profile.css";
 //import avatar from "../../assets/avatar.jpg";
 //import TrainingLogModal from "../TrainingLogModal/TrainingLogModal";
 import { TrainingLog } from '../../types/TrainingLog.ts';
 
-//Badge Definitions
+/* Badges */
+
+type Stats = { streak: number; completed: number };
+
 type Badge = {
     id: string;
     label: string;
+    hint: string;
     icon: string;
-    isUnlocked: (stats: { streak: number; completed: number }) => boolean;
+    isUnlocked: (s: Stats) => boolean;
 }
 
 const BADGES: Badge[] = [
-    { id: "first-step", label: "First Challenge", icon: "★", isUnlocked: (s) => s.completed >= 1 },
-    { id: "streak-7", label: "7-Day Streak", icon: "🔥", isUnlocked: (s) => s.streak >= 7 },
-    { id: "streak-30", label: "30-Day Streak", icon: "⚡", isUnlocked: (s) => s.streak >= 30 },
-    { id: "done-10", label: "10 completed", icon: "◆", isUnlocked: (s) => s.completed >= 10 },
-    { id: "done-50", label: "50 completed", icon: "◈", isUnlocked: (s) => s.completed >= 50},
+    { id: "first-step", label: "First Challenge", hint: "Complete 1 challenge", icon: "★", isUnlocked: (s) => s.completed >= 1 },
+    { id: "streak-7", label: "7-Day Streak", hint: "Reach a 7-day streak", icon: "🔥", isUnlocked: (s) => s.streak >= 7 },
+    { id: "streak-30", label: "30-Day Streak", hint: "Reach a 30-day streak", icon: "⚡", isUnlocked: (s) => s.streak >= 30 },
+    { id: "done-10", label: "10 completed", hint: "Complete 10 challenges", icon: "◆", isUnlocked: (s) => s.completed >= 10 },
+    { id: "done-50", label: "50 completed", hint: "Complete 50 challenges", icon: "◈", isUnlocked: (s) => s.completed >= 50},
 ];
 
 const Profile: React.FC = () => {
