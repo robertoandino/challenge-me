@@ -436,6 +436,21 @@ function Profile() {
                         </div>
                     )};
                 </section>
+
+                {/* Streak + Heatmap */}
+                <section className="pf-streak" aria-labelledby="pf-streak-title">
+                    <div className="pf-streak-head">
+                        <h2 id="pf-streak-title" className="pf-streak-num">
+                            {stats.streak}
+                            <span className="pf-streak-unit">{stats.streak === 1 ? " day" : " days"} in a row</span>
+                        </h2>
+                        <p className="pf-muted">
+                            {stats.streak === 0
+                                ? "Complete a challenge today to start a streak"
+                                : "Consistency beats motivation"}
+                        </p>
+                    </div>
+                </section>
             </div>
         </div>
     )
