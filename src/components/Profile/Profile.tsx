@@ -279,7 +279,7 @@ function Profile() {
         readJSON("profile", { name: "John Smith", bio: "Athlete" })
     );
     const [isEditing, setIsEditing] = useState(false)
-    const [draft, setdraft] = useState(profile);
+    const [draft, setDraft] = useState(profile);
 
     const [weeklyGoal, setWeeklyGoal] = useState<number>(() => readJSON("weeklyGoal", 5));
     const [showAll, setShowAll] = useState(false);
@@ -343,7 +343,7 @@ function Profile() {
     const visibleLogs = showAll ? logs : logs.slice(0, PREVIEW_COUNT);
 
     const startEdit = () => {
-        setdraft(profile);
+        setDraft(profile);
         setIsEditing(true);
     };
 
@@ -391,6 +391,51 @@ function Profile() {
                         )}
                     </button>
                 </header>
+
+                {/* Identity */}
+                <section className="pf-hero">
+                    <div className="pf-avatar" aria-hidden="true">{initials}</div>
+                    
+                    {isEditing ? (
+                        <form
+                            className="pf-edit"
+                            onSubmit={saveProfile}
+                            onKeyDown={(e) => e.key === "Escape" && setIsEditing(false)}
+                        >
+                            <input 
+                                className="pf-input pf-input-name"
+                                value={draft.name}
+                                maxLength={40}
+                                onChange={(e) => setDraft({ ...draft, name: e.target.value })}
+                                aria-label="Name"
+                                placeholder="Your name"
+                                autoFocus
+                            />
+                            <input
+                                className="pf-input"
+                                value={draft.bio}
+                                maxLength={80}
+                                onChange={(e) => setDraft({ ...draft, bio: e.target.value })}
+                                aria-label="Bio"
+                                placeholder="A line about you"
+                            />
+                            <div className="pf-edit-actions">
+                                <button type="submit" className="pf-btn pf-btn-primary" disabled={!draft.name.trim()}>
+                                    Save changes
+                                </button>
+                                <button type="button" className="pf-btn" onClick={() => setIsEditing(false)}>
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    ) : (
+                        <div className="pf-hero-info">
+                            <h1 className="pf-name">{profile.name}</h1>
+                            <p className="pf-bio">{profile.bio}</p>
+                            <button className="pf-link" onClick={startEdit}>Edit profile</button>
+                        </div>
+                    )};
+                </section>
             </div>
         </div>
     )
