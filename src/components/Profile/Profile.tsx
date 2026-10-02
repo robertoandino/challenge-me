@@ -450,6 +450,21 @@ function Profile() {
                                 : "Consistency beats motivation"}
                         </p>
                     </div>
+
+                    <div
+                        className="pf-heatmap"
+                        role="img"
+                        aria-label={`Activity over the last ${WEEKS} weeks: ${activeDays} active days`}
+                    >
+                        {cells.map((c) => (
+                            <span
+                                key={c.date.toISOString()}
+                                className={`pf-cell lv${Math.min(c.count, 3)}${c.future ? " future" : ""}`}
+                                title={`${formatDay(c.date)}: ${c.count} ${c.count === 1 ? "challenge" : "challenges"}`}
+                            />
+                        ))}
+                    </div>
+
                 </section>
             </div>
         </div>
