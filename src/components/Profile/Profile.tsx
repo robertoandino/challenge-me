@@ -465,7 +465,17 @@ function Profile() {
                         ))}
                     </div>
 
+                    <div className="pf-legend" aria-hidden="true">
+                        <span>Less</span>
+                        <span className="pf-cell 1v0" />
+                        <span className="pf-cell 1v1" />
+                        <span className="pf-cell 1v2" />
+                        <span className="pf-cell 1v3" />
+                    </div>
                 </section>
+
+                {/* Numbers */}
+                
             </div>
         </div>
     )
