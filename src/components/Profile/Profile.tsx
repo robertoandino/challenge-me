@@ -533,7 +533,44 @@ function Profile() {
                     </ul>
                 </section>
 
-                
+                {/* Training log */}
+                <section aria-labelledby="pf-log-title">
+                    <h2 id="pf-log-title" className="pf-h2">Training log</h2>
+
+                    {logs.length === 0 ? (
+                        <p className="pf-empty">
+                            No entries yet. Finish a challenge and log it to start your history
+                        </p>
+                    ) : (
+                        <>
+                            <ol className="pf-log">
+                                {visibleLogs.map((log) => (
+                                    <li key={log.id} className="pf-entry">
+                                        <div className="pf-entry-top">
+                                            <time className="pf-muted">{log.date}</time>
+                                            <span className="pf-dots" aria-label={`Difficulty ${log.difficulty}`}>
+                                                {"●".repeat(Math.max(0, Math.min(10, log.difficulty)))}
+                                            </span>
+                                        </div>
+                                        <p className="pf-entry-title">{log.challenge}</p>
+                                        <p className="pf-mood">
+                                            <span>{log.moodBefore}</span>
+                                            <span aria-label="to">→</span>
+                                            <span>{log.moodAfter}</span>
+                                        </p>
+                                        {log.takeaway && <p className="pf-takeaway">"{log.takeaway}"</p>}
+                                    </li>
+                                ))}
+                            </ol>
+                            
+                            {logs.length > PREVIEW_COUNT && (
+                                <button className="pf-link" onClick={() => setShowAll((v) => !v)}>
+                                    {showAll ? "Show fewer" : `Show all ${logs.length} entries`}
+                                </button>
+                            )}
+                        </>
+                    )}
+                </section>
             </div>
         </div>
     )
