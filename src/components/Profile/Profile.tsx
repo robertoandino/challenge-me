@@ -475,7 +475,31 @@ function Profile() {
                 </section>
 
                 {/* Numbers */}
-                
+                <section className="pf-numbers">
+                    <div>
+                        <p className="pf-big">{stats.completed}</p>
+                        <p className="pf-muted">challenges completed</p>
+                    </div>
+                    <div>
+                        <p className="pf-big">{activeDays}</p>
+                        <p className="pf-muted">active days, last {WEEKS} weeks</p>
+                    </div>
+                    <div className="pf-goal">
+                        <div className="pf-goal-row">
+                            <p className="pf-big">
+                                {weeklyDone}<span className="pf-goal-of">/{weeklyGoal}</span>
+                            </p>
+                            <div className="pf-stepper" role="group" aria-label="Weekly goal">
+                                <button onClick={() => changeGoal(-1)} aria-label="Lower weekly goal" disabled={weeklyGoal <= 1}>
+                                    -
+                                </button>
+                                <button onClick={() => changeGoal(1)} aria-label="Raise weekly goal" disabled={weeklyGoal >= 14}> 
+                                    +
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     )
