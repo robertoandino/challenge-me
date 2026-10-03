@@ -329,7 +329,7 @@ function Profile() {
 
     const activeDays = cells.filter((c) => c.count > 0).length;
     const weeklyPct = Math.min(100, Math.round((weeklyDone / weeklyGoal) * 100));
-    const UnlockedCount = BADGES.filter((b) => b.isUnlocked(stats)).length;
+    const unlockedCount = BADGES.filter((b) => b.isUnlocked(stats)).length;
 
     const initials =
         profile.name
@@ -513,6 +513,27 @@ function Profile() {
                 </section>
 
                 {/* Badges */}
+                <section aria-labelledby="pf-badges-title">
+                    <h2 id="pf-badges-title" className="pf-h2">
+                        Badges <span className="pf-muted">{unlockedCount} of {BADGES.length}</span>
+                    </h2>
+                    <ul className="pf-badges"> 
+                        {BADGES.map((b) => {
+                            const unlocked = b.isUnlocked(stats);
+                            return (
+                                <li key={b.id} className={`pf-badge${unlocked ? "on" : ""}`} >
+                                    <span className="pf-badge-icon">{b.icon}</span>
+                                    <span className="pf-badge-text">
+                                        <span className="pf-badge-label">{b.label}</span>
+                                        {!unlocked && <span className="pf-badge-hint">{b.hint}</span>}
+                                    </span>
+                                </li>
+                            );
+                        })}
+                    </ul>
+                </section>
+
+                
             </div>
         </div>
     )
