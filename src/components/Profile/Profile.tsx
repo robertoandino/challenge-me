@@ -498,8 +498,21 @@ function Profile() {
                                 </button>
                             </div>
                         </div>
+                        <div
+                            className="pf-bar"
+                            role="progressbar"
+                            aria-valuemin={0}
+                            aria-valuemax={weeklyGoal}
+                            aria-valuenow={Math.min(weeklyDone, weeklyGoal)}
+                            aria-label="Weekly goal progress"
+                        >
+                            <div className="pf-bar-fill" style={{ width: `${weeklyPct}%`}} />
+                        </div>
+                        <p className="pf-muted">this week's goal</p>
                     </div>
                 </section>
+
+                {/* Badges */}
             </div>
         </div>
     )
