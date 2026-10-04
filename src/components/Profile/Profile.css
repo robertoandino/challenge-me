@@ -128,6 +128,61 @@
     align-items: center;
 }
 
+/* Hero */
+.pf-hero {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.pf-avatar {
+    flex: none;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--pf-on-accent);
+    background: var(--pf-accent);
+}
+
+.pf-hero-info {
+    min-width: 0;
+}
+
+.pf-name {
+    font-size: clamp(1.75rem, 5vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02rem;
+    overflow-wrap: anywhere;
+}
+
+.pf-bio {
+    margin-top: 4px;
+    color: var(--pf-muted);
+}
+
+.pf-edit {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pf-input {
+    width: 100%;
+    font: inherit;
+    color: var(--pf-text);
+    background: var(--pf-panel);
+    border: 1px solid var(--pf-line);
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
 /* Main Div */
 .profile-page {
     min-height: 100vh;
