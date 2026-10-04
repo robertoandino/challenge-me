@@ -183,6 +183,17 @@
     padding: 10px 12px;
 }
 
+.pf-input-name {
+    font-weight: 700;
+    font-size: 1.25rem;
+}
+
+.pf-edit-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+}
+
 /* Main Div */
 .profile-page {
     min-height: 100vh;
