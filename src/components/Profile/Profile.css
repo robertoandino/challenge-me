@@ -374,6 +374,22 @@
     filter: grayscale(1);
 }
 
+.pf-badge.on .pf-badge-icon {
+    filter: none;
+    background: var(--pf-h1);
+}
+
+.pf-badge-text {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.pf-badge-hint {
+    font-size: 0.75rem;
+    color: var(--pf-muted);
+}
+
 /* Main Div */
 .profile-page {
     min-height: 100vh;
