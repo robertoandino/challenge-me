@@ -243,7 +243,28 @@
     display: block;
 }
 
+.pf-cell.lv1 { background: var(--pf-h1); }
+.pf.cell.lv2 { background: var(--pf-h2); }
+.pf-cell.lv3 { background: var(--pf-h3); }
+.pf-cell.future { opacity: 0.35; }
 
+.pf-legend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    font-size: 0.75rem;
+    color: var(--pf-muted);
+}
+
+.pf-legen .pf-cell {
+    width: 12px;
+    aspect-ratio: auto;
+    height: 12px;
+}
+
+.pf-legend span:first-child { margin-right: 4px; }
+.pf-legend span:last-child { margin-left: 4px; }
 
 /* Main Div */
 .profile-page {
