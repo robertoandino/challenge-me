@@ -434,7 +434,7 @@ function Profile() {
                             <p className="pf-bio">{profile.bio}</p>
                             <button className="pf-link" onClick={startEdit}>Edit profile</button>
                         </div>
-                    )};
+                    )}
                 </section>
 
                 {/* Streak + Heatmap */}
