@@ -390,6 +390,62 @@
     color: var(--pf-muted);
 }
 
+/* Training Log */
+.pf-empty {
+    color: var(--pf-muted);
+    padding: 20px;
+    border: 1px dashed var(--pf-line);
+    border-radius: 12px;
+}
+
+.pf-entry {
+    padding: 4px 0 24px 20px;
+    position: relative;
+}
+
+.pf-entry::before {
+    content: "";
+    position: absolute;
+    left: -6px;
+    top: 9px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--pf-accent);
+}
+
+.pf-entry-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.pf-dots {
+    color: var(--pf-accent);
+    font-size: 0.625rem;
+    letter-spacing: 2px;
+}
+
+.pf-entry-title {
+    margin-top: 4px;
+    font-weight: 500;
+    font-size: 1.0625rem;
+}
+
+.pf-mood {
+    margin-top: 6px;
+    display: flex;
+    gap: 8px;
+    color: var(--pf-muted);
+}
+
+.pf-takeaway {
+    margin-top: 8px;
+    max-width: 60ch;
+    font-style: italic;
+    color: var(--pf-muted);
+}
+
 /* Main Div */
 .profile-page {
     min-height: 100vh;
