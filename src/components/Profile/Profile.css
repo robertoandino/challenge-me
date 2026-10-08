@@ -341,6 +341,39 @@
     gap: 12px;
 }
 
+/* Badges */
+.pf-badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 10px;
+}
+
+.pf-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border: 1px dashed var(--pf-line);
+    border-radius: 12px;
+    opacity: 0.6;
+}
+
+.pf-badge.on {
+    opacity: 1;
+    border: 1px solid var(--pf-accent);
+}
+
+.pf-badge-icon {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--pf-h0);
+    filter: grayscale(1);
+}
+
 /* Main Div */
 .profile-page {
     min-height: 100vh;
