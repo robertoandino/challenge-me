@@ -315,6 +315,32 @@
     cursor: not-allowed;
 }
 
+.pf-bar {
+    height: 6px;
+    margin: 10px 0 8px;
+    border-radius: 999px;
+    background: var(--pf-h0);
+    overflow: hidden;
+}
+
+.pf-bar-fill {
+    height: 100%;
+    background: var(--pf-accent);
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+/* Section headings */
+.pf-h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.01rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
 /* Main Div */
 .profile-page {
     min-height: 100vh;
