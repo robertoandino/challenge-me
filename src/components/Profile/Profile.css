@@ -266,6 +266,55 @@
 .pf-legend span:first-child { margin-right: 4px; }
 .pf-legend span:last-child { margin-left: 4px; }
 
+/* Numbers */
+.pf-numbers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.pf-big {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+}
+
+.pf-goal-of {
+    color: var(--pf-muted);
+    font-weight: 500;
+}
+
+.pf-goal-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.pf-stepper {
+    display: flex;
+    gap: 4px;
+}
+
+.pf-stepper button {
+    width: 28px;
+    height: 28px;
+    font: inherit;
+    line-height: 1;
+    color: var(--pf-text);
+    background: transparent;
+    border: 1px solid var(--pf-line);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.pf-stepper button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
 /* Main Div */
 .profile-page {
     min-height: 100vh;
