@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&display=swap");
 
-/* Shared tokens */
+/* Shared tokens. Dark theme is the default*/
 :root {
     --cm-font: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
 
@@ -18,4 +18,20 @@
     --cm-h1: #5e3517;
     --cm-h2: #a85f17;
     --cm-h3: #f0a13a;
+}
+
+:root[data-theme="light"] {
+    --cm-bg: #f5f2fa;
+    --cm-bg-image: linear-gradient(135deg, #f5f2fa 0%, #fbeee2 100%);
+    --cm-panel: #ffffff;
+    --cm-line: #e2dcee;
+    --cm-text: #1a1633;
+    --cm-muted: #5d5878;
+    --cm-accent: #b35a00;
+    --cm-on-accent: #ffffff;
+    
+    --cm-h0: #ebe6f2;
+    --cm-h1: #f6d2a4;
+    --cm-h2: #ea9a44;
+    --cm-h3: #b35a00;
 }
