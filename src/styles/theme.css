@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&display=swap");
+
+/* Shared tokens */
+:root {
+    --cm-font: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+    --cm-bg: #080c3c;
+    --cm-b-image: linear-gradient(135deg, #060a40 0%, #4d1212 100%);
+    --cm-panel: #151a40;
+    --cm-line: #2c3366;
+    --cm-text: #f1f3fb;
+    --cm-muted: #9aa3c7;
+    --cm-accent: #e1851d;
+    --cm-on-accent: #1a0d02;
+
+    /* Activity heatmap, low to high */
+    --cm-h0: #1b2150;
+    --cm-h1: #5e3517;
+    --cm-h2: #a85f17;
+    --cm-h3: #f0a13a;
+}
