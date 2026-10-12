@@ -7,3 +7,18 @@ export const KEYS = {
     profile: "profile",
     weeklyGoal: "weeklyGoal",
 } as const;
+
+export type Difficulty = "easy" | "medium" | "hard";
+export const DIFFICULTIES: readonly Difficulty[] = ["easy", "medium", "hard"];
+
+export const DEFAULT_CHALLENGE = "Time to train";
+
+export interface ChallengeState {
+    currentChallenge: string;
+    difficulty: Difficulty;
+    selectedCategory: ChallengeCategory | "all";
+    completedDates: string[];
+    completedCount: number;
+    hasGenerated: boolean;
+    isChallengeCompleted: boolean;
+}
