@@ -17,6 +17,7 @@ export interface ChallengeState {
     currentChallenge: string;
     difficulty: Difficulty;
     selectedCategory: ChallengeCategory | "all";
+    challengeHistory: string[];
     completedDates: string[];
     completedCount: number;
     hasGenerated: boolean;
@@ -67,5 +68,21 @@ export function calcStreak(dates: ReadonlySet<string>): number {
         day.setDate(day.getDate() - 1);
     }
     return n;
+}
+
+/* Challenge State */
+
+export function loadChallengeState(): ChallengeState {
+    const s = readJSON<Partial<ChallengeState>>(KEYS.challengeState, {});
+    return {
+        currentChallenge: s.currentChallenge || DEFAULT_CHALLENGE,
+        difficulty: DIFFICULTIES.includes(s.difficulty as Difficulty) ? (s.difficulty as Difficulty as Difficulty) : "easy",
+        selectedCategory: s.selectedCategory || "all",
+        challengeHistory: Array.isArray(s.challengeHistory) ? s.challengeHistory : [],
+        completedDates: Array.isArray(s.completedDates) ? s.completedDates : [],
+        completedCount: s.completedCount ?? 0,
+        hasGenerated: !!s.hasGenerated,
+        isChallengeCompleted: !!s.isChallengeCompleted,
+    };
 }
 
