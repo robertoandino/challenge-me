@@ -86,3 +86,22 @@ export function loadChallengeState(): ChallengeState {
     };
 }
 
+/* Theme */
+
+export type Theme = "dark" | "light";
+
+export function loadTheme(): Theme {
+    try {
+        return localStorage.getItem(KEYS.theme) === "light" ? "light" : "dark";
+    } catch {
+        return "dark";
+    }
+}
+
+export function saveTheme(theme: Theme): void {
+    try {
+        localStorage.setItem(KEYS.theme, theme);
+    } catch {
+        /* ignore */
+    }
+}
