@@ -34,3 +34,19 @@ export function readJSON<T>(key: string, fallback: T): T {
     }
 }
 
+export function writeJSON(key: string, value: unknown): void {
+    try {
+        localStorage.setItem(key, JSON.stringify(value));
+    } catch {
+        /* storage unavailable (private mode / quota): keep running in memory */
+    }
+}
+
+export function removeKey(key: string): void {
+    try {
+        localStorage.removeItem(key);
+    } catch {
+        /* ignore */
+    }
+}
+
