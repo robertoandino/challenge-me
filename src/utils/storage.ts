@@ -22,3 +22,15 @@ export interface ChallengeState {
     hasGenerated: boolean;
     isChallengeCompleted: boolean;
 }
+
+/* LocalStorage (never throws) */
+
+export function readJSON<T>(key: string, fallback: T): T {
+    try {
+        const raw = localStorage.getItem(key);
+        return raw ? (JSON.parse(raw) as T) : fallback;
+    } catch {
+        return fallback;
+    }
+}
+
