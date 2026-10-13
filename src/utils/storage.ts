@@ -50,3 +50,22 @@ export function removeKey(key: string): void {
     }
 }
 
+/* Dates */
+
+// Local-time YYYY-MM-DD. toISOString() is UTC and shifts the date in the evening for anyone west of UTC.
+export const dateKey = (d: Date = new Date()): string =>
+    `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+
+//Consecutive days ending today. If today isn't done yet, the streak is still alive until midnight.
+export function calcStreak(dates: ReadonlySet<string>): number {
+    const day = new Date();
+    if (!dates.has(dateKey(day))) day.setDate(day.getDate() - 1);
+
+    let n = 0;
+    while (dates.has(dateKey(day))) {
+        n++;
+        day.setDate(day.getDate() - 1);
+    }
+    return n;
+}
+
