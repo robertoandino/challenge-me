@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { challenges } from "../../data/challenges";
-import { ChallengeCategory } from "../../data/Challenge";
+import type { ChallengeCategory } from "../../data/Challenge";
 import { quotes, Quote } from "../../data/quotes";
+import "../../styles/theme.css";
 import "./Home.css";
 import "../responsive.css";
 import Header from "../../components/Header/Header";
