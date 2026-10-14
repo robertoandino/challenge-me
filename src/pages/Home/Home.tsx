@@ -14,8 +14,22 @@ import DailyQuoteCard from "../../components/DailyQuoteCard/DailyQuoteCard";
 //import ProgressRing from "../components/ProgressRing/ProgressRing";
 import TrainingLogModal from "../../components/TrainingLogModal/TrainingLogModal";
 import { TrainingLog } from "../../types/TrainingLog";
+import {
+    DEFAULT_CHALLENGE,
+    DIFFICULTIES,
+    KEYS,
+    calcStreak,
+    dateKey,
+    loadChallengeState,
+    loadTheme,
+    readJSON,
+    removeKey,
+    writeJSON,
+    type ChallengeState,
+    type Difficulty,
+} from "../../utils/storage";
 
-interface ChallengeState {
+/*interface ChallengeState {
     currentChallenge: string;
     streakCount: number;
     completedCount: number;
@@ -23,7 +37,7 @@ interface ChallengeState {
     selectedCategory: ChallengeCategory | "all"
     challengeHistory: string[];
     completedDates: string[];
-}
+}*/
 
 const Home: React.FC = () => {
     //Current challenge
