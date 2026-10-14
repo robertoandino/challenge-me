@@ -29,15 +29,13 @@ import {
     type Difficulty,
 } from "../../utils/storage";
 
-/*interface ChallengeState {
-    currentChallenge: string;
-    streakCount: number;
-    completedCount: number;
-    difficulty: string;
-    selectedCategory: ChallengeCategory | "all"
-    challengeHistory: string[];
-    completedDates: string[];
-}*/
+const CATEGORIES: readonly (ChallengeCategory | "all")[] = ["all", "physical", "mental", "creative", "social"];
+
+const nextOf = <T,>(list: readonly T[], current: T): T => 
+    list[(list.indexOf(current) + 1) % list.length];
+
+// Stable number per calendar day (local time), used to pick the daily quote and challenge.
+const daySeed = (d = new Date()) => d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
 
 const Home: React.FC = () => {
     //Current challenge
