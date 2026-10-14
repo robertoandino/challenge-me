@@ -50,7 +50,13 @@ function Home() {
     const [hasGenerated, setHasGenerated] = useState(saved.hasGenerated);
     const [isChallengeCompleted, setIsChallengeCompleted] = useState(saved.isChallengeCompleted);
 
-    
+    const [isGenerating, setIsGenerating] = useState(false);
+    const [emptyMessage, setEmptyMessage] = useState("");
+    const [showStreakReaction, setShowStreakReaction] = useState(false);
+    const [toast, setToast] = useState<{ id: number; text: string } | null>(null);
+    const [showLogModal, setShowLogModal] = useState(false);
+    const [profileOpen, setProfileOpen] = useState(false);
+
 }
 
 export default Home;
