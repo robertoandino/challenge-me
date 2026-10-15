@@ -131,8 +131,17 @@ function Home() {
                 setIsGenerating(false);
                 return;
             }
-            
 
+            // Avoid repeating the last few challenges unless the pool is too small.
+            const fresh = pool.filter((c) => !challengeHistory.includes(c.text));
+            const choices = fresh.length > 0 ? fresh : pool;
+            const next = choices[Math.floor(Math.random() * choices.length)];
+
+            setCurrentChallenge(next.text);
+            setChallengeHistory((prev) => [next.text, ...prev].slice(0, 5));
+            setIsChallengeCompleted(false);
+            setHasGenerated(true);
+            setIsGenerating(false);
         }, 500)
     }
 }
