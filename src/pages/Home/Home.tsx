@@ -63,7 +63,18 @@ function Home() {
     const dailyChallenge = useMemo(() => challenges[daySeed() % challenges.length]?.text ?? "", []);
     const dailyQuote = useMemo(() => quotes[daySeed() % quotes.length] ?? null, []);
 
+    /* Timers are tracked so they are cleared on unmount and never stack. */
+    const timers = useRef<number[]>([]);
+    const later = (fn: () => void, ms: number) => {
+        timers.current.push(window.setTimeout(fn, ms));
+    };
+    useEffect(() => {
+        const pending = timers.current;
+        return () => pending.forEach(clearTimeout);
+    }, []);
+
     
+
 }
 
 export default Home;
