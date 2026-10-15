@@ -41,7 +41,7 @@ function Home() {
     // Everything persisted is read once, synchronously, so there is no flash or flag.
     const [saved] = useState(loadChallengeState);
 
-    const [currentChellenge, setCurrentChallenge] = useState(saved.currentChallenge);
+    const [currentChallenge, setCurrentChallenge] = useState(saved.currentChallenge);
     const [difficulty, setDifficulty] = useState<Difficulty>(saved.difficulty);
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | "all">(saved.selectedCategory);
     const [challengeHistory, setChallengeHistory] = useState<string[]>(saved.challengeHistory);
@@ -73,8 +73,36 @@ function Home() {
         return () => pending.forEach(clearTimeout);
     }, []);
 
-    
+    /* Apply the saved theme on this page too (Profile component owns the toggle). */
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", loadTheme());
+    }, []);
 
+    /* Persist on every change. */
+    useEffect(() => {
+        const payload: ChallengeState = {
+            currentChallenge,
+            difficulty,
+            selectedCategory,
+            challengeHistory,
+            completedDates: Array.from(completedDates),
+            completedCount,
+            hasGenerated,
+            isChallengeCompleted,
+        };
+        writeJSON(KEYS.challengeState, payload);
+    }, [
+        currentChallenge,
+        difficulty,
+        selectedCategory,
+        challengeHistory,
+        completedDates,
+        completedCount,
+        hasGenerated,
+        isChallengeCompleted,
+    ]);
+
+    
 }
 
 export default Home;
