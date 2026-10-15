@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useMemo, useRef, useEffect } from "react";
 import { challenges } from "../../data/challenges";
 import type { ChallengeCategory } from "../../data/Challenge";
 import { quotes, Quote } from "../../data/quotes";
@@ -57,6 +57,13 @@ function Home() {
     const [showLogModal, setShowLogModal] = useState(false);
     const [profileOpen, setProfileOpen] = useState(false);
 
+    // The streak is never stored: it is always derived from the days you completed something.
+    const streakCount = useMemo(() => calcStreak(completedDates), [completedDates]);
+
+    const dailyChallenge = useMemo(() => challenges[daySeed() % challenges.length]?.text ?? "", []);
+    const dailyQuote = useMemo(() => quotes[daySeed() % quotes.length] ?? null, []);
+
+    
 }
 
 export default Home;
