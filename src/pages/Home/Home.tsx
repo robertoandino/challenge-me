@@ -28,6 +28,7 @@ import {
     type ChallengeState,
     type Difficulty,
 } from "../../utils/storage";
+import { flushSync } from "react-dom";
 
 const CATEGORIES: readonly (ChallengeCategory | "all")[] = ["all", "physical", "mental", "creative", "social"];
 
@@ -175,6 +176,28 @@ function Home() {
         const existing = readJSON<TrainingLog[]>(KEYS.trainingLogs, []);
         writeJSON(KEYS.trainingLogs, [log, ...(Array.isArray(existing) ? existing : [])]);
     };
+
+    /* Temp Dev use only */
+    const clearChallengeData = () => {
+        if (!window.confirm("Reset all progress? This clears your streak, stats and training log.")) return;
+
+        removeKey(KEYS.trainingLogs);
+        setCurrentChallenge(DEFAULT_CHALLENGE);
+        setDifficulty("easy");
+        setSelectedCategory("all");
+        setChallengeHistory([]);
+        setCompletedDates(new Set());
+        setCompletedCount(0);
+        setHasGenerated(false);
+        setIsChallengeCompleted(false);
+        setEmptyMessage("");
+    };
+
+    return(
+        <main className="main-container">
+
+        </main>
+    )
 }
 
 export default Home;
