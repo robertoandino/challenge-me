@@ -142,7 +142,23 @@ function Home() {
             setIsChallengeCompleted(false);
             setHasGenerated(true);
             setIsGenerating(false);
-        }, 500)
+        }, 500);
+    };
+
+    /* Complete */
+    const handleCompletedClick = () => {
+        if (!hasGenerated || isChallengeCompleted || isGenerating) return;
+
+        setIsChallengeCompleted(true);
+        setCompletedCount((n) => n + 1);
+        setCompletedDates((prev) => new Set(prev).add(dateKey()));
+        showToast("✅ Challenge completed!")
+        setShowLogModal(true);
+    };
+
+    const handleStreakClick = () => {
+        setShowStreakReaction(true);
+        later(() => setShowStreakReaction(false), 1500);
     }
 }
 
