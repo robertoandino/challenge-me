@@ -2,7 +2,7 @@ import type { ChallengeCategory } from "../data/Challenge";
 
 export const KEYS = {
     challengeState: "challengeState",
-    traininglogs: "trainingLogs",
+    trainingLogs: "trainingLogs",
     theme: "theme",
     profile: "profile",
     weeklyGoal: "weeklyGoal",

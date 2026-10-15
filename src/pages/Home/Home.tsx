@@ -171,7 +171,10 @@ function Home() {
         }
     };
 
-    
+    const handleSaveLog = (log: TrainingLog) => {
+        const existing = readJSON<TrainingLog[]>(KEYS.trainingLogs, []);
+        writeJSON(KEYS.trainingLogs, [log, ...(Array.isArray(existing) ? existing : [])]);
+    };
 }
 
 export default Home;
