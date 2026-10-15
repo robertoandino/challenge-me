@@ -115,7 +115,26 @@ function Home() {
         setEmptyMessage("");
     }
 
-    
+    /* Generate */
+    const generateChallenge = () => {
+        if (isGenerating) return;
+        setIsGenerating(true);
+        setEmptyMessage("");
+
+        later(() => {
+            const pool = challenges.filter(
+                (c) => (selectedCategory === "all" || c.category === selectedCategory) && c.difficulty === difficulty
+            );
+
+            if (pool.length === 0){
+                setEmptyMessage("No challenges found for this category and difficulty. Try a different combination.");
+                setIsGenerating(false);
+                return;
+            }
+            
+
+        }, 500)
+    }
 }
 
 export default Home;
