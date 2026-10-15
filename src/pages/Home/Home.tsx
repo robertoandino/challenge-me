@@ -159,7 +159,19 @@ function Home() {
     const handleStreakClick = () => {
         setShowStreakReaction(true);
         later(() => setShowStreakReaction(false), 1500);
-    }
+    };
+
+    const handleCopy = async () => {
+        if (emptyMessage) return;
+        try {
+            await navigator.clipboard.writeText(currentChallenge);
+            showToast("Copied to clipboard");
+        } catch {
+            showToast("Couldn't copy. Select the text instead.")
+        }
+    };
+
+    
 }
 
 export default Home;
