@@ -102,6 +102,19 @@ function Home() {
         isChallengeCompleted,
     ]);
 
+    const showToast = (text: string) => setToast({ id: Date.now(), text });
+
+    /* Selection */
+    const cycleDifficulty = () => {
+        setDifficulty((d) => nextOf(DIFFICULTIES, d));
+        setEmptyMessage("");
+    };
+
+    const cycleCategory = () => {
+        setSelectedCategory((c) => nextOf(CATEGORIES, c));
+        setEmptyMessage("");
+    }
+
     
 }
 
