@@ -195,7 +195,14 @@ function Home() {
 
     return(
         <main className="main-container">
-
+            <Header
+                dailyChallenge={dailyChallenge}
+                completedCount={completedCount}
+                currentChallenge={currentChallenge}
+                profileOpen={profileOpen}
+                setProfileOpen={setProfileOpen}
+            />
+            
         </main>
     )
 }
