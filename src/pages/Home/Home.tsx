@@ -233,6 +233,20 @@ function Home() {
                     info="Category"
                 />
             </section>
+
+            <div className="challenge-section">
+                <ChallengeBox
+                    currentChallenge={emptyMessage || currentChallenge}
+                    isGenerating={isGenerating}
+                />
+                <ButtonGroup
+                    isGenerating={isGenerating}
+                    hasGenerated={hasGenerated}
+                    onGenerate={generateChallenge}
+                    onCopy={handleCopy}
+                />
+            </div>
+
         </main>
     )
 }
