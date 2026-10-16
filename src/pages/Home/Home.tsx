@@ -202,7 +202,37 @@ function Home() {
                 profileOpen={profileOpen}
                 setProfileOpen={setProfileOpen}
             />
-            
+
+            <DailyQuoteCard dailyQuote={dailyQuote} />
+
+            <section className="stats-cards">
+                <StatCard
+                    title="Streak Count"
+                    value={streakCount}
+                    showReaction={showStreakReaction}
+                    onClick={handleStreakClick}
+                    info="Streak"
+                />
+                <StatCard
+                    title="Mark as completed"
+                    value={completedCount}
+                    onClick={handleCompletedClick}
+                    info="Completed"
+                    disabled={!hasGenerated || isChallengeCompleted || isGenerating || !!emptyMessage}
+                />
+                <StatCard
+                    title="Select Difficulty"
+                    value={difficulty}
+                    onClick={cycleDifficulty}
+                    info="Difficulty"
+                />
+                <StatCard
+                    title="Select Category"
+                    value={selectedCategory}
+                    onClick={cycleCategory}
+                    info="Category"
+                />
+            </section>
         </main>
     )
 }
