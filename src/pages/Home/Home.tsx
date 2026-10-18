@@ -260,6 +260,19 @@ function Home() {
                 )}
             </div>
 
+            {showLogModal && (
+                <TrainingLogModal
+                    challengeTitle={currentChallenge}
+                    onClose={() => setShowLogModal(false)}
+                    onSave={handleSaveLog}
+                />
+            )}
+
+            {import.meta.env.DEV && (
+                <button onClick={clearChallengeData} className="reset-button">
+                    Reset progresss (dev only)
+                </button>
+            )}
         </main>
     )
 }
