@@ -247,6 +247,19 @@ function Home() {
                 />
             </div>
 
+            {/* Live region stays mounted so screen readers announce toasts. */}
+            <div role="status" aria-live="polite">
+                {toast && (
+                    <div
+                        key={toast.id}
+                        className="completion-toast"
+                        onAnimationEnd={() => setToast(null)}
+                    >
+                        {toast.text}
+                    </div>
+                )}
+            </div>
+
         </main>
     )
 }
