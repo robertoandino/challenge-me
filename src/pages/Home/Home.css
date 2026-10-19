@@ -1,64 +1,9 @@
 .main-container {
     min-height: 100vh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(135deg, #01033f9f, #5a1010d7);
-}
-
-/* Loading States */
-.loading-state {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    color: white;
-}
-
-.loading-spinner {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 50%;
-    border-top-color: #e1851d;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-/* Completion Toast */
-.completion-toast {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: transparent;
-    color: white;
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    font-size: 1.2rem;
-    z-index: 1000;
-    animation: fadeInOut 3s ease;
-}
-
-@keyframes fadeInOut {
-    0%, 100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
-    10%, 90% { opacity: 1; transform: translateX(-50%) translateY(40px);}
-}
-
-
-.reset-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    margin: 50px auto;
-    background: transparent;
-    border-color: orange;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 20px;
+    background: var(--cm-bg-image);
+    color: var(--cm-text);
+    font-family: var(--cm-font);
 }

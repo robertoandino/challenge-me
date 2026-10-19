@@ -1,7 +1,7 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { challenges } from "../../data/challenges";
 import type { ChallengeCategory } from "../../data/Challenge";
-import { quotes, Quote } from "../../data/quotes";
+import { quotes } from "../../data/quotes";
 import "../../styles/theme.css";
 import "./Home.css";
 import "../responsive.css";
@@ -28,7 +28,7 @@ import {
     type ChallengeState,
     type Difficulty,
 } from "../../utils/storage";
-import { flushSync } from "react-dom";
+
 
 const CATEGORIES: readonly (ChallengeCategory | "all")[] = ["all", "physical", "mental", "creative", "social"];
 
