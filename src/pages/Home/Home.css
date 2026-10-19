@@ -31,3 +31,32 @@
         transform: rotate(360deg);
     }
 }
+
+/* Toast (removed from the DOM by onAnimationEnd, so the animation length is the display time) */
+.completion-toast {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--cm-panel);
+    color: var(--cm-text);
+    border: 1px solid var(--cm-line);
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.75rem;
+    font-size: 1.125rem;
+    z-index: 1000;
+    animation: toast-in-out 2s ease both;
+}
+
+@keyframes toast-in-out {
+    0%,
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -20px);
+    }
+    12%,
+    88% {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
