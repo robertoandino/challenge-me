@@ -4,6 +4,18 @@ import "./Profile.css";
 //import avatar from "../../assets/avatar.jpg";
 //import TrainingLogModal from "../TrainingLogModal/TrainingLogModal";
 import { TrainingLog } from '../../types/TrainingLog.ts';
+import {
+    KEYS,
+    calcStreak,
+    dateKey,
+    loadChallengeState,
+    loadTheme,
+    readJSON,
+    saveTheme,
+    writeJSON,
+    type Theme,
+} from "../../utils/storage";
+
 
 /* ----------- Badges ------------ */
 
@@ -25,24 +37,6 @@ const BADGES: Badge[] = [
     { id: "done-50", label: "50 completed", hint: "Complete 50 challenges", icon: "◈", isUnlocked: (s) => s.completed >= 50},
 ];
 
-/* ----------- Storage + date helpers ------------ */
-
-const readJSON = <T,>(key: string, fallback: T): T => {
-    try {
-        const raw = localStorage.getItem(key);
-        return raw ? (JSON.parse(raw) as T) : fallback;
-    } catch {
-        return fallback;
-    }
-};
-
-const writeJSON = (key: string, value: unknown) => {
-    try {
-        localStorage.setItem(key, JSON.stringify(value));
-    } catch {
-        /* storage unavaible: keep going in memory */
-    }
-};
 
 // "2026-10-01 parses as UTC by default, which can land on the previous day locally."
 const parseLogDate = (s: string): Date | null => {
@@ -65,7 +59,6 @@ const formatDay = (d: Date) =>
 const WEEKS = 12;
 const PREVIEW_COUNT = 5;
 
-type Theme = "dark" | "light";
 
 /* ----------- Component ------------ */
 
