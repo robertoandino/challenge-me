@@ -60,3 +60,50 @@
         transform: translate(-50%, 0);
     }
 }
+
+/* Dev reset */
+.reset-button {
+    display: block;
+    width: fit-content;
+    min-width: 12rem;
+    margin: 48px auto;
+    padding: 0.625rem 1.25rem;
+    font: inherit;
+    font-size: 1rem;
+    color: var(--cm-text);
+    background: transparent;
+    border: 1px solid var(--cm-accent);
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.reset-button:hover {
+    background: var(--cm-panel);
+}
+
+.reset-button:focus-visible {
+    outline: 2px solid var(--cm-accent);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .loading-spinner {
+        animation-duration: 2.5s;
+    }
+
+    /* Fade only; keeping an animation means onAnimationEnd still fires. */
+    .completion-toast {
+        animation-name: toast-fade;
+    }
+
+    @keyframes toast-fade {
+        0%,
+        100% {
+            opacity: 0;
+        }
+        12%,
+        88% {
+            opacity: 1;
+        }
+    }
+}
