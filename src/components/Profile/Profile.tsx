@@ -94,7 +94,12 @@ function Profile() {
         const counts = new Map<string, number>();
         for (const log of logs) {
             const d = parseLogDate(log.date);
-            if (d) counts.set(dayKey(d), (counts.get(dayKey(d)) ?? 0) + 1);
+            if (d) counts.set(dateKey(d), (counts.get(dateKey(d)) ?? 0) + 1);
+        }
+
+        // Completed days with no log entry still count as activity.
+        for (const key of completedDates) {
+            if (!counts.has(key)) counts.set(key, 1);
         }
 
         const today = new Date();
@@ -104,13 +109,13 @@ function Profile() {
 
         const cells = Array.from({ length: WEEKS * 7 }, (_, i) => {
             const date = new Date(start);
-            date.setDate(start.getDate() + i);
+            date.setDate(start.getDate() + 1);
             return { date, count: counts.get(dateKey(date)) ?? 0, future: date > today };
         });
 
-        const weeklyDone = cells.slice(-7).reduce((n, c) => n + c.count, 0);
+        const weeklyDone = cells.slice(-7).filter((c) => c.count > 0).length;
         return { cells, weeklyDone };
-    }, [logs]);
+    }, [logs, completedDates]);
 
     const activeDays = cells.filter((c) => c.count > 0).length;
     const weeklyPct = Math.min(100, Math.round((weeklyDone / weeklyGoal) * 100));
