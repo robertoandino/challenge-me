@@ -1,8 +1,5 @@
 import { useMemo, useState, useEffect} from "react";
-//import { useLocation } from "react-router-dom";
 import "./Profile.css";
-//import avatar from "../../assets/avatar.jpg";
-//import TrainingLogModal from "../TrainingLogModal/TrainingLogModal";
 import { TrainingLog } from '../../types/TrainingLog.ts';
 import {
     KEYS,
@@ -109,7 +106,7 @@ function Profile() {
 
         const cells = Array.from({ length: WEEKS * 7 }, (_, i) => {
             const date = new Date(start);
-            date.setDate(start.getDate() + 1);
+            date.setDate(start.getDate() + i);
             return { date, count: counts.get(dateKey(date)) ?? 0, future: date > today };
         });
 
@@ -261,6 +258,7 @@ function Profile() {
                         <span className="pf-cell 1v1" />
                         <span className="pf-cell 1v2" />
                         <span className="pf-cell 1v3" />
+                        <span>More</span>
                     </div>
                 </section>
 
