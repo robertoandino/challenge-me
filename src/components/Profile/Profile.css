@@ -16,9 +16,9 @@
 /* Page */
 .pf-page {
     min-height: 100vh;
-    background: var(--pf-bg);
+    background: var(--cm-bg-image);
     color: var(--pf-text);
-    font-family: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-family: var(--cm-font);
     padding: 20px 16px 72px;
     box-sizing: border-box;
 }
@@ -69,6 +69,10 @@
     border-radius: 999px;
     padding: 8px 14px;
     cursor: pointer;
+}
+
+.pf-btn:hover:not(:disabled) {
+    border-color: var(--pf-muted);
 }
 
 .pf-btn:disabled {
@@ -241,7 +245,7 @@
     color: var(--pf-muted);
 }
 
-.pf-legen .pf-cell {
+.pf-legend .pf-cell {
     width: 12px;
     aspect-ratio: auto;
     height: 12px;
@@ -369,6 +373,11 @@
     min-width: 0;
 }
 
+.pf-badge-label {
+    font-weight: 500;
+    font-size: 0.9375rem;
+}
+
 .pf-badge-hint {
     font-size: 0.75rem;
     color: var(--pf-muted);
@@ -380,6 +389,12 @@
     padding: 20px;
     border: 1px dashed var(--pf-line);
     border-radius: 12px;
+}
+
+.pf-log {
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid var(--pf-line);
 }
 
 .pf-entry {
