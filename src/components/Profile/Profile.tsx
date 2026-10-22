@@ -59,13 +59,7 @@ const WEEKS = 12;
 const PREVIEW_COUNT = 5;
 
 function Profile() {
-    const [theme, setTheme] = useState<Theme>(() => {
-        try {
-            return localStorage.getItem("theme") === "light" ? "light" : "dark";
-        } catch {
-            return "dark";
-        }
-    });
+    const [theme, setTheme] = useState<Theme>(loadTheme);
 
     const [profile, setProfile] = useState(() =>
         readJSON("profile", { name: "John Smith", bio: "Athlete" })
@@ -76,24 +70,23 @@ function Profile() {
     const [weeklyGoal, setWeeklyGoal] = useState<number>(() => readJSON("weeklyGoal", 5));
     const [showAll, setShowAll] = useState(false);
 
-    //Read once on mount: challengeState is written elsewhere in the app.
-    const [stats] = useState<Stats>(() => {
-        const s = readJSON<{ streakCount?: number; completedCount?: number }>("challengeState", {});
-        return { streak: s.streakCount ?? 0, completed: s.completedCount ?? 0 };
-    })
+    //Read once on mount: Home writes challengeState. The streak is derived from completed dates.
+    const [challengeState] = useState(loadChallengeState);
+    const completedDates = useMemo(() => new Set(challengeState.completedDates), [challengeState]);
+    const stats: Stats = useMemo(
+        () => ({ streak: calcStreak(completedDates), completed: challengeState.completedCount }),
+        [completedDates, challengeState]
+    );
+
 
     const [logs] = useState<TrainingLog[]>(() => {
-        const stored = readJSON<TrainingLog[]>("trainingLogs", []);
+        const stored = readJSON<TrainingLog[]>(KEYS.trainingLogs, []);
         return Array.isArray(stored) ? stored : [];
     })
 
     useEffect(() => {
         document.documentElement.setAttribute("data-theme", theme);
-        try {
-            localStorage.setItem("theme", theme)
-        } catch {
-            /* ignore */
-        }
+        saveTheme(theme);
     }, [theme]);
 
     /* Heatmap cells (last 12 weeks, Monday-first) + this week's count */
@@ -112,7 +105,7 @@ function Profile() {
         const cells = Array.from({ length: WEEKS * 7 }, (_, i) => {
             const date = new Date(start);
             date.setDate(start.getDate() + i);
-            return { date, count: counts.get(dayKey(date)) ?? 0, future: date > today };
+            return { date, count: counts.get(dateKey(date)) ?? 0, future: date > today };
         });
 
         const weeklyDone = cells.slice(-7).reduce((n, c) => n + c.count, 0);
