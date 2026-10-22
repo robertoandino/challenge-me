@@ -29,6 +29,19 @@ import {
     type Difficulty,
 } from "../../utils/storage";
 
+const DIFFICULTY_OPTIONS: readonly { value: Difficulty; label: string }[] =[
+    { value: "easy", label: "Easy" },
+    { value: "medium", label: "Medium" },
+    { value: "hard", label: "Hard" },
+];
+
+const CATEGORY_OPTIONS: readonly { value: ChallengeCategory | "all"; label: string }[] = [
+    { value: "all", label: "All" },
+    { value: "physical", label: "Physical" },
+    { value: "mental", label: "Mental" },
+    { value: "creative", label: "Creative" },
+    { value: "social", label: "Social" },
+]
 
 const CATEGORIES: readonly (ChallengeCategory | "all")[] = ["all", "physical", "mental", "creative", "social"];
 
@@ -251,7 +264,7 @@ function Home() {
             <div role="status" aria-live="polite">
                 {toast && (
                     <div
-                        key={toast.id}
+                        key={toast.id} 
                         className="completion-toast"
                         onAnimationEnd={() => setToast(null)}
                     >
