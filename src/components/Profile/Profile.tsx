@@ -147,9 +147,9 @@ function Profile() {
     };
 
     const changeGoal = (delta: number) => {
-        const next = Math.max(1, Math.min(14, weeklyGoal + delta));
+        const next = Math.max(1, Math.min(7, weeklyGoal + delta));
         setWeeklyGoal(next);
-        writeJSON("weeklyGoal", next);
+        writeJSON(KEYS.weeklyGoal, next);
     };
 
     return (
