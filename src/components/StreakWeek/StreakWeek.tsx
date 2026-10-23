@@ -36,6 +36,13 @@ function StreakWeek({ streak, completed, completedDates, showReaction, onReact }
             };
         });
     }, [completedDates]);
+
+    const message = 
+        streak === 0
+            ? "Finish one challenge today to start a streak."
+            : doneToday
+                ? "Today is done. Keep going or rest."
+                : "Complete a challegne today to keep it alive.";
     
     return (
         <h1>
