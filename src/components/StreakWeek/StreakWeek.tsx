@@ -1,3 +1,8 @@
+import { useMemo } from "react";
+import Animations from "../StatCard/Animations";
+import { dateKey } from "../../utils/storage";
+import "./StreakWeek.css";
+
 interface StreakWeekProps {
     streak: number;
     completed: number;
@@ -5,6 +10,8 @@ interface StreakWeekProps {
     showReaction: boolean;
     onReact: () => void;
 }
+
+const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
 function StreakWeek({ streak, completed, completedDates, showReaction, onReact }: StrealWeekProps){
     return (
