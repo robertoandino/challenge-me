@@ -138,13 +138,13 @@ function Home() {
     const showToast = (text: string) => setToast({ id: Date.now(), text });
 
     /* Selection */
-    const cycleDifficulty = () => {
-        setDifficulty((d) => nextOf(DIFFICULTIES, d));
+    const chooseDifficulty = (d: Difficulty) => {
+        setDifficulty(d);
         setEmptyMessage("");
-    };
+    }
 
-    const cycleCategory = () => {
-        setSelectedCategory((c) => nextOf(CATEGORIES, c));
+    const chooseCategory = (c: ChallengeCategory | "all") => {
+        setSelectedCategory(c);
         setEmptyMessage("");
     }
 
