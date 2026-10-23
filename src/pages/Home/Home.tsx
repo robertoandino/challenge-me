@@ -6,6 +6,7 @@ import "../../styles/theme.css";
 import "./Home.css";
 import "../responsive.css";
 import Header from "../../components/Header/Header";
+import ChallengeCard, { type ChallengeStatus } from "../../components/ChallengeCard/ChallengeCard";
 import StatCard from "../../components/StatCard/StatCard";
 import ChallengeBox from "../../components/ChallengeBox/ChallengeBox";
 import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
@@ -74,6 +75,22 @@ function Home() {
     // The streak is never stored: it is always derived from the days you completed something.
     const streakCount = useMemo(() => calcStreak(completedDates), [completedDates]);
 
+    // Category and difficulty of the challenge on screen (it was drawn earlier, so it can differ from the filters).
+    const currentMeta = useMemo(() => {
+        const c = challenges.find((x) => x.text === currentChallenge);
+        return c ? { caregory: String(c.category), difficulty: String(c.difficulty) } : null;
+    }, [currentChallenge])
+
+    const status: ChallengeStatus = isGenerating
+        ? "generating"
+        : emptyMessage
+            ? "empty"
+            : !hasGenerated
+                ? "idle"
+                : isChallengeCompleted
+                    ? "done"
+                    : "ready";
+ 
     const dailyChallenge = useMemo(() => challenges[daySeed() % challenges.length]?.text ?? "", []);
     const dailyQuote = useMemo(() => quotes[daySeed() % quotes.length] ?? null, []);
 
