@@ -8,6 +8,7 @@ import "../responsive.css";
 import Header from "../../components/Header/Header";
 import ChallengeCard, { type ChallengeStatus } from "../../components/ChallengeCard/ChallengeCard";
 import StreakWeek from "../../components/StreakWeek/StreakWeek";
+import SegmentedControl from "../../components/SegmentedControl/SegmentedControl";
 import StatCard from "../../components/StatCard/StatCard";
 import ChallengeBox from "../../components/ChallengeBox/ChallengeBox";
 import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
