@@ -29,7 +29,7 @@ function StreakWeek({ streak, completed, completedDates, showReaction, onReact }
             d.setDate(monday.getDate() + i);
             return {
                 name,
-                letter: name[0];
+                letter: name[0],
                 done: completedDates.has(dateKey(d)),
                 isToday: d.getTime() === today.getTime(),
                 future: d > today,
