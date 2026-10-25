@@ -13,7 +13,7 @@ interface StreakWeekProps {
 
 const WEEKDAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-function StreakWeek({ streak, completed, completedDates, showReaction, onReact }: StrealWeekProps){
+function StreakWeek({ streak, completed, completedDates, showReaction, onReact }: StreakWeekProps){
     
     const doneToday = completedDates.has(dateKey());
 
@@ -45,9 +45,21 @@ function StreakWeek({ streak, completed, completedDates, showReaction, onReact }
                 : "Complete a challegne today to keep it alive.";
     
     return (
-        <h1>
-            hi
-        </h1>
+        <section className="sw" aria-label="Streak">
+            <div className="sw-left">
+                <button type="button" className="sw-streak" onClick={onReact} >
+                    <span className="sw-flame" aria-hidden="true">🔥</span>
+                    <span className="sw-num">{streak}</span>
+                    <span className="sw-unit">day streak</span>
+                </button>
+                {showReaction && (
+                    <div className="sw-reaction" aria-hidden="true">
+                        <Animations type={streak < 5 ? "sad" : "fireworks"}/>
+                    </div>
+                )}
+            </div>
+
+        </section>
     )
 }
 
