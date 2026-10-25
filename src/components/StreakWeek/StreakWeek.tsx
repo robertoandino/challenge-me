@@ -78,6 +78,8 @@ function StreakWeek({ streak, completed, completedDates, showReaction, onReact }
                         </li>
                     ))}
                 </ol>
+                <p className="sw-msg">{message}</p>
+                <p className="sw-total">{completed} completed in total</p>
             </div>
         </section>
     )
