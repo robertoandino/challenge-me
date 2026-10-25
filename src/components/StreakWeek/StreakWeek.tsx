@@ -59,6 +59,26 @@ function StreakWeek({ streak, completed, completedDates, showReaction, onReact }
                 )}
             </div>
 
+            <div className="sw-right">
+                <ol className="sw-week">
+                    {days.map((d) => (
+                        <li
+                            key={d.name}
+                            className={`sw-day${d.done ? " done" : ""}${d.isToday ? " today" : ""}${d.future ? " future" : ""}`}
+                            aria-label={`${d.name}${d.isToday ? " (today)" : ""}: ${d.done ? "done" : "not done"}`}
+                        >
+                            <span className="sw-dot" aria-hidden="true">
+                                {d.done && (
+                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                                        <path d="M2.5 6.5L5 9l4.5-5.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                )}
+                            </span>
+                            <span className="sw-letter" aria-hidden="true">{d.letter}</span>
+                        </li>
+                    ))}
+                </ol>
+            </div>
         </section>
     )
 }
