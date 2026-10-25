@@ -80,3 +80,34 @@
     gap: 6px;
 }
 
+.sw-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.sw-dot {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    border: 1.5px solid var(--cm-line);
+    color: var(--cm-on-accent);
+}
+
+.sw-day.today .sw-dot {
+    border-color: var(--cm-accent);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--cm-accent) 25%, transparent);
+}
+
+.sw-day.future .sw-dot {
+    border-style: dashed;
+    opacity: 0.5;
+}
+
+.sw-letter {
+    font-size: 0.75rem;
+    color: var(--cm-muted);
+}
