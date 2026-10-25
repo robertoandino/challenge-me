@@ -111,3 +111,21 @@
     font-size: 0.75rem;
     color: var(--cm-muted);
 }
+
+.sw-day.today .sw-letter {
+    color: var(--cm-text);
+    font-weight: 700;
+}
+
+.sw-msg,
+.sw-total {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--cm-muted);
+}
+
+.sw-msg {
+    margin-top: 12px;
+    color: var(--cm-text);
+}
+
