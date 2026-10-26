@@ -13,11 +13,27 @@ interface SegmentedControlProps<T extends string> {
     variant?: "segmented" | "chips";
 }
 
-function SegmentedControl(){
+function SegmentedControl<T extends string>({
+    label,
+    options,
+    value,
+    onChange,
+    variant = "segmented",
+}: SegmentedControlProps<T>) {
     return (
-        <h1>
-            hi
-        </h1>
+        <div className={`sc sc-${variant}`} role ="group" aria-label={label}>
+            {options.map((o) => (
+                <button
+                    key={o.value}
+                    type="button"
+                    className={`sc-options${o.value === value ? " is-on" : ""}`}
+                    aria-pressed={o.value === value}
+                    onClick={() => onChange(o.value)}
+                >
+                    {o.label}
+                </button>
+            ))}
+        </div>
     )
 }
 
