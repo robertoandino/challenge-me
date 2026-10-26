@@ -32,7 +32,7 @@ import {
     type Difficulty,
 } from "../../utils/storage";
 
-const DIFFICULTY_OPTIONS: readonly { value: Difficulty; label: string }[] =[
+const DIFFICULTY_OPTIONS: readonly { value: Difficulty; label: string }[] = [
     { value: "easy", label: "Easy" },
     { value: "medium", label: "Medium" },
     { value: "hard", label: "Hard" },
