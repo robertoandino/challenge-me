@@ -243,6 +243,22 @@ function Home() {
                     showReaction={showStreakReaction}
                     onReact={handleStreakClick}
                 />
+
+                <section className="home-filters" aria-label="Challenge settings">
+                    <SegmentedControl
+                        label="Difficulty"
+                        options={DIFFICULTY_OPTIONS}
+                        value={difficulty}
+                        onChange={chooseDifficulty}
+                    />
+                    <SegmentedControl
+                        label="Category"
+                        variant="chips"
+                        options={CATEGORY_OPTIONS}
+                        value={selectedCategory}
+                        onChange={chooseCategory}
+                    />
+                </section>
             </div>
 
             {/* Live region stays mounted so screen readers announce toasts. */}
