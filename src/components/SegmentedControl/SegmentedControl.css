@@ -45,3 +45,14 @@
     border-color: transparent;
     border-radius: 999px;
 }
+
+/* Wrapping pills */
+.sc-chips {
+    flex-wrap: wrap;
+}
+
+.sc-chips .sc-option {
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.875rem;
+}
