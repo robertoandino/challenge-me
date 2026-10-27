@@ -9,17 +9,16 @@ import Header from "../../components/Header/Header";
 import ChallengeCard, { type ChallengeStatus } from "../../components/ChallengeCard/ChallengeCard";
 import StreakWeek from "../../components/StreakWeek/StreakWeek";
 import SegmentedControl from "../../components/SegmentedControl/SegmentedControl";
-import StatCard from "../../components/StatCard/StatCard";
-import ChallengeBox from "../../components/ChallengeBox/ChallengeBox";
-import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
-import DailyQuoteCard from "../../components/DailyQuoteCard/DailyQuoteCard";
+//import StatCard from "../../components/StatCard/StatCard";
+//import ChallengeBox from "../../components/ChallengeBox/ChallengeBox";
+//import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
+//import DailyQuoteCard from "../../components/DailyQuoteCard/DailyQuoteCard";
 //import profileMenu from "../components/ProfileMenu";
 //import ProgressRing from "../components/ProgressRing/ProgressRing";
 import TrainingLogModal from "../../components/TrainingLogModal/TrainingLogModal";
 import { TrainingLog } from "../../types/TrainingLog";
 import {
     DEFAULT_CHALLENGE,
-    DIFFICULTIES,
     KEYS,
     calcStreak,
     dateKey,
