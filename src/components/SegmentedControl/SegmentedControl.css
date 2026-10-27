@@ -24,3 +24,24 @@
     border-color: var(--cm-accent);
     font-weight: 500;
 }
+
+.sc-option:focus-visible {
+    outline: 2px solid var(--cm-accent);
+    outline-offset: 2px;
+}
+
+/* Three equal segments in one pill */
+.sc-segmented {
+    padding: 4px;
+    gap: 4px;
+    background: var(--cm-panel);
+    border: 1px solid var(--cm-line);
+    border-radius: 999px;
+}
+
+.sc-segmented .sc-option {
+    flex: 1;
+    padding: 8px 12px;
+    border-color: transparent;
+    border-radius: 999px;
+}
