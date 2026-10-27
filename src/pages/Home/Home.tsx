@@ -258,6 +258,16 @@ function Home() {
                         onChange={chooseCategory}
                     />
                 </section>
+
+                <ChallengeCard
+                    status={status}
+                    challenge={currentChallenge}
+                    meta={currentMeta}
+                    emptyMessage={emptyMessage}
+                    onGenerate={generateChallenge}
+                    onComplete={handleCompletedClick}
+                    onCopy={handleCopy}
+                />
             </div>
 
             {/* Live region stays mounted so screen readers announce toasts. */}
