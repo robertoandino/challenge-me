@@ -1,0 +1,26 @@
+.sc {
+    display: flex;
+    gap: 6px;
+}
+
+.sc-option {
+    font: inherit;
+    font-size: 0.9375rem;
+    color: var(--cm-muted);
+    background: transparent;
+    border: 1px solid var(--cm-line);
+    cursor: pointer;
+    transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.sc-option:hover {
+    color: var(--cm-text);
+    border-color: var(--cm-muted);
+}
+
+.sc-option.is-on {
+    color: var(--cm-on-accent);
+    background: var(--cm-accent);
+    border-color: var(--cm-accent);
+    font-weight: 500;
+}
