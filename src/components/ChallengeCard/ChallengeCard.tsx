@@ -40,6 +40,19 @@ function ChallengeCard({ status, challenge, meta, emptyMessage, onGenerate, onCo
                     </button>
                 )}
             </div>
+
+            <div className="cc-body" aria-live="polite" arai-busy={status === "generating"}>
+                {status === "generating" ? (
+                    <div className="cc-spinner" role="presentation" />
+                ) : status === "idle" ? (
+                    <p className="cc-text cc-text-quiet">Pick a difficulty and category, then draw your challenge.</p>
+                ) : status === "empty" ? (
+                    <p className="cc-text cc-text-quiet">{emptyMessage}</p>
+                ) : (
+                    <p key={challenge} className="cc-text">{challenge}</p>
+                )}
+            </div>
+
         </section>
     )
 }
