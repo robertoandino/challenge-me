@@ -30,6 +30,15 @@ function ChallengeCard({ status, challenge, meta, emptyMessage, onGenerate, onCo
                 )}
 
                 {status === "done" && <span className="cc-badge">✓ Completed</span>}
+
+                {hasChallenge && (
+                    <button type="button" className="cc-icon-btn" onClick={onCopy} aria-label="Copy challenge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                            <rect x="9" y="9" width="11" height="11" rx="2" />
+                            <path d="M5 15V5a2 2 0 0 1 2-2h10" />
+                        </svg>
+                    </button>
+                )}
             </div>
         </section>
     )
