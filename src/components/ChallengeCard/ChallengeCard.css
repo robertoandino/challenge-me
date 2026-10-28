@@ -97,3 +97,24 @@
     color: var(--cm-muted);
 }
 
+@keyframes cc-in {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+}
+
+.cc-spinner {
+    width: 36px;
+    height: 36px;
+    border: 4px solid var(--cm-line);
+    border-top-color: var(--cm-accent);
+    border-radius: 50%;
+    animation: cc-spin 1s linear infinite;
+}
+
+@keyframes cc-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
