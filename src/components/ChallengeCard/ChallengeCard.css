@@ -13,3 +13,26 @@
 .cc-ready {
     border-color: var(--cm-accent);
 }
+
+.cc-top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 32px;
+}
+
+.cc-chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.cc-chip {
+    padding: 4px 12px;
+    font-size: 0.8125rem;
+    text-transform: capitalize;
+    color: var(--cm-text);
+    background: var(--cm-h0);
+    border-radius: 999px;
+}
+
