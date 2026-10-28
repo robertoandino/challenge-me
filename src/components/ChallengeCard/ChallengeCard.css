@@ -162,3 +162,24 @@
     outline-offset: 3px;
 }
 
+@media (max-width: 520px) {
+    .cc {
+        padding: 20px;
+        min-height: 260px;
+    }
+
+    .cc-actions .cc-btn {
+        flex: 1;
+        padding-inline: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cc-spinner {
+        animation-duration: 2.5s;
+    }
+
+    .cc-text {
+        animation: none;
+    }
+}
