@@ -61,3 +61,18 @@
     border-radius: 50%;
     cursor: pointer;
 }
+
+.cc-badge + .cc-icon-btn {
+    margin-left: 0;
+}
+
+.cc-icon-btn:hover {
+    color: var(--cm-text);
+    border-color: var(--cm-muted);
+}
+
+.cc-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
