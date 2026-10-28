@@ -36,3 +36,28 @@
     border-radius: 999px;
 }
 
+.cc-eyebrow {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--cm-muted);
+}
+
+.cc-badge {
+    margin-left: auto;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--cm-accent);
+}
+
+.cc-icon-btn {
+    margin-left: auto;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    color: var(--cm-muted);
+    background: transparent;
+    border: 1px solid var(--cm-line);
+    border-radius: 50%;
+    cursor: pointer;
+}
