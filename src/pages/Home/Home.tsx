@@ -45,11 +45,6 @@ const CATEGORY_OPTIONS: readonly { value: ChallengeCategory | "all"; label: stri
     { value: "social", label: "Social" },
 ]
 
-const CATEGORIES: readonly (ChallengeCategory | "all")[] = ["all", "physical", "mental", "creative", "social"];
-
-const nextOf = <T,>(list: readonly T[], current: T): T => 
-    list[(list.indexOf(current) + 1) % list.length];
-
 // Stable number per calendar day (local time), used to pick the daily quote and challenge.
 const daySeed = (d = new Date()) => d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
 
@@ -79,7 +74,7 @@ function Home() {
     // Category and difficulty of the challenge on screen (it was drawn earlier, so it can differ from the filters).
     const currentMeta = useMemo(() => {
         const c = challenges.find((x) => x.text === currentChallenge);
-        return c ? { caregory: String(c.category), difficulty: String(c.difficulty) } : null;
+        return c ? { category: String(c.category), difficulty: String(c.difficulty) } : null;
     }, [currentChallenge])
 
     const status: ChallengeStatus = isGenerating
