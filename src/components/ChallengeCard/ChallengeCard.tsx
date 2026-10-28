@@ -53,6 +53,27 @@ function ChallengeCard({ status, challenge, meta, emptyMessage, onGenerate, onCo
                 )}
             </div>
 
+            <div className="cc-actions">
+                {status === "ready" ? (
+                    <>
+                        <button type="button" className="cc-btn cc-btn-primary" onClick={onComplete}>
+                            Mark as done
+                        </button>
+                        <button type="button" className="cc-btn" onClick={onGenerate}>
+                            Another one
+                        </button>
+                    </>
+                ) : (
+                    <button
+                        type="button"
+                        className="cc-btn cc-btn-primary"
+                        onClick={onGenerate}
+                        disabled={status === "generating"}
+                    >
+                        {status === "done" ? "Next challenge" : status === "generating" ? "Drawing..." : "Draw a challenge"}
+                    </button>
+                )}
+            </div>
         </section>
     )
 }
