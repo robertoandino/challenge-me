@@ -31,6 +31,20 @@ function MoodPicker({ legend, value, onChange }: MoodPickerProps) {
     return (
         <fieldset className="log-field">
             <legend>{legend}</legend>
+            <div className="mood-row"></div>
+                {MOODS.map((m) => (
+                    <button
+                        key={m.emoji}
+                        type="button"
+                        className={`mood-btn${value === m.emoji ? " active" : ""}`}
+                        aria-pressed={value === m.emoji}
+                        aria-label={m.label}
+                        title={m.label}
+                        onClick={() => onChange(m.emoji)}
+                    >
+                        {m.emoji}
+                    </button>
+                ))}
         </fieldset>
     )
 }
