@@ -27,6 +27,14 @@ interface MoodPickerProps {
     onChange: (mood: Mood) => void;
 }
 
+function MoodPicker({ legend, value, onChange }: MoodPickerProps) {
+    return (
+        <fieldset className="log-field">
+            <legend>{legend}</legend>
+        </fieldset>
+    )
+}
+
 function TrainingLogModal({ challengeTitle, onClose, onSave }: TrainingLogModalProps) {
 
     return (
