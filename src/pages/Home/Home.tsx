@@ -12,7 +12,7 @@ import SegmentedControl from "../../components/SegmentedControl/SegmentedControl
 //import StatCard from "../../components/StatCard/StatCard";
 //import ChallengeBox from "../../components/ChallengeBox/ChallengeBox";
 //import ButtonGroup from "../../components/ButtonGroup/ButtonGroup";
-//import DailyQuoteCard from "../../components/DailyQuoteCard/DailyQuoteCard";
+import DailyQuoteCard from "../../components/DailyQuoteCard/DailyQuoteCard";
 //import profileMenu from "../components/ProfileMenu";
 //import ProgressRing from "../components/ProgressRing/ProgressRing";
 import TrainingLogModal from "../../components/TrainingLogModal/TrainingLogModal";
@@ -263,6 +263,8 @@ function Home() {
                     onComplete={handleCompletedClick}
                     onCopy={handleCopy}
                 />
+
+                <DailyQuoteCard dailyQuote={dailyQuote} />
             </div>
 
             {/* Live region stays mounted so screen readers announce toasts. */}
