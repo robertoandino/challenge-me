@@ -1,46 +1,19 @@
-.daily-quote-box {
-    width: 100%;
-    max-width: 950px;
-    min-width: 300px;
-    margin: 3rem auto;
-    margin-top: 2rem;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-style: italic;
-    border-radius: 50px;
-    border-top: 1px solid rgba(228, 135, 30, 0.815);
+.dq {
+    margin: 8px 0 0;
+    padding: 2px 0 2px 16px;
+    border-left: 2px solid var(--cm-accent);
 }
 
-.daily-quote-box:hover {
-    transform: translateY(-1px);
-    border-color: rgba(247, 61, 15, 0.562);
-}
-
-.quote-text{
-    font-size: 1.7rem;
-}
-
-.quote-author {
-    display: block;
-    margin-top: 4.5rem;
-    text-align: right;
+.dq-text {
+    margin: 0;
     font-size: 1rem;
-    opacity: 0.75rem;
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--cm-text);
 }
 
-.fade-in {
-    animation: fadeSlideIn 0.8s ease-out forwards;
-}
-
-@keyframes fadeSlideIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.dq-author {
+    margin-top: 6px;
+    font-size: 0.8125rem;
+    color: var(--cm-muted);
 }
