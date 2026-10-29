@@ -1,6 +1,5 @@
-import React from "react";
-import "./DailyQuoteCard.css"
-import { Quote } from "../../data/quotes";
+import type { Quote } from "../../data/quotes";
+import "./DailyQuoteCard.css";
 
 interface DailyQuoteCardProps {
     dailyQuote: Quote | null;
