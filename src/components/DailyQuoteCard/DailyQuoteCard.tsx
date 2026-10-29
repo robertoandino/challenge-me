@@ -5,16 +5,14 @@ interface DailyQuoteCardProps {
     dailyQuote: Quote | null;
 }
 
-const DailyQuoteCard: React.FC<DailyQuoteCardProps> = ({ dailyQuote }) => {
+function DailyQuoteCard({ dailyQuote }: DailyQuoteCardProps) {
     if (!dailyQuote) return null;
 
     return (
-        <div className="fade-in">
-            <div className="daily-quote-box">
-                <p className="quote-text">{dailyQuote.text}</p>
-                <span className="quote-author">- {dailyQuote.author}</span>
-            </div>
-        </div>
+        <figure className="dq">
+            <blockquote className="dq-text">{dailyQuote.text}</blockquote>
+            <figcaption className="dq-author">{dailyQuote.author}</figcaption>
+        </figure>
     );
 }
 
