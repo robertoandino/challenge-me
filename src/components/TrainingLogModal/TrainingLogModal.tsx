@@ -57,7 +57,12 @@ function TrainingLogModal({ challengeTitle, onClose, onSave }: TrainingLogModalP
 
     const dialogRef = useRef<HTMLDivElement>(null);
 
-    
+    // Keep the latest onClose in a ref so the effect below runs once. Otherwise every parent
+    // re-render (e.g. the toast dissapearing) would re-run it and pull focus out of the input.
+    const onCloseRef = useRef(onClose);
+    useEffect(() => {
+        onCloseRef.current = onClose;
+    })
 
     return (
         <div className="log-overlay">
