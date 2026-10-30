@@ -64,6 +64,44 @@ function TrainingLogModal({ challengeTitle, onClose, onSave }: TrainingLogModalP
         onCloseRef.current = onClose;
     })
 
+    // Focus the dialog, close on Escape, and stop the page behind from scrolling.
+    useEffect(() => {
+        dialogRef.current?.focus();
+
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") onCloseRef.current();
+        };
+        document.addEventListener("keydown", onKey);
+
+        const previousOverFlow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+
+        return () => {
+            document.removeEventListener("keydown", onKey);
+            document.body.style.overflow = previousOverFlow;
+        };
+    }, []);
+
+    const canSave = moodBefore !== null && moodAfter !== null && difficulty !== null;
+
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        if (!moodBefore || !moodAfter || !difficulty) return;
+
+        const log: TrainingLog = {
+            id: crypto.randomUUID(),
+            date: dateKey(), // local date; toISOString() is UTC and can be "tomorrow" in the evening
+            challenge: challengeTitle,
+            moodBefore,
+            moodAfter,
+            difficulty,
+            takeaway: takeaway.trim(),
+        };
+
+        onSave(log);
+        onClose();
+    };
+
     return (
         <div className="log-overlay">
             hi
