@@ -50,6 +50,14 @@ function MoodPicker({ legend, value, onChange }: MoodPickerProps) {
 }
 
 function TrainingLogModal({ challengeTitle, onClose, onSave }: TrainingLogModalProps) {
+    const [moodBefore, setMoodBefore] = useState<Mood | null>(null);
+    const [moodAfter, setMoodAfter] = useState<Mood | null>(null);
+    const [difficulty, setDifficulty] = useState<Level | null>(null);
+    const [takeaway, setTakeaway] = useState("");
+
+    const dialogRef = useRef<HTMLDivElement>(null);
+
+    
 
     return (
         <div className="log-overlay">
