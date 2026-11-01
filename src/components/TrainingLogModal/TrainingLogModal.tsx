@@ -124,8 +124,23 @@ function TrainingLogModal({ challengeTitle, onClose, onSave }: TrainingLogModalP
                     <MoodPicker legend="Mood before" value={moodBefore} onChange={setMoodBefore} />
                     <MoodPicker legend="Mood after" value={moodAfter} onChange={setMoodAfter} />
 
+                    <fieldset className="log-field">
+                        <legend>Difficulty</legend>
+                        <div className="difficulty-row">
+                            {LEVELS.map((level) => (
+                                <button
+                                    key={level}
+                                    type="button"
+                                    className={`difficultt-dot${difficulty !== null && difficulty >= level ? " filled" : ""}`}
+                                    aria-label={`Difficulty ${level} of ${LEVELS.length}`}
+                                    aria-pressed={difficulty === level}
+                                    onClick={() => setDifficulty(level)}
+                                />
+                            ))}
+                        </div>
+                    </fieldset>
                     
-
+                    
                 </form>
             </div>
         </div>
