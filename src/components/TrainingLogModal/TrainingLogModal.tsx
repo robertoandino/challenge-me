@@ -117,7 +117,16 @@ function TrainingLogModal({ challengeTitle, onClose, onSave }: TrainingLogModalP
                 tabIndex={-1}
                 ref={dialogRef}
             >
-                
+                <form onSubmit={handleSubmit}>
+                    <h2 id="log-title" className="log-title">Log your training</h2>
+                    <p className="challenge-name">{challengeTitle}</p>
+
+                    <MoodPicker legend="Mood before" value={moodBefore} onChange={setMoodBefore} />
+                    <MoodPicker legend="Mood after" value={moodAfter} onChange={setMoodAfter} />
+
+                    
+
+                </form>
             </div>
         </div>
     );
