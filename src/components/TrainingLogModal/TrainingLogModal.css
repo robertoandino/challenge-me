@@ -92,3 +92,23 @@
     background: color-mix(in srgb, var(--cm-accent) 14%, transparent);
 }
 
+.difficulty-row {
+    display: flex;
+    gap: 10px;
+}
+
+.difficulty-dot {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: transparent;
+    border: 2px solid var(--cm-line);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.15s, border-color 0.15s;
+}
+
+.difficulty-dot.filled {
+    background: var(--cm-accent);
+    border-color: var(--cm-accent);
+}
