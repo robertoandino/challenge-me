@@ -103,8 +103,22 @@ function TrainingLogModal({ challengeTitle, onClose, onSave }: TrainingLogModalP
     };
 
     return (
-        <div className="log-overlay">
-            hi
+        <div 
+            className="log-overlay"
+            onMouseDown={(e) => {
+                if (e.target === e.currentTarget) onClose();
+            }}    
+        >
+            <div
+                className="log-modal"
+                role="dialog"
+                aria-model="true"
+                aria-labelledby="log-title"
+                tabIndex={-1}
+                ref={dialogRef}
+            >
+                
+            </div>
         </div>
     );
 }
