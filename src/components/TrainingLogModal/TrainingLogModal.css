@@ -112,3 +112,18 @@
     background: var(--cm-accent);
     border-color: var(--cm-accent);
 }
+
+.log-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    font: inherit;
+    color: var(--cm-text);
+    background: transparent;
+    border: 1px solid var(--cm-line);
+    border-radius: 12px;
+}
+
+.log-input::placeholder {
+    color: var(--cm-muted);
+}
