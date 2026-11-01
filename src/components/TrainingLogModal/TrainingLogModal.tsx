@@ -152,6 +152,19 @@ function TrainingLogModal({ challengeTitle, onClose, onSave }: TrainingLogModalP
                             onChange={(e) => setTakeaway(e.target.value)}
                         />
                     </div>
+
+                    {!canSave && (
+                        <p className="log-hint">Choose a mood before, a mood after and difficulty to save.</p>
+                    )}
+
+                    <div className="log-actions">
+                        <button type="button" onClick={onClose} className="cancel-btn">
+                            Skip
+                        </button>
+                        <button type="submit" className="save-btn" disabled={!canSave}>
+                            Save log
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
