@@ -127,3 +127,23 @@
 .log-input::placeholder {
     color: var(--cm-muted);
 }
+
+.log-hint {
+    margin: -6px 0 14px;
+    font-size: 0.8125rem;
+    color: var(--cm-muted);
+}
+
+.log-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.cancel-btn,
+.save-btn {
+    font: inherit;
+    padding: 11px 22px;
+    border-radius: 999px;
+    cursor: pointer;
+}
