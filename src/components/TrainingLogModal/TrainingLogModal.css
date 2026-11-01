@@ -65,3 +65,30 @@
     font-weight: 500;
     color: var(--cm-muted);
 }
+
+.mood-row {
+    display: flex;
+    gap: 8px;
+}
+
+.mood-btn {
+    flex: 1;
+    padding: 10px 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    background: transparent;
+    border: 1px solid var(--cm-line);
+    border-radius: 14px;
+    cursor: pointer;
+    filter: grayscale(0.7);
+    opacity: 0.75;
+    transition: filter 0.15s, opacity 0.15s, border-color 0.15s;
+}
+
+.mood-btn.active {
+    filter: none;
+    opacity: 1;
+    border-color: var(--cm-accent);
+    background: color-mix(in srgb, var(--cm-accent) 14%, transparent);
+}
+
