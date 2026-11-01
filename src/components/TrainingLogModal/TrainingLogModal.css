@@ -147,3 +147,16 @@
     border-radius: 999px;
     cursor: pointer;
 }
+
+.cancel-btn {
+    color: var(--cm-text);
+    background: transparent;
+    border: 1px solid var(--cm-line);
+}
+
+.save-btn {
+    font-weight: 500;
+    color: var(--cm-on-accent);
+    background: var(--cm-accent);
+    border: 1px solid var(--cm-accent);
+}
