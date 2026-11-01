@@ -140,7 +140,18 @@ function TrainingLogModal({ challengeTitle, onClose, onSave }: TrainingLogModalP
                         </div>
                     </fieldset>
                     
-                    
+                    <div className="log-field">
+                        <label htmlFor="log-takeaway" className="log-label">Takeaway</label>
+                        <input
+                            id="log-takeaway"
+                            className="log-input"
+                            type="text"
+                            maxLength={120}
+                            placeholder="One thing you noticed today..."
+                            value={takeaway}
+                            onChange={(e) => setTakeaway(e.target.value)}
+                        />
+                    </div>
                 </form>
             </div>
         </div>
