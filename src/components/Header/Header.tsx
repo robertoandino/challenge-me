@@ -17,6 +17,20 @@ function Header({
     profileOpen,
     setProfileOpen,
 }: HeaderProps) {
+    const menuRef = useRef<HTMLDivElement>(null);
+
+    // Close the menu on outside click or Escape.
+    useEffect(() => {
+        if (!profileOpen) return;
+
+        const onPointerDown = (e: PointerEvent) => {
+            if (!menuRef.current?.contains(e.target as Node)) setProfileOpen(false);
+        };
+        const onKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") setProfileOpen(false);
+        };
+    })
+
     return (
         <div>
             hi
