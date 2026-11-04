@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useRef, type Dispatch, type SetStateAction } from "react";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
 import "./Header.css";
 
@@ -7,41 +7,21 @@ interface HeaderProps {
     completedCount: number;
     currentChallenge: string;
     profileOpen: boolean;
-    setProfileOpen: React.Dispatch<React.SetStateAction<boolean>>;
+    setProfileOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const Header: React.FC<HeaderProps> = ({
+function Header({
     dailyChallenge,
     completedCount,
     currentChallenge,
     profileOpen,
     setProfileOpen,
-}) => {
+}: HeaderProps) {
     return (
-        <header className="site-header">
-            <div className="header-left">
-                <div className="logo">⚡</div>
-                <h1 className="main-title">Challenge</h1>        
-            </div>
-
-            <div className="profile-menu-container">
-                <button
-                    className="profile-button"
-                    onClick={() => setProfileOpen((open) => !open)}
-                >
-                    <span role="img" aria-label="profile">🔥</span>
-                </button>
-
-                {profileOpen && (
-                    <ProfileMenu
-                        dailyChallenge={dailyChallenge}
-                        completedCount={completedCount}
-                        currentChallenge={currentChallenge}
-                    />
-                )}
-            </div>
-        </header>
-    );
-};
+        <div>
+            hi
+        </div>
+    )
+}
 
 export default Header;
