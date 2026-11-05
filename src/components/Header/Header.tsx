@@ -47,7 +47,18 @@ function Header({
             </div>
 
             <div className="profile-menu-container" ref={menuRef}>
-
+                <button
+                    type="button"
+                    className="profile-button"
+                    onClick={() => setProfileOpen((open) => !open)}
+                    aria-label="Profile menu"
+                    aria-expanded={profileOpen}
+                >
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
+                    </svg>
+                </button>
             </div>
         </header>
     )
