@@ -29,7 +29,15 @@ function Header({
         const onKeyDown = (e: KeyboardEvent) => {
             if (e.key === "Escape") setProfileOpen(false);
         };
-    })
+    
+
+        document.addEventListener("pointerdown", onPointerDown);
+        document.addEventListener("keydown", onKeyDown);
+        return () => {
+            document.removeEventListener("pointerdown", onPointerDown);
+            document.removeEventListener("keydown", onKeyDown);
+        };
+    }, [profileOpen, setProfileOpen]);
 
     return (
         <div>
