@@ -10,3 +10,27 @@
     position: relative;
     z-index: 10;
 }
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    font-size: 1.125rem;
+    background: var(--cm-accent);
+    border-radius: 50%;
+}
+
+.main-title {
+    margin: 0;
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--cm-text);
+}
