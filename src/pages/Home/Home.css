@@ -8,102 +8,22 @@
     font-family: var(--cm-font);
 }
 
-/* Loading state */
-.loading-state {
+/* Layout */
+.home-body {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 8px 16px 24px;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    color: var(--cm-text);
+    gap: 16px;
 }
 
-.loading-spinner {
-    width: 40px;
-    height: 40px;
-    border: 4px solid var(--cm-line);
-    border-top-color: var(--cm-accent);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
-}
+.home-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
-}
 
-/* Toast (removed from the DOM by onAnimationEnd, so the animation length is the display time) */
-.completion-toast {
-    position: fixed;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--cm-panel);
-    color: var(--cm-text);
-    border: 1px solid var(--cm-line);
-    padding: 0.875rem 1.75rem;
-    border-radius: 0.75rem;
-    font-size: 1.125rem;
-    z-index: 1000;
-    animation: toast-in-out 2s ease both;
-}
-
-@keyframes toast-in-out {
-    0%,
-    100% {
-        opacity: 0;
-        transform: translate(-50%, -20px);
-    }
-    12%,
-    88% {
-        opacity: 1;
-        transform: translate(-50%, 0);
-    }
-}
-
-/* Dev reset */
-.reset-button {
-    display: block;
-    width: fit-content;
-    min-width: 12rem;
-    margin: 48px auto;
-    padding: 0.625rem 1.25rem;
-    font: inherit;
-    font-size: 1rem;
-    color: var(--cm-text);
-    background: transparent;
-    border: 1px solid var(--cm-accent);
-    border-radius: 999px;
-    cursor: pointer;
-}
-
-.reset-button:hover {
-    background: var(--cm-panel);
-}
-
-.reset-button:focus-visible {
-    outline: 2px solid var(--cm-accent);
-    outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .loading-spinner {
-        animation-duration: 2.5s;
-    }
-
-    /* Fade only; keeping an animation means onAnimationEnd still fires. */
-    .completion-toast {
-        animation-name: toast-fade;
-    }
-
-    @keyframes toast-fade {
-        0%,
-        100% {
-            opacity: 0;
-        }
-        12%,
-        88% {
-            opacity: 1;
-        }
-    }
 }
