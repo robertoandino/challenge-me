@@ -97,6 +97,11 @@
     color: var(--cm-on-accent);
 }
 
+.sw-day.done .sw-dot {
+    background: var(--cm-accent);
+    border-color: var(--cm-accent);
+}
+
 .sw-day.today .sw-dot {
     border-color: var(--cm-accent);
     box-shadow: 0 0 0 3px color-mix(in srgb, var(--cm-accent) 25%, transparent);
