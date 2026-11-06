@@ -26,7 +26,7 @@ function SegmentedControl<T extends string>({
                 <button
                     key={o.value}
                     type="button"
-                    className={`sc-options${o.value === value ? " is-on" : ""}`}
+                    className={`sc-option${o.value === value ? " is-on" : ""}`}
                     aria-pressed={o.value === value}
                     onClick={() => onChange(o.value)}
                 >
