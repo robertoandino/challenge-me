@@ -73,7 +73,16 @@ function ProfileMenu({ dailyChallenge, completedCount, streakCount, onUseDaily, 
                 </div>   
             )}
 
-            
+            <div className="pm-list">
+                <button type="button" className="pm-item" onClick={() => navigate("/profile")}>
+                    <span>View profile</span>
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                        <path d="M5 2L5 5-5 5/" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                </button>
+
+                
+            </div>
         </div>
     );
 };
