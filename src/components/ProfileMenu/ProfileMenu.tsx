@@ -12,6 +12,15 @@ interface ProfileMenuProps {
     currentChallenge: string;
 };
 
+const initialsOf = (name: string) =>
+    name
+        .split("")
+        .filter(Boolean)
+        .slice(0, 2)
+        .map((n) => n[0])
+        .join("")
+        .toUpperCase() || "?";
+
 function ProfileMenu({ dailyChallenge, completedCount, streakCount, onUseDaily, onClose}: 
     ProfileMenuProps) {
 
