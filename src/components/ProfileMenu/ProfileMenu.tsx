@@ -6,6 +6,9 @@ import "./ProfileMenu.css"
 interface ProfileMenuProps {
     dailyChallenge: string;
     completedCount: number;
+    streakCount: number;
+    onUseDaily: () => void;
+    onClose: () => void;
     currentChallenge: string;
 };
 
