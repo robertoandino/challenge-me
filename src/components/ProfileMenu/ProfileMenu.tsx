@@ -62,6 +62,18 @@ function ProfileMenu({ dailyChallenge, completedCount, streakCount, onUseDaily, 
                     <span className="pm-stat-label">completed</span>
                 </div>
             </div>
+
+            {dailyChallenge && (
+                <div className="pm-daily">
+                    <p className="pm-label">Today's challenge</p>
+                    <p className="pm-daily-text">{dailyChallenge}</p>
+                    <button type="button" className="pm-daily-btn" onClick={useDaily}>
+                        Do this one
+                    </button>
+                </div>   
+            )}
+
+            
         </div>
     );
 };
