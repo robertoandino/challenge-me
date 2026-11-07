@@ -36,9 +36,23 @@ function ProfileMenu({ dailyChallenge, completedCount, streakCount, onUseDaily, 
         saveTheme(next);
     }
 
+    const useDaily = () => {
+        onUseDaily();
+        onClose();
+    }
+
     return (
         <div className="profile-dropdown">
-            hi
+            <div className="pm-who">
+                <div className="pm-avatar" aria-hidden="true">{initialsOf(profile.name)}</div>
+            
+                <div className="pm-who-text">
+                    <p className="pm-name">{profile.name}</p>
+                    {profile.bio && <p className="pm-bio">{profile.bio}</p>}
+                </div>
+            </div>
+
+            
         </div>
     );
 };
