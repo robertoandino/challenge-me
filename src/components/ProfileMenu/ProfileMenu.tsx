@@ -23,6 +23,18 @@ const initialsOf = (name: string) =>
 
 function ProfileMenu({ dailyChallenge, completedCount, streakCount, onUseDaily, onClose}: 
     ProfileMenuProps) {
+    const navigate = useNavigate();
+
+    //same saved profile the Profile page edits.
+    const [profile] = useState(() => readJSON(KEYS.profile, { name: "John Smith", bio: "Athlete"}));
+    const [theme, setTheme] = useState<Theme>(loadTheme);
+
+    const toggleTheme = () => {
+        const next: Theme = theme === "dark" ? "light" : "dark";
+        setTheme(next);
+        document.documentElement.setAttribute("data-theme", next);
+        saveTheme(next);
+    }
 
     return (
         <div className="profile-dropdown">
