@@ -52,7 +52,16 @@ function ProfileMenu({ dailyChallenge, completedCount, streakCount, onUseDaily, 
                 </div>
             </div>
 
-            
+            <div className="pm-stats">
+                <div className="pm-stat">
+                    <span className="pm-stat-num">{streakCount}</span>
+                    <span className="pm-stat-label">day streak</span>
+                </div>
+                <div className="pm-stat">
+                    <span className="pm-stat-num">{completedCount}</span>
+                    <span className="pm-stat-label">completed</span>
+                </div>
+            </div>
         </div>
     );
 };
