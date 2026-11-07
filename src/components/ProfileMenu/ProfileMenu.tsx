@@ -81,10 +81,21 @@ function ProfileMenu({ dailyChallenge, completedCount, streakCount, onUseDaily, 
                     </svg>
                 </button>
 
-                
+                <button
+                    type="button"
+                    className="pm-item"
+                    role="switch"
+                    aria-checked={theme === "dark"}
+                    onClick={toggleTheme}
+                >
+                    <span>Dark mode</span>
+                    <span className="pm-switch" aria-hidden="true">
+                        <span className="pm-switch-thumb" />
+                    </span>
+                </button>
             </div>
         </div>
     );
-};
+}
 
 export default ProfileMenu;
