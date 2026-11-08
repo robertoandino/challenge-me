@@ -28,3 +28,43 @@
         transform: translateY(-6px);
     }
 }
+
+/* Who */
+.pm-who {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pm-avatar {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    color: var(--cm-on-accent);
+    background: var(--cm-accent);
+    border-radius: 50%;
+}
+
+.pm-who-text {
+    min-width: 0;
+}
+
+.pm-name {
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pm-bio {
+    font-size: 0.875rem;
+    color: var(--cm-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
