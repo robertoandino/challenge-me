@@ -17,3 +17,14 @@
     z-index: 11000;
     animation: pm-in 0.18s ease both;
 }
+
+.profile-dropdown p {
+    margin: 0;
+}
+
+@keyframes pm-in {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+}
