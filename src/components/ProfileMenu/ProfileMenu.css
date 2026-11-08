@@ -67,4 +67,29 @@
     white-space: nowrap;
 }
 
+/* Stats */
+.pm-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
 
+.pm-stat {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 12px;
+    background: var(--cm-h0);
+    border-radius: 12px;
+}
+
+.pm-stat-num {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    font-variant-numeric: tubular-nums;
+}
+
+.pm-stat-label {
+    font-size: 0.75rem;
+    color: var(--cm-muted);
+}
