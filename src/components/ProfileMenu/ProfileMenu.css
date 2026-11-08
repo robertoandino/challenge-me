@@ -93,3 +93,38 @@
     font-size: 0.75rem;
     color: var(--cm-muted);
 }
+
+/* Daily challenge */
+.pm-daily {
+    padding: 12px;
+    border: 1px solid var(--cm-line);
+    border-radius: 14px;
+}
+
+.pm-label {
+    font-size: 0.75rem;
+    color: var(--cm-muted);
+}
+
+.pm-daily-text {
+    margin-top: 4px !important;
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.pm-daily-btn {
+    margin-top: 10px;
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 8px 16px;
+    color: var(--cm-on-accent);
+    background: var(--cm-accent);
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+}
