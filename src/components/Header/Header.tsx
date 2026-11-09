@@ -5,6 +5,8 @@ import "./Header.css";
 interface HeaderProps {
     dailyChallenge: string;
     completedCount: number;
+    streakCount: number;
+    onUseDaily: () => void;
     currentChallenge: string;
     profileOpen: boolean;
     setProfileOpen: Dispatch<SetStateAction<boolean>>;
@@ -13,6 +15,8 @@ interface HeaderProps {
 function Header({
     dailyChallenge,
     completedCount,
+    streakCount,
+    onUseDaily,
     currentChallenge,
     profileOpen,
     setProfileOpen,
