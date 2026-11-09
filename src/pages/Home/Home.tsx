@@ -234,7 +234,8 @@ function Home() {
             <Header
                 dailyChallenge={dailyChallenge}
                 completedCount={completedCount}
-                currentChallenge={currentChallenge}
+                streakCount={streakCount}
+                onUseDaily={loadDailyChallenge}
                 profileOpen={profileOpen}
                 setProfileOpen={setProfileOpen}
             />

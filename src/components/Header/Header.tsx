@@ -7,7 +7,6 @@ interface HeaderProps {
     completedCount: number;
     streakCount: number;
     onUseDaily: () => void;
-    currentChallenge: string;
     profileOpen: boolean;
     setProfileOpen: Dispatch<SetStateAction<boolean>>;
 }
