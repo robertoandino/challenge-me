@@ -203,6 +203,16 @@ function Home() {
         writeJSON(KEYS.trainingLogs, [log, ...(Array.isArray(existing) ? existing : [])]);
     };
 
+    /* Load today's challenge (from the profile menu) as the current one */
+    const loadDailyChallenge = () => {
+        if (!dailyChallenge) return;
+        setCurrentChallenge(dailyChallenge);
+        setChallengeHistory((prev) => [dailyChallenge, ...prev.filter((t) => t !== dailyChallenge)].slice(0, 5));
+        setEmptyMessage("");
+        setHasGenerated(true);
+        setIsChallengeCompleted(false);
+    };
+
     /* Temp Dev use only */
     const clearChallengeData = () => {
         if (!window.confirm("Reset all progress? This clears your streak, stats and training log.")) return;
