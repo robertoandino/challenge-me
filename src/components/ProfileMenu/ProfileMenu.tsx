@@ -9,7 +9,6 @@ interface ProfileMenuProps {
     streakCount: number;
     onUseDaily: () => void;
     onClose: () => void;
-    currentChallenge: string;
 };
 
 const initialsOf = (name: string) =>

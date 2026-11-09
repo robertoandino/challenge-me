@@ -17,7 +17,6 @@ function Header({
     completedCount,
     streakCount,
     onUseDaily,
-    currentChallenge,
     profileOpen,
     setProfileOpen,
 }: HeaderProps) {
@@ -46,7 +45,7 @@ function Header({
     return (
         <header className="site-header">
             <div className="header-left">
-                <div className="logo">⚡</div>
+                <div className="logo" aria-hidden="true">⚡</div>
                 <h1 className="main-title">Challenge</h1>
             </div>
 
@@ -68,7 +67,9 @@ function Header({
                     <ProfileMenu
                         dailyChallenge={dailyChallenge}
                         completedCount={completedCount}
-                        currentChallenge={currentChallenge}
+                        streakCount={streakCount}
+                        onUseDaily={onUseDaily}
+                        onClose={() => setProfileOpen(false)}
                     />
                 )}
             </div>
