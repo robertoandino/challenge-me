@@ -22,7 +22,7 @@ export const quotes: Quote[] = [
     },
     {
         text: "The last three or four reps is what makes the muscle grow.",
-        author: "Arnold Asharzenegger",
+        author: "Arnold Schwarzenegger",
     },
     {
         text: "What hurts today makes you stronger tomorrow.",

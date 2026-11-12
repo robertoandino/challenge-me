@@ -20,7 +20,7 @@ export const challenges: Challenge[] = [
         id: 6, text: "Compliment someone today", category: "social", difficulty: "easy"
     }, 
     {
-        id: 7, text: "Try a new stretch or yoga pose", category: "physical", difficulty: "medium" 
+        id: 7, text: "Try a new stretch or yoga pose", category: "physical", difficulty: "easy" 
     },
     {
         id: 8, text: "Do 15 squats", category: "physical", difficulty: "easy"
@@ -44,7 +44,7 @@ export const challenges: Challenge[] = [
         id: 14, text: "Do 50 pushups (break into sets if needed)", category: "physical", difficulty: "hard"
     },
     {
-        id: 15, text: "Hold a wall sit for 20 minutes", category: "physical", difficulty: "hard"
+        id: 15, text: "Hold a wall sit for 2 minutes", category: "physical", difficulty: "hard"
     },
     {
         id: 16, text: "Complete a 15-minute HIIT workout", category: "physical", difficulty: "hard"
@@ -86,7 +86,7 @@ export const challenges: Challenge[] = [
         id: 28, text: "Create something and share it with someone", category: "creative", difficulty: "hard"
     },
     {
-        id: 29, text: "Send a friendly message to someone you care about", category: "social", difficulty: "hard"
+        id: 29, text: "Send a friendly message to someone you care about", category: "social", difficulty: "easy"
     },
     {
         id: 30, text: "Smile and say hello to a stranger", category: "social", difficulty: "easy"
