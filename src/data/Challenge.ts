@@ -1,8 +1,9 @@
 export type ChallengeCategory = 'physical' | 'mental' | 'creative' | 'social';
+export type Difficulty = "easy" | "medium" | "hard";
 
 export interface Challenge {
     id: number;
     text: string;
-    category: 'physical' | 'mental' | 'creative' | 'social' | 'all';
-    difficulty: 'easy' | 'medium' | 'hard';
+    category: ChallengeCategory;
+    difficulty: Difficulty;
 }
