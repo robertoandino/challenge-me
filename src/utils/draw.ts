@@ -27,7 +27,7 @@ export function pickChallenge(
         candidates = pool.filter((c) => c.category === chosen);
     }
 
-    const fresh = candidates.filter((c) => !recendIds.includes(c.id));
+    const fresh = candidates.filter((c) => !recentIds.includes(c.id));
     const choices = fresh.length > 0 ? fresh : candidates;
     return choices[Math.floor(random() * choices.length)];
 }
