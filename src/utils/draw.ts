@@ -23,7 +23,11 @@ export function pickChallenge(
     let candidates = pool;
     if (category === "all") {
         const categories = Array.from(new Set(pool.map((c) => c.category)));
+        const chosen = categories[Math.floor(random() * categories.length)];
+        candidates = pool.filter((c) => c.category === chosen);
     }
+
+    
 
     return null;
 }
