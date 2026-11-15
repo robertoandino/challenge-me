@@ -18,6 +18,12 @@ export function pickChallenge(
     const pool = all.filter(
         (c) => c.difficulty === difficulty && (category === "all" || c.category === category)
     );
+    if (pool.length === 0) return null;
+
+    let candidates = pool;
+    if (category === "all") {
+        const categories = Array.from(new Set(pool.map((c) => c.category)));
+    }
 
     return null;
 }
