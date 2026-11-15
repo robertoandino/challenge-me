@@ -8,3 +8,16 @@ import type { Challenge, ChallengeCategory, Difficulty } from "../data/Challenge
  * - Challenges in 'recentIds' are skipped unless nothing else is left.
  * - Returns null when no challenge matches the filters.
  */
+export function pickChallenge(
+    all: readonly Challenge[],
+    category: ChallengeCategory | "all",
+    difficulty: Difficulty,
+    recentIds: readonly number[],
+    random: () => number = Math.random
+): Challenge | null {
+    const pool = all.filter(
+        (c) => c.difficulty === difficulty && (category === "all" || c.category === category)
+    );
+
+    return null;
+}
