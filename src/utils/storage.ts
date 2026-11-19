@@ -79,6 +79,12 @@ export function calcStreak(dates: ReadonlySet<string>): number {
 
 /* Challenge State */
 
+// v1 saves stored text, so look the ids up. Anything that no longer exists is dropped.
+const toIds = (history: unknown[]): number[] =>
+    history
+        .map((h) => (typeof h === "number" ? h : challenges.find((c) => c.text === h)?.id))
+        .filter((id): id is number => typeof id === "number");
+
 export function loadChallengeState(): ChallengeState {
     const s = readJSON<Partial<ChallengeState>>(KEYS.challengeState, {});
     return {
