@@ -1,4 +1,7 @@
-import type { ChallengeCategory } from "../data/Challenge";
+import { challenges } from "../data/challenges";
+import type { ChallengeCategory, Difficulty } from "../data/Challenge";
+
+export type { Difficulty };
 
 export const KEYS = {
     challengeState: "challengeState",
@@ -8,7 +11,7 @@ export const KEYS = {
     weeklyGoal: "weeklyGoal",
 } as const;
 
-export type Difficulty = "easy" | "medium" | "hard";
+//export type Difficulty = "easy" | "medium" | "hard";
 export const DIFFICULTIES: readonly Difficulty[] = ["easy", "medium", "hard"];
 
 export const DEFAULT_CHALLENGE = "Time to train";
