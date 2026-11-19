@@ -11,17 +11,21 @@ export const KEYS = {
     weeklyGoal: "weeklyGoal",
 } as const;
 
-//export type Difficulty = "easy" | "medium" | "hard";
 export const DIFFICULTIES: readonly Difficulty[] = ["easy", "medium", "hard"];
 
 export const DEFAULT_CHALLENGE = "Time to train";
 
+// Bump when the saved shape changes, and add a migration in loadChallengeState.
+// v1: history held challenge text. v2: history holds challenge ids.
+export const STATE_VERSION = 2;
+
 export interface ChallengeState {
+    version: number;
     currentChallenge: string;
     difficulty: Difficulty;
     selectedCategory: ChallengeCategory | "all";
-    challengeHistory: string[];
-    completedDates: string[];
+    challengeHistory: number[]; // ids of challenges, newest first.
+    completedDates: string[]; // local YYYY-MM-DD; the streak is derived from these
     completedCount: number;
     hasGenerated: boolean;
     isChallengeCompleted: boolean;
@@ -78,6 +82,7 @@ export function calcStreak(dates: ReadonlySet<string>): number {
 export function loadChallengeState(): ChallengeState {
     const s = readJSON<Partial<ChallengeState>>(KEYS.challengeState, {});
     return {
+        version: STATE_VERSION,
         currentChallenge: s.currentChallenge || DEFAULT_CHALLENGE,
         difficulty: DIFFICULTIES.includes(s.difficulty as Difficulty) ? (s.difficulty as Difficulty as Difficulty) : "easy",
         selectedCategory: s.selectedCategory || "all",
