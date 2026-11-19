@@ -86,13 +86,17 @@ const toIds = (history: unknown[]): number[] =>
         .filter((id): id is number => typeof id === "number");
 
 export function loadChallengeState(): ChallengeState {
-    const s = readJSON<Partial<ChallengeState>>(KEYS.challengeState, {});
+    const s = readJSON<Partial<Omit<ChallengeState, "challengeHistory">> & { challengeHistory?: unknown[] }>(
+        KEYS.challengeState,
+        {}
+    );
+
     return {
         version: STATE_VERSION,
         currentChallenge: s.currentChallenge || DEFAULT_CHALLENGE,
-        difficulty: DIFFICULTIES.includes(s.difficulty as Difficulty) ? (s.difficulty as Difficulty as Difficulty) : "easy",
+        difficulty: DIFFICULTIES.includes(s.difficulty as Difficulty) ? (s.difficulty as Difficulty) : "easy",
         selectedCategory: s.selectedCategory || "all",
-        challengeHistory: Array.isArray(s.challengeHistory) ? s.challengeHistory : [],
+        challengeHistory: Array.isArray(s.challengeHistory) ? toIds(s.challengeHistory) : [],
         completedDates: Array.isArray(s.completedDates) ? s.completedDates : [],
         completedCount: s.completedCount ?? 0,
         hasGenerated: !!s.hasGenerated,
