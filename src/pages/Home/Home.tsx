@@ -50,7 +50,7 @@ const CATEGORY_OPTIONS: readonly { value: ChallengeCategory | "all"; label: stri
 ]
 
 // Stable number per calendar day (local time), used to pick the daily quote and challenge.
-const daySeed = (d = new Date()) => d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+//const daySeed = (d = new Date()) => d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
 
 function Home() {
     // Everything persisted is read once, synchronously, so there is no flash or flag.
@@ -117,6 +117,7 @@ function Home() {
     /* Persist on every change. */
     useEffect(() => {
         const payload: ChallengeState = {
+            version: STATE_VERSION,
             currentChallenge,
             difficulty,
             selectedCategory,
@@ -158,23 +159,16 @@ function Home() {
         setEmptyMessage("");
 
         later(() => {
-            const pool = challenges.filter(
-                (c) => (selectedCategory === "all" || c.category === selectedCategory) && c.difficulty === difficulty
-            );
+            const next = pickChallenge(challenges, selectedCategory, difficulty, challengeHistory);
 
-            if (pool.length === 0){
+            if (!next){
                 setEmptyMessage("No challenges found for this category and difficulty. Try a different combination.");
                 setIsGenerating(false);
                 return;
             }
 
-            // Avoid repeating the last few challenges unless the pool is too small.
-            const fresh = pool.filter((c) => !challengeHistory.includes(c.text));
-            const choices = fresh.length > 0 ? fresh : pool;
-            const next = choices[Math.floor(Math.random() * choices.length)];
-
             setCurrentChallenge(next.text);
-            setChallengeHistory((prev) => [next.text, ...prev].slice(0, 5));
+            setChallengeHistory((prev) => [next.id, ...prev].slice(0, HISTORY_SIZE));
             setIsChallengeCompleted(false);
             setHasGenerated(true);
             setIsGenerating(false);
