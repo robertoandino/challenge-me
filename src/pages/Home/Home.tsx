@@ -1,6 +1,6 @@
 import { useState, useMemo, useRef, useEffect } from "react";
 import { challenges } from "../../data/challenges";
-import type { ChallengeCategory } from "../../data/Challenge";
+import type { ChallengeCategory, Difficulty } from "../../data/Challenge";
 import { quotes } from "../../data/quotes";
 import "../../styles/theme.css";
 import "./Home.css";
@@ -20,6 +20,7 @@ import { TrainingLog } from "../../types/TrainingLog";
 import {
     DEFAULT_CHALLENGE,
     KEYS,
+    STATE_VERSION,
     calcStreak,
     dateKey,
     loadChallengeState,
@@ -28,8 +29,11 @@ import {
     removeKey,
     writeJSON,
     type ChallengeState,
-    type Difficulty,
 } from "../../utils/storage";
+import { pickChallenge } from "../../utils/draw";
+import { dailyIndex } from "../../utils/daily";
+
+const HISTORY_SIZE = 5;
 
 const DIFFICULTY_OPTIONS: readonly { value: Difficulty; label: string }[] = [
     { value: "easy", label: "Easy" },
