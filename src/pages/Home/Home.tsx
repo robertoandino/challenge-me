@@ -59,7 +59,7 @@ function Home() {
     const [currentChallenge, setCurrentChallenge] = useState(saved.currentChallenge);
     const [difficulty, setDifficulty] = useState<Difficulty>(saved.difficulty);
     const [selectedCategory, setSelectedCategory] = useState<ChallengeCategory | "all">(saved.selectedCategory);
-    const [challengeHistory, setChallengeHistory] = useState<string[]>(saved.challengeHistory);
+    const [challengeHistory, setChallengeHistory] = useState<number[]>(saved.challengeHistory);
     const [completedDates, setCompletedDates] = useState<Set<string>>(() => new Set(saved.completedDates));
     const [completedCount, setCompletedCount] = useState(saved.completedCount);
     const [hasGenerated, setHasGenerated] = useState(saved.hasGenerated);
@@ -90,9 +90,14 @@ function Home() {
                 : isChallengeCompleted
                     ? "done"
                     : "ready";
- 
-    const dailyChallenge = useMemo(() => challenges[daySeed() % challenges.length]?.text ?? "", []);
-    const dailyQuote = useMemo(() => quotes[daySeed() % quotes.length] ?? null, []);
+
+    // Today's challenge skips "hard" so the daily pick is always doable, and the index never repeats within a cycle.
+    const dailyPick = useMemo(() => {
+        const pool = challenges.filter((c) => c.difficulty !== "hard");
+        return pool[dailyIndex(pool.length)] ?? null;
+    }, []);
+    const dailyChallenge = dailyPick?.text ?? "";
+    const dailyQuote = useMemo(() => quotes[dailyIndex(quotes.length)] ?? null, []);
 
     /* Timers are tracked so they are cleared on unmount and never stack. */
     const timers = useRef<number[]>([]);
