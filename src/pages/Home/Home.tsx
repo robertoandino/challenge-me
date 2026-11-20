@@ -208,9 +208,9 @@ function Home() {
 
     /* Load today's challenge (from the profile menu) as the current one */
     const loadDailyChallenge = () => {
-        if (!dailyChallenge) return;
-        setCurrentChallenge(dailyChallenge);
-        setChallengeHistory((prev) => [dailyChallenge, ...prev.filter((t) => t !== dailyChallenge)].slice(0, 5));
+        if (!dailyPick) return;
+        setCurrentChallenge(dailyPick.text);
+        setChallengeHistory((prev) => [dailyPick.id, ...prev.filter((id) => id !== dailyPick.id)].slice(0, HISTORY_SIZE));
         setEmptyMessage("");
         setHasGenerated(true);
         setIsChallengeCompleted(false);
